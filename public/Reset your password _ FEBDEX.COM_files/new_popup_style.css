@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+}
+
+.popup__container {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+}
+
+.popup {
+    display: flex;
+    /*max-width: 650px;*/
+    background-color: #11141D;
+    border-radius: 20px;
+    position: relative;
+}
+
+.popup__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.popup__left {
+    width: 208px;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.popup__left img {
+    position: absolute;
+    width: 418px;
+    top: -86px;
+    left: -133px;
+    max-width: unset;
+    height: -webkit-fill-available;
+}
+
+.popup__right {
+    background-color: #181E2B;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 65px 28px 40px 85px;
+}
+
+.popup__right-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.popup__right-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 40px;
+    max-width: 321px;
+}
+
+.popup__right-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    width: fit-content;
+    background-color: #5351D5;
+    cursor: pointer;
+    padding: 10px 46px;
+    border-radius: 5px;
+}
+
+.popup__right-button:hover {
+
+background: rgb(81,115,213);
+background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100%);
+    
+}
+
+
+@media (max-width: 730px) {
+    .popup {
+        flex-direction: column;
+    }
+
+    .popup__left {
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .popup__left img {
+        left: -105px;
+    }
+
+    .popup__right {
+        border-radius: 20px;
+        position: relative;
+        z-index: 2;
+        padding: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .popup {
+        padding: 10px;
+    }
+}

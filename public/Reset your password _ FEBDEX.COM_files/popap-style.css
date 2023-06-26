@@ -1,0 +1,128 @@
+/* Необходимо будет отключить скрол для боди во время включение попапа и на оборот id="dark" */
+
+/*#dark{*/
+/*    overflow: hidden;*/
+/*}*/
+
+
+.popap-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.popap-container-item{
+    display: flex;
+    position: relative;
+    background-color: #161C29;
+    max-width: 600px;
+    height: 350px;
+border-radius: 6px;
+}
+
+.popap-container-item-close{
+    width: 25px;
+    height: 25px;
+    right: 20px;
+    top: 30px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.popap-container-item-close::before{
+    content: "";
+    position: absolute;
+    background-color: #ffff;
+    transform: rotate(45deg);
+    width: 25px;
+    height: 3px;
+    bottom: 12px;
+}
+.popap-container-item-close::after{
+    content: "";
+    position: absolute;
+    background-color: #ffff;
+    transform: rotate(-45deg);
+    width: 25px;
+    height: 3px;
+    bottom: 12px;
+}
+
+.popap-container-img{
+    width: 250px;
+    height: 100%;
+    display: flex;
+    background-color: #12151F;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+border-radius: 6px 0 0 6px;
+}
+
+.popap-container-img img{
+    width: 100px;
+    height: 100px;
+}
+
+.popap-container-item-text-box{
+    max-width: 505px;
+    padding: 45px 30px 45px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popap-container-item-title{
+    color: #ffff;
+    font-size: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 0;
+}
+
+.popap-container-item-text{
+    color: #ffff;
+    padding-bottom: 35px;
+    max-width: 445px;
+}
+
+.popap-container-item-btn{
+    flex-basis: 100%;
+}
+
+.popap-container-item-button{
+    color: #ffff;
+    background-color: #00C059;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 550px){
+    .popap-container-item{
+        flex-wrap: wrap;
+        height: 410px;
+        max-width: 350px;
+    }
+    .popap-container-item-text-box{
+        padding: 11px 10px 5px 10px;
+    }
+    .popap-container-item-text{
+        padding-bottom: 0;
+    }
+    .popap-container-img{
+        flex-basis: 100%;
+        height: auto;
+    }
+}

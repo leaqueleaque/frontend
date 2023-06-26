@@ -1,0 +1,105 @@
+.successful-popup__bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.successful-popup__bg.successful-popup__bg-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.successful-popup {
+    min-width: 341px;
+}
+
+.successful-popup__top {
+    padding: 33px 10px 32px 10px;
+    background-color: #11141D;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.successful-popup__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.successful-popup__bottom {
+    background: #181E2B;
+    border-radius: 0 0 10px 10px;
+    padding: 35px 26px 26px 28px;
+}
+
+.successful-popup__column {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.successful-popup__column + .successful-popup__column {
+    margin-top: 20px;
+}
+
+.successful-popup__column-key {
+    color: #FFFFFF;
+}
+
+.successful-popup__column-value {
+    color: #DADADA;
+}
+
+.successful-popup__column-value.completed {
+    color: #4DB742;
+}
+
+.successful-popup__column-value.pending {
+    color: #e7bd1f;
+}
+
+
+
+
+.successful-popup__column-value.to,
+.successful-popup__column-value.id {
+    inline-size: 150px;
+    overflow-wrap: break-word;
+    text-align: right;
+}
+
+.successful-popup__close {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    background: #5351D5;
+    border-radius: 5px;
+    width: 100%;
+    padding: 13px 0 12px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 35px;
+}
+
+.successful-popup__close:hover {
+background: rgb(81,115,213);
+background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100%);
+   
+}

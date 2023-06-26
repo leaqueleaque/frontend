@@ -1,0 +1,838 @@
+.userCard{
+    font-family: 'Poppins', sans-serif;
+}
+
+.userCard__container{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.userCard__box{
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 0 44px;
+}
+
+.userCard__item-left,
+.userCard__item-right{
+    background-color: #131722;
+    height: 132px;
+    flex-basis: calc(50% - 12px);
+    border-radius: 10px;
+    background: rgb(19,23,34);
+background: linear-gradient(110deg, rgba(19,23,34,1) 56%, rgba(36,37,82,1) 56%);
+}
+
+.userCard__item-left{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.userCard__item-left:before{
+    content: "";
+    position: absolute;
+    width: 281px;
+    height: 132px;
+    right: 0;
+}
+
+.userCard__balance{
+    padding: 37px 10px 10px 65px;
+    z-index: 1;
+    width: 250px;
+    height: 132px;
+}
+
+.userCard__balance-title{
+    color: #9F9EA5;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.userCard__balance-count{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color: #FFFFFF;
+    margin-top: 3px;
+}
+
+.userCard__balance-count span{
+    font-weight: 500;
+    font-size: 23px;
+}
+
+.userCard__user-data{
+    display: flex;
+    padding: 28px 0 10px 10px;
+}
+
+.userCard__img-box{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userCard__img-box img{
+    width: 71.82px;
+    height: 71.82px;
+    border-radius: 50%;
+}
+
+.userCard__user-data-box{
+    padding: 0px 10px 10px 22px;
+}
+
+.userCard__user-name{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+    position: relative;
+    padding-left: 20px;
+}
+
+.userCard__user-name:before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/fi-ss-user.svg');
+    position: absolute;
+    left: -5px;
+    top: 3px;
+}
+
+.userCard__user-email{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #9F9EA5;
+    padding-left: 20px;
+    position: relative;
+    margin-top: 6px;
+}
+
+.userCard__user-email:before{
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 3px;
+    width: 18px;
+    height: 14px;
+    background-image: url('../img/fi-ss-envelope.svg');
+}
+
+.userCard__user-id{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #9F9EA5;
+    padding-left: 20px;
+    position: relative;
+    margin-top: 6px;
+}
+
+.userCard__user-id:before{
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/id.svg');
+}
+
+.userCard__item-right{
+    background: linear-gradient(93.26deg, #242552 4.16%, #30294E 98.77%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 34px 0 0 131px;
+}
+
+.userCard__item-right:before{
+    content: "";
+    position: absolute;
+    background-image: url('../img/card-img-right.png');
+    height: 133px;
+    width: 119px;
+    background-size: cover;
+    left: 15px;
+    top: 0;
+}
+
+.userCard__promo-title{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+    color: #fff;
+}
+
+.userCard__promo-input{
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background: #000000;
+    border-radius: 5px;
+    width: 278px;
+    height: 38px;
+    margin-top: 6px;
+    padding: 1px 15px 0 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #9F9EA5;
+    outline: none;
+}
+
+.userCard__promo-btn{
+    height: 38px;
+    width: 110px;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto','Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #004ED6;
+    border: none;
+    margin-left: 7px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.userCard__promo-btn:hover{
+    background-color: #005cff;
+}
+
+
+
+/*userNavigation*/
+.userNavigation{
+    margin-bottom: 43px;
+}
+.userNavigation__input{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    width: 225px;
+    height: 46px;
+    background: #131722;
+    border-radius: 10px;
+    border: none;
+    padding: 2px 0 0 58px;
+    outline: none;
+    color: #9F9EA5;
+}
+
+.userNavigation__search{
+    position: relative;
+}
+
+.userNavigation__search:before{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../img/fi-br-search.svg');
+}
+
+
+.userNavigation__box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.userNavigation__search-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 447px;
+}
+
+
+
+/*for checkbox*/
+
+.userNavigation__features-label {
+    display: block;
+    padding-left: 27px;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #9F9EA5;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+/* Hide the browser's default checkbox */
+.userNavigation__features-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.userNavigation__features-checkmark {
+    position: absolute;
+    top: 1px;
+    left: -6px;
+    width: 18px;
+    height: 18px;
+    background: #313748;
+    border-radius: 2px;
+    transition: background-color .3s ease-in-out;
+}
+
+/* When the checkbox is checked, add a blue background */
+.userNavigation__features-label input:checked ~ .userNavigation__features-checkmark {
+    background-color: #007bff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.userNavigation__features-checkmark:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+}
+
+/* Show the checkmark when checked */
+.userNavigation__features-label input:checked ~ .userNavigation__features-checkmark:after {
+    opacity: 1;
+}
+
+/* Style the checkmark/indicator */
+.userNavigation__features-label .userNavigation__features-checkmark:after {
+    left: 7.5px;
+    top: 4px;
+    width: 4px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: opacity .3s ease-in-out;
+}
+
+/*for checkbox*/
+
+
+.userNavigation__tabBtn-box{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 11px;
+}
+
+.userNavigation__tabBtn{
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 151px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #273660;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.userNavigation__tabBtn_wc{
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 185px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #273660;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 47px;
+}
+
+.userNavigation__tabBtn:hover{
+ background: rgb(58 151 57);
+    background: linear-gradient(90deg, rgb(86 75 181) 0%, rgb(86 48 98) 100%);
+       
+}
+
+.userNavigation__tabBtn_wc:hover{
+ background: rgb(58 151 57);
+    background: linear-gradient(90deg, rgb(86 75 181) 0%, rgb(86 48 98) 100%);
+       
+}
+
+.userNavigation__tabBtn.userNavigation__tabBtn-active:hover{
+background: rgb(58 151 57);
+    background: linear-gradient(90deg, rgb(86 75 181) 0%, rgb(86 48 98) 100%);
+}
+
+.userNavigation__tabBtn_wc.userNavigation__tabBtn_wc-active:hover{
+background: rgb(58 151 57);
+    background: linear-gradient(90deg, rgb(86 75 181) 0%, rgb(86 48 98) 100%);
+}
+
+.userAttention{
+    margin: 70px 0 135px 0;
+}
+
+
+.userAttention__box{
+    width: 100%;
+    height: 88px;
+    background: linear-gradient(89.96deg, #0E2B4D 0.02%, #02776D 99.97%);
+    border-radius: 10px 10px 10px 56px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 34px 0 128px;
+}
+
+.userAttention__box:before{
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -22px;
+    width: 89.92px;
+    height: 113.98px;
+    background-image: url('../img/fl-br-block.svg');
+}
+
+.userAttention__text{
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    padding-right: 15px;
+}
+
+.userAttention__text span{
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+
+.userAttention__btn{
+    height: 40px;
+    min-width: 116px;
+    border-radius: 5px;
+    background-color: #273660;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.userAttention__btn:hover{
+    background-color: #2a4078;
+}
+
+.tableUser__box::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+}
+
+.tableUser__box::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.tableUser__box::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #494b5c;
+}
+
+.tableUser {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tableUser__names {
+    display: flex;
+    background: #1F2434;
+    border-radius: 10px 10px 0 0;
+    padding: 0 0 0 28px;
+    color: #9F9EA5;
+}
+
+.tableUser__name {
+    padding: 28px 0 28px 0;
+}
+
+.tableUser__name-coin,
+.tableUser__name-balance,
+.tableUser__name-equivalent {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.tableUser__name-coin {
+    width: 60%;
+}
+
+.tableUser__name-balance,
+.tableUser__name-equivalent {
+    width: 224px;
+    border-left: 1px solid #2F333F;
+    padding-left: 30px;
+}
+
+.tableUser__item {
+    padding: 0 0 0 28px;
+    background-color: #131722;
+    border-bottom: 1px solid #2F333F;
+}
+
+.tableUser__item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.tableUser__item,
+.tableUser__item-coin,
+.tableUser__item-icon {
+    display: flex;
+    align-items: center;
+}
+
+.tableUser__item-coin {
+    width: 60%;
+    padding: 15px 0 14px 0;
+}
+
+.tableUser__item-coin span {
+    color: #8D8D95;
+    margin-left: 5px;
+}
+
+.tableUser__item-coin,
+.tableUser__item-balance,
+.tableUser__item-equivalent {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.tableUser__item-icon {
+    margin-right: 13px;
+}
+
+.tableUser__item-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.tableUser__item-balance,
+.tableUser__item-equivalent {
+    width: 224px;
+    height: 72px;
+    border-left: 1px solid #2F333F;
+    padding: 28px 0 28px 28px;
+}
+
+@media (max-width: 1200px) {
+    .userCard__box {
+        column-gap: 20px;
+    }
+
+    .userCard__item-right {
+        height: 180px;
+    }
+
+    .userCard__item-right form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .userCard__promo-btn {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .userCard__item-right:before {
+        height: 180px;
+        width: 125px;
+        left: 7px;
+        top: 3px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .userCard__box {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .userCard__item-right form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .userCard__item-right:before {
+        height: 133px;
+        width: 119px;
+        left: 15px;
+        top: 0;
+    }
+
+    .userCard__item-right {
+        padding: 20px 20px 20px 131px;
+    }
+
+    .userCard__promo-btn {
+        margin-top: 6px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 980px) {
+    .userNavigation__search-box {
+        width: 425px;
+    }
+}
+
+@media (max-width: 950px) {
+    .userNavigation__box {
+        /*flex-direction: column-reverse;*/
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .userNavigation__tabBtn-box {
+        column-gap: 10px;
+        width: 425px;
+    }
+
+    .userNavigation__tabBtn {
+        width: 130px;
+    }
+}
+
+@media (max-width: 880px) {
+    .userNavigation__box {
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+}
+
+@media (max-width: 730px) {
+    .tableUser__box {
+        overflow-x: scroll;
+        border-radius: 10px;
+    }
+
+    .tableUser__wrapper {
+        min-width: 730px;
+    }
+
+    .userAttention__box {
+        height: 100px;
+    }
+
+    .userAttention__box:before {
+        top: -15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .userCard__item-right form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .userCard__promo-btn {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .userCard__item-right:before {
+        height: 163px;
+        width: 125px;
+        left: 9px;
+        top: -1px;
+    }
+
+    .userCard__balance {
+        padding: 37px 10px 10px 90px;
+    }
+
+    .userAttention__text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 550px) {
+    .userAttention__box {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 90px 20px 20px 20px;
+        height: auto;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .userAttention__text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .userAttention__btn {
+        margin-top: 10px;
+    }
+
+    .userAttention__box:before {
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 525px) {
+    .userCard__balance {
+        padding: 37px 10px 10px 50px;
+    }
+}
+
+@media (max-width: 485px) {
+    .userCard__item-left {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        background: rgb(19 23 34);
+    background: linear-gradient(0deg, rgb(19 23 34) 51%, rgb(31 36 52) 51%);
+    margin-bottom: 10px;
+    }
+
+    .userCard__balance {
+        text-align: center;
+    }
+
+    .userCard__user-data,
+    .userCard__balance {
+        padding: 28px 0 10px 0;
+    }
+
+    .userCard__item-left:before {
+        width: 262px;
+        height: 249px;
+        right: 0;
+        background-repeat: no-repeat;
+        background-size: 600px;
+        display:none;
+        
+    }
+}
+
+@media (max-width: 450px) {
+    .userCard__promo-input {
+        width: 100%;
+    }
+    .userNavigation__tabBtn-box {
+        width: 355px;
+    }
+
+    .userNavigation__search-box {
+        width: 355px;
+    }
+
+    .userNavigation__input {
+        width: 170px;
+        padding: 0 0 0 30px;
+    }
+
+    .userNavigation__tabBtn {
+        width: 105px;
+    }
+
+    .userNavigation__search:before {
+        left: 11px;
+    }
+    .userCard__container{
+        padding: 0 10px;
+    }
+    .userCard__box{
+        row-gap: 10px;
+        margin: 25px 0;
+    }
+    .userNavigation {
+        margin-bottom: 25px;
+    }
+    .userAttention {
+        margin: 55px 0 135px 0;
+    }
+}
+
+@media (max-width: 403px) {
+    .userCard__item-right {
+        padding: 20px 20px 20px 95px;
+    }
+
+    .userCard__item-right:before {
+        height: 163px;
+        width: 147px;
+        left: -29px;
+        top: -20px;
+        rotate: 35deg;
+    }
+}
+
+@media (max-width: 580px) {
+    .tableUser__item-coin,
+    .tableUser__name-coin{
+        width: 33%;
+    }
+    .tableUser__names,
+    .tableUser__item{
+        padding: 0 0 0 15px;
+    }
+    .tableUser__item-balance, .tableUser__item-equivalent,
+    .tableUser__name-balance, .tableUser__name-equivalent{
+        padding: 28px 0 15px 15px;
+    }
+    
+  
+}

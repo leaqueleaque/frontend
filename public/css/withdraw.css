@@ -1,0 +1,543 @@
+
+.withdraw__form{
+    margin-top: 22px;
+}
+.withdraw__card{
+    max-width: 570px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.withdraw__card + .withdraw__card{
+    margin-top: 16px;
+}
+
+.withdraw__card-text-box{
+    display: flex;
+    flex-direction: column;
+    color: #919197;
+}
+
+.withdraw__form-title{
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.withdraw__form-des{
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.withdraw__shelf{
+    width: 342px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.withdraw__form{
+    padding: 0 15px;
+}
+
+
+.withdraw__form-title{
+    margin-bottom: 3px;
+}
+
+
+.withdraw__form .withdraw__btn-container{
+    max-width: 570px;
+    margin: 53px auto 0;
+}
+
+
+
+
+
+/*form update*/
+
+.withdraw__shelf .formP2p__currency.input-field{
+    width: 164px;
+}
+
+.formP2p__currency-item{
+    width: 344px;
+    height: 38px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    color: #919197;
+}
+
+
+.formP2p__coin-search.validate {
+    width: 344px !important;
+    height: 38px !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px !important;
+    line-height: 16px;
+    color: #919197;
+}
+
+.validate {
+    padding-left: 15px !important;
+}
+
+.input-field{
+    width: 344px;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid #000;
+background-color: #000;
+}
+
+.formP2p__currency-list.active{
+    border: 1px solid #1c2030;
+    border-radius: 5px;
+    box-shadow: 1px 1px 31px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 1px 31px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 31px -7px rgba(0,0,0,0.75);
+}
+
+.formP2p__coin-search.validate {
+    border-bottom: 1px solid #5C77FE !important;
+}
+
+.formP2p__currency-item{
+    border-bottom: 1px solid #151824;
+}
+
+.formP2p__coin.coin-three:before {
+    top: 15px;
+}
+
+.formP2p__coin{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    color: #919197;
+}
+
+.formP2p__currency-list:before {
+    top: 6px;
+}
+
+.formP2p__currency-list.active {
+    height: 229px;
+}
+
+.formP2p__coin-search.validate.formP2p__card-number{
+    border-bottom: none !important;
+}
+
+.formP2p__currency-list.wallet-list {
+    width: 230px;
+}
+
+.formP2p__coin.month-title,
+.formP2p__coin.year-title,
+.formP2p__coin.wallet-title{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.withdraw__shelf .formP2p__currency.input-field.wallet-field{
+    width: 230px;
+}
+
+.withdraw__shelf .formP2p__currency.input-field.mani-field{
+    width: 100px;
+}
+
+.formP2p__currency-list.active{
+    z-index: 1;
+}
+
+.formP2p__coin-search.validate {
+    width: 100% !important;
+}
+
+.formP2p__currency.input-field.mani-field input{
+    padding-right: 15px !important;
+}
+
+.withdraw__form input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 1000px) {
+    .withdraw__card{
+        flex-direction: column;
+    }
+    .formP2p__currency.input-field{
+        margin: 0;
+    }
+    .withdraw__card-text-box{
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 800px) {
+    .withdraw__card{
+        flex-direction: row;
+    }
+    .formP2p__currency.input-field{
+        margin: 0 0 18px 0;
+    }
+}
+
+@media (max-width: 570px) {
+    .withdraw__card{
+        flex-direction: column;
+    }
+    .formP2p__currency.input-field{
+        margin: 0;
+    }
+}
+
+@media (max-width: 410px){
+    .deposit .input-field {
+        width: 316px;
+    }
+    .withdraw__shelf {
+        width: 316px;
+    }
+    .withdraw__shelf .formP2p__currency.input-field {
+        width: 153px;
+    }
+    .withdraw__shelf .formP2p__currency.input-field.wallet-field {
+        width: 207px;
+    }
+    .formP2p__currency-list.wallet-list {
+        width: 207px;
+    }
+}
+
+
+
+
+
+
+/*UPD2*/
+
+
+.deposit__content-list.withdraw__container-content {
+    background-color: transparent;
+}
+
+.withdraw__content-bottom {
+    width: 100%;
+    background-color: #131722;
+    border-radius: 10px;
+    height: fit-content;
+    margin-top: 17px;
+}
+
+.withdraw__info-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 13px 0 11px 23px;
+    border-bottom: 1px solid #313748;
+}
+
+.withdraw__info-container {
+    padding: 16px 18px 19px 35px;
+}
+
+.withdraw__info-text {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: #919197;
+    position: relative;
+    max-width: 635px;
+}
+
+.withdraw__info-text:nth-child(1)::before {
+    top: 7px;
+}
+
+.withdraw__info-text:nth-child(2)::before {
+    top: 27px;
+}
+
+.withdraw__info-text::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #919197;
+}
+
+.withdraw__info-text + .withdraw__info-text {
+    padding-top: 19px;
+}
+
+.withdraw {
+    padding-top: 20px;
+    padding-left: 76px;
+    padding-right: 74px;
+    height: fit-content;
+}
+
+.withdraw__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 26px;
+    margin-bottom: 22px;
+}
+
+.withdraw__content-top {
+    background-color: #131722;
+    border-radius: 10px;
+    height: fit-content;
+    padding-bottom: 43px;
+}
+
+.withdraw__address,
+.withdraw__amount {
+    column-gap: 25px;
+}
+
+.withdraw__address,
+.withdraw__amount,
+.withdraw__network {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 570px;
+}
+
+.withdraw__address label {
+    padding-top: 2px;
+}
+.withdraw__amount label {
+    padding-top: 2px;
+}
+
+.withdraw__address-title,
+.withdraw__amount-title,
+.withdraw__network-title {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.withdraw__address-description,
+.withdraw__amount-description,
+.withdraw__network-description {
+    color: #919197;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.withdraw__address-input,
+.withdraw__amount-input {
+    width: 323px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #000;
+    outline: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #919197;
+    padding-left: 0px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.withdraw__network-fee {
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.withdraw__btn-arrow {
+    margin-right: 3px;
+    margin-left: 6px;
+}
+
+.withdraw__btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.withdraw__btn {
+    font-family: 'Roboto', sans-serif;
+    width: 200px;
+    height: 45px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    background: rgb(60 103 227);
+    background: linear-gradient(90deg, rgb(104 84 215) 0%, rgb(52 147 213) 100%);
+    border-radius: 10px;
+    padding: 12px 25px 10.5px 33px;
+    color: white!important;
+}
+a.withdraw__btn:hover {
+color:#fff;
+        background: rgb(103 60 227);
+    background: linear-gradient(90deg, rgb(154 29 249) 0%, rgb(24 138 255) 100%);
+}
+
+.withdraw__shelf .formP2p__currency-list:before{
+    display: none;
+}
+
+.withdraw__shelf .formP2p__currency-list.active{
+    height: 190px;
+}
+
+@media (max-width: 1160px) {
+    .withdraw {
+        padding-left: 30px;
+        padding-right: 99px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .withdraw {
+        padding-right: 59px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .withdraw {
+        padding-right: 59px;
+    }
+
+    .withdraw__address-input, .withdraw__amount-input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .withdraw {
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 1030px) {
+    .withdraw__address, .withdraw__amount {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .withdraw__network {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .withdraw__address-container,
+    .withdraw__amount-container,
+    .withdraw__network-container {
+        margin-bottom: 15px;
+    }
+
+    /*.withdraw__content-top {*/
+    /*    height: 475px;*/
+    /*}*/
+
+    .withdraw__btn-container {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 1000px) {
+    .withdraw__network-description {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 930px) {
+    .withdraw {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .withdraw__address, .withdraw__amount, .withdraw__network {
+        flex-direction: row;
+        text-align: start;
+        max-width: 100%;
+    }
+
+    .withdraw__btn-container {
+        justify-content: flex-end;
+    }
+
+    .withdraw__network-description {
+        max-width: 100%;
+    }
+
+    /*.withdraw__content-top {*/
+    /*    height: 400px;*/
+    /*}*/
+}
+
+@media (max-width: 575px) {
+    .withdraw__address, .withdraw__amount {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .withdraw__network {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /*.withdraw__content-top {*/
+    /*    height: 450px;*/
+    /*}*/
+}
+
+@media (max-width: 520px) {
+    .withdraw__network-description {
+        max-width: 200px;
+    }
+
+    /*.withdraw__content-top {*/
+    /*    height: 470px;*/
+    /*}*/
+}
+
+@media (max-width: 450px) {
+    .withdraw__network-description {
+        max-width: 180px;
+    }
+
+    .withdraw__info-text {
+        font-size: 12px;
+    }
+
+    .withdraw__network-fee {
+        font-size: 13px;
+    }
+
+    .withdraw__address-input, .withdraw__amount-input {
+        width: 270px; 
+    }
+}

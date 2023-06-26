@@ -1,0 +1,444 @@
+.deposit {
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+	max-width: 1181px;
+	padding: 0 15px;
+	margin: 17px auto 0;
+}
+
+.deposit__box {
+	display: grid;
+	grid-template-columns: 410px 1fr;
+	grid-column-gap: 21px;
+}
+
+.deposit__coin-list {
+	width: 410px;
+	height: 566px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.deposit__coin-item {
+	width: 393px;
+	height: 62px;
+	transition: background 0.3s ease-in-out;
+	background: #131722;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	padding: 15px 12px 16px 24px;
+	cursor: pointer;
+}
+
+.deposit__coin-item:hover {
+	background: rgb(69, 39, 141);
+	background: linear-gradient(
+		90deg,
+		rgb(69 39 141) 35%,
+		rgba(93, 120, 255, 1) 100%
+	);
+}
+
+.deposit__coin-item.buttonActiveNew {
+	background: rgb(69, 39, 141);
+	background: linear-gradient(
+		90deg,
+		rgb(69 39 141) 35%,
+		rgba(93, 120, 255, 1) 100%
+	);
+}
+
+.deposit__coin-img {
+	width: 30px;
+	height: 31px;
+}
+
+.deposit__coin-wallet {
+	margin-left: auto;
+}
+
+.deposit__coin-title {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.deposit__coin-img {
+	margin-right: 17px;
+}
+
+.deposit__coin-wallet {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	text-align: right;
+	color: #d9dadd;
+}
+
+.deposit__coin-list::-webkit-scrollbar {
+	width: 7px;
+	background: #131722;
+	border-radius: 10px;
+	transform: matrix(-1, 0, 0, 1, 0, 0);
+	/*height: 3px;*/
+}
+
+.deposit__coin-list::-webkit-scrollbar-thumb {
+	background: #81899e;
+	border: 0 none #ffffff;
+	border-radius: 42px;
+}
+
+.deposit__coin-list::-webkit-scrollbar-thumb:hover {
+	background: #ffffff;
+}
+
+.deposit__content-list {
+	width: 100%;
+	height: 566px;
+	background-color: #131722;
+	border-radius: 10px;
+}
+
+.deposit__content-title {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+	padding: 21px 23px 17px 21px;
+	border-bottom: 2px solid #313748;
+}
+
+.deposit__crypto-header{
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	align-items: center;
+	margin-top: 27px;
+	margin-left: 23px;
+	margin-right: 23px;
+}
+
+.deposit__crypto-logo {
+	width: 43px;
+	height: 44px;
+	margin-right: 21px;
+}
+
+.deposit__crypto-box {
+	display: flex;
+}
+
+.deposit__crypto-box-title {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	color: #919197;
+	margin-bottom: 2px;
+}
+
+.deposit__crypto-box-wallet {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+}
+
+.deposit__crypto-timer{
+	font-size: 14px;
+	color: #919197;
+}
+.deposit__crypto-timer span{
+	font-size: 16px;
+	color: white;
+}
+
+.deposit__center-content {
+	max-width: 626px;
+	padding: 0 23px;
+	display: flex;
+	column-gap: 24px;
+	margin: 41px auto 0;
+}
+
+.deposit__text-items {
+	display: flex;
+	flex-direction: column;
+	row-gap: 21px;
+	max-width: 348px;
+	padding-top: 9px;
+}
+
+.deposit__text-item {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	color: #919197;
+	position: relative;
+	padding-left: 20px;
+}
+
+.deposit__text-item:before {
+	content: '';
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #919197;
+	position: absolute;
+	left: 5px;
+	top: 7px;
+}
+
+.deposit__address__box {
+	position: relative;
+	max-width: 625px;
+	padding: 0 23px;
+	width: 100%;
+	margin: 48px auto 0;
+}
+
+.deposit__address {
+	font-family: 'Poppins', sans-serif;
+	width: 100%;
+	height: 57px;
+	border: 1px solid #2e3548;
+	border-radius: 5px;
+	background-color: #000;
+	outline: none;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 22px;
+	color: #919197;
+	padding: 18px 116px 16px 17px;
+	position: relative;
+}
+
+.deposit__address-btn {
+	width: 97px;
+	height: 43px;
+	background: rgb(60 103 227);
+	background: linear-gradient(90deg, rgb(104 84 215) 0%, rgb(52 147 213) 100%);
+	border-radius: 5px;
+	position: absolute;
+	right: 30px;
+	top: 7px;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+}
+
+.deposit__coin-img,
+.deposit__coin-title,
+.deposit__coin-wallet {
+	pointer-events: none;
+}
+
+.deposit__content-list {
+	position: relative;
+}
+.deposit__content-item {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	transition: 0.5s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.deposit__content-item.deposit__content-item-active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.deposit__qr-code {
+	width: 208px;
+	height: 208px;
+	margin: 0 auto;
+}
+
+.deposit__mobile-btn,
+.deposit__close-list {
+	display: none;
+}
+
+@media (max-width: 960px) {
+	.deposit__center-content {
+		flex-direction: column;
+		row-gap: 100px;
+	}
+	.deposit__qr-code {
+		margin-bottom: 15px;
+	}
+	.deposit__content-list {
+		height: 670px;
+	}
+	.deposit__coin-list {
+		height: 670px;
+	}
+	.deposit__address__box {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 200px;
+	}
+}
+
+@media (max-width: 900px) {
+	.deposit__coin-item {
+		/*width: 355px;*/
+		padding: 15px 10px 16px 10px;
+		width: 100%;
+	}
+
+	.deposit__coin-list {
+		width: 370px;
+		width: 100%;
+	}
+	.deposit__box {
+		grid-template-columns: 370px 1fr;
+		grid-column-gap: 10px;
+	}
+	.deposit__coin-img {
+		margin-right: 10px;
+	}
+	.deposit__coin-title {
+		font-size: 14px;
+		line-height: 21px;
+	}
+	.deposit__coin-wallet {
+		font-size: 14px;
+		line-height: 16px;
+	}
+}
+
+@media (max-width: 800px) {
+	.deposit__mobile-btn svg {
+		pointer-events: none;
+	}
+	.deposit__coin-list::-webkit-scrollbar {
+		width: 4px;
+	}
+	.deposit__coin-list-box {
+		position: fixed;
+		top: 0;
+		bottom: -500px;
+		right: 0;
+		left: 0;
+		z-index: 15;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		background-color: rgb(9 9 9 / 90%);
+		transition: 0.7s ease-in-out;
+		opacity: 0;
+		visibility: hidden;
+	}
+	.deposit__coin-list-box.active {
+		opacity: 1;
+		visibility: visible;
+		bottom: 0;
+	}
+	.deposit__coin-list {
+		height: 504px;
+		padding: 0 15px 10px 15px;
+	}
+	.deposit__coin-list-wrapper {
+		background-color: #000;
+		padding-top: 10px;
+		position: relative;
+		border-radius: 10px;
+		width: 100%;
+		padding-bottom: 67px;
+	}
+	.deposit__coin-list-wrapper:before {
+		content: '';
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background-color: #000;
+		z-index: -1;
+		position: absolute;
+		top: -43px;
+		right: -18px;
+	}
+	.deposit__coin-list-box {
+		display: flex;
+		flex-direction: column;
+	}
+	.deposit__close-list {
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		right: 22px;
+		top: -25px;
+		display: block;
+	}
+	.deposit__box {
+		grid-template-columns: 1fr;
+		grid-column-gap: 0;
+	}
+	.deposit__center-content {
+		flex-direction: row;
+	}
+	.deposit__content-list {
+		height: 566px;
+	}
+	.deposit__address__box {
+		position: relative;
+		bottom: 0;
+	}
+	/*.deposit__box{*/
+	/*    position: relative;*/
+	/*}*/
+	.deposit__mobile-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 30px;
+		right: 50px;
+		width: 90px;
+		height: 35px;
+		background-color: #655bcf;
+		z-index: 2;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 527px) {
+	.deposit__center-content {
+		flex-direction: column;
+	}
+	.deposit__address__box {
+		position: absolute;
+		bottom: 295px;
+	}
+	.deposit__content-list {
+		height: 750px;
+	}
+	.deposit__center-content {
+		margin: 20px auto 0;
+		padding: 0 15px;
+	}
+	.deposit__crypto-box {
+		margin-left: 15px;
+	}
+	.deposit__content-title {
+		padding: 21px 15px 17px 15px;
+	}
+	.deposit__center-content {
+		row-gap: 85px;
+	}
+}

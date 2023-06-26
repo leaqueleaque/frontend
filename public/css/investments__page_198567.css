@@ -1,0 +1,199 @@
+.investments__global-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto auto auto;
+    padding: 0 15px;
+}
+
+.investments__box {
+    background: #131722;
+    border-radius: 0 0 10px 10px;
+}
+
+.investments__info {
+    background: linear-gradient(90deg, #1F2152 0%, #134C58 100%);
+    border-radius: 10px 10px 0 0;
+    padding: 25px 15px 26px 44px;
+}
+
+.investments__title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+}
+
+.investments__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #A1A0A7;
+    margin-top: 2px;
+}
+
+.investments__table-names {
+    display: flex;
+    padding: 32px 45px 20px 44px;
+}
+
+.investments__table-name {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #A1A0A7;
+}
+
+.investments__table-name-coin,
+.investments__table-coin {
+    width: 200px;
+}
+
+.investments__table-name-plan,
+.investments__table-plan {
+    width: 108px;
+}
+
+.investments__table-name-left,
+.investments__table-left {
+    width: 94px;
+}
+
+.investments__table-name-profit,
+.investments__table-profit {
+    width: 180px;
+}
+
+.investments__table-name-invested,
+.investments__table-invested {
+    width: 138px;
+}
+
+.investments__table-name-cancel,
+.investments__table-cansel {
+    width: 100px;
+}
+
+.investments__table-value {
+    display: flex;
+    padding: 21px 45px 23px 44px;
+}
+
+.investments__table-value:nth-child(even) {
+    background: #252C40;
+}
+
+.investments__table-value:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.investments__table-coin {
+    display: flex;
+}
+
+.investments__table-coin img {
+    margin-right: 9px;
+    width: 17px;
+    height: 17px;
+}
+
+.investments__table-coin span {
+    display: block;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.investments__table-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    text-align: right;
+}
+
+.investments__table-plan,
+.investments__table-left {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.investments__table-profit,
+.investments__table-invested {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.investments__table-profit span,
+.investments__table-invested span {
+    color: #54D881;
+    margin-top: 5px;
+}
+
+.investments__table-cansel {
+    background: #414b64;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.investments__table-cansel:hover {
+background:#4d5976;
+}
+
+
+.investments__table-values-empty {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #A1A0A7;
+    padding: 96px 0 99px 0;
+    text-align: center;
+    min-width: 909px;
+}
+
+@media (max-width: 950px) {
+    .investments {
+        width: 100%;
+    }
+
+    .investments__table-values-empty {
+        min-width: 100%;
+    }
+
+    .investments__table-names,
+    .investments__table-values {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 800px) {
+    .investments__info {
+        padding: 25px 20px 26px 25px;
+    }
+
+    .investments__table-names {
+        padding: 32px 20px 20px 25px;
+    }
+
+    .investments__table-value {
+        padding: 21px 20px 23px 25px;
+    }
+
+    .investments__table-name-coin, .investments__table-coin {
+        width: 180px;
+    }
+
+    .investments__table {
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    .investments__table-names,
+    .investments__table-values {
+        min-width: 760px;
+    }
+}

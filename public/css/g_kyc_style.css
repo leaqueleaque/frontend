@@ -1,0 +1,524 @@
+.verification {
+	font-family: 'Roboto', sans-serif;
+	margin-top: 149px;
+	margin-bottom: 112px;
+	color: #ffffff;
+}
+
+.verification input:disabled {
+	background: #292f3e;
+}
+
+.verification__container {
+	max-width: 930px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.verification__title {
+	font-weight: 600;
+	font-size: 27px;
+	line-height: 35px;
+	margin-bottom: 45px;
+}
+
+.verification__box {
+	background: #171c28;
+	border-radius: 10px;
+	padding-bottom: 70px;
+}
+
+.verification__info-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 54px;
+	height: 54px;
+}
+
+.verification__info-img img {
+	width: 35px;
+	height: 35px;
+}
+
+.verification__info-not {
+	background: #c66161;
+}
+
+.verification__info-verified {
+	background: #1e7854;
+}
+
+.verification__info-progress {
+	background: #3d475f;
+}
+
+.verification__info {
+	display: flex;
+	border-radius: 8px 8px 0 0;
+	align-items: center;
+	min-height: 65px;
+	padding-left: 57px;
+}
+
+.verification__info-text {
+	font-weight: 500;
+	font-size: 19px;
+	letter-spacing: 0.03em;
+	margin-left: 10px;
+	margin-top: 0px;
+}
+
+.verification__inputs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas:
+		'nameFirst nameLast'
+		'country address'
+		'phone date'
+		'passport id';
+	column-gap: 36px;
+	row-gap: 31px;
+	padding: 38px 52px 33px 52px;
+}
+
+.verification__input-first {
+	grid-area: nameFirst;
+}
+
+.verification__input-last {
+	grid-area: nameLast;
+}
+
+.verification__input-country {
+	grid-area: country;
+	position: relative;
+}
+
+.verification__input-country .verification__input-input,
+.verification__input-passport .verification__input-input,
+.verification__input-phone .verification__input-input {
+	cursor: pointer;
+	position: relative;
+}
+
+.verification__input-icon {
+	position: absolute;
+	right: 21px;
+	top: 21px;
+	pointer-events: none;
+}
+
+.verification__input-icon:before {
+	content: '';
+	position: absolute;
+	top: -21px;
+	left: -23px;
+	width: 1px;
+	height: 59px;
+	background-color: #343436;
+}
+
+.verification__input-icon img {
+	transition: transform 0.3s ease-in-out;
+	pointer-events: none;
+}
+
+.verification__input-country .verification__input-value,
+.verification__input-passport .verification__input-value,
+.verification__input-phone .verification__input-value {
+	pointer-events: none;
+}
+
+.verification__input-value img {
+	width: 24px;
+	height: 18px;
+}
+
+.verification__input-input.verification__input-input-active
+	.verification__input-icon
+	img {
+	transform: rotate(180deg);
+}
+
+.verification__input-address {
+	grid-area: address;
+}
+
+.verification__input-phone {
+	grid-area: phone;
+	position: relative;
+}
+
+.verification__input-date {
+	grid-area: date;
+}
+
+.verification__input-passport {
+	grid-area: passport;
+	position: relative;
+}
+
+.verification__input-id {
+	grid-area: id;
+}
+
+.verification__input {
+	display: flex;
+	flex-direction: column;
+}
+
+.verification__input-country-list,
+.verification__input-passport-list {
+	position: absolute;
+	top: 90px;
+	background-color: #171c28;
+	z-index: 5;
+	width: 100%;
+}
+
+.verification__input-label {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	margin-bottom: 12px;
+}
+
+.verification__file {
+	padding: 0 52px 58px 52px;
+	display: flex;
+	justify-content: space-between;
+	column-gap: 37px;
+}
+
+.verification__document,
+.verification__selfie {
+	max-width: 381px;
+	flex-basis: 100%;
+}
+
+.verification__file-title {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	margin-bottom: 15px;
+}
+
+.verification__file-description {
+	font-weight: 300;
+	font-size: 11px;
+	line-height: 14px;
+	margin-bottom: 15px;
+	color: #9f9ea5;
+}
+
+.verification__file-box {
+	display: flex;
+	align-items: center;
+}
+
+.verification__file-box .verification__file-input input[type='file'] {
+	display: none;
+}
+
+.verification__file-input {
+	background: #2f333f;
+	border-radius: 5px;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	padding: 11px 20px 12px 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.verification__file-input:hover {
+	background: #58617a;
+}
+
+.verification__input-input.verification__input-disabled,
+.verification__input.verification__input-disabled input {
+	background: #292f3e !important;
+	pointer-events: none;
+	user-select: none;
+}
+
+.verification__file-input img {
+	margin-right: 7px;
+	margin-bottom: -5px;
+}
+
+.verification__file-output {
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 15px;
+	margin-left: 14px;
+	color: #9f9ea5;
+}
+
+.verification__submit {
+	margin-left: 283px;
+	margin-top: 50px;
+	background: linear-gradient(90deg, #2883b6 0%, #399d79 100%);
+	border-radius: 5px;
+	padding: 21px 69px 21px 68px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 21px;
+	border: none;
+	color: #ffffff;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.verification__submit:hover {
+	background: linear-gradient(270deg, #8c4adf 13.55%, #5d78ff 89.46%);
+}
+
+.verification input,
+.verification__input-country .verification__input-input,
+.verification__input-phone .verification__input-input,
+.verification__input-passport .verification__input-input {
+	background: #000000;
+	border-radius: 5px;
+	padding: 21px 19px 20px 19px;
+	border: none;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #9f9ea5;
+	outline: none;
+}
+
+.verification input[type='date'] {
+	position: relative;
+	text-transform: uppercase;
+}
+
+.verification input::-webkit-outer-spin-button,
+.verification input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.verification input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.verification input[type='date']::-webkit-calendar-picker-indicator {
+	color: rgba(0, 0, 0, 0);
+	opacity: 1;
+	display: block;
+	background: url('../img/calendar.svg') no-repeat;
+	width: 39px;
+	height: 100%;
+	border-width: thin;
+	position: absolute;
+	right: 15px;
+	cursor: pointer;
+}
+
+.verification__input-list {
+	position: absolute;
+	width: 100%;
+	top: 90px;
+	z-index: 10;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	overflow: hidden;
+	height: 0;
+	transition: all 0.3s ease-in-out;
+	background: #1c2030;
+	visibility: hidden;
+	margin-top: 5px;
+}
+
+.verification__input-box {
+	overflow-y: scroll;
+	height: 180px;
+}
+
+.verification__input-box::-webkit-scrollbar {
+	width: 3px;
+	height: 3px;
+}
+
+.verification__input-box::-webkit-scrollbar-thumb {
+	background: #e1e1e1;
+	border: 0 none #ffffff;
+	border-radius: 42px;
+}
+
+.verification__input-box::-webkit-scrollbar-thumb:hover {
+	background: #ffffff;
+}
+
+.verification__input-list.verification__input-list-active {
+	height: 180px;
+	visibility: visible;
+	box-shadow: 1px 1px 31px -7px rgb(0 0 0 / 75%);
+	-webkit-box-shadow: 1px 1px 31px -7px rgb(0 0 0 / 75%);
+	-moz-box-shadow: 1px 1px 31px -7px rgba(0, 0, 0, 0.75);
+}
+
+.verification__input-list-item {
+	border-radius: 5px;
+	padding: 21px 19px 20px 19px;
+	border: none;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #9f9ea5;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.verification__input-list-item:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.verification__input-list-item img {
+	width: 24px;
+	height: 17px;
+}
+
+.verification__input-container-phone {
+	display: flex;
+}
+
+.verification__input-container-phone .verification__input-wrapper {
+	min-width: 86px;
+}
+
+.verification__input-container-phone
+	.verification__input-wrapper
+	.verification__input-list {
+	max-width: 86px;
+}
+
+.verification__input-container-phone
+	.verification__input-wrapper
+	.verification__input-icon:before {
+	position: static;
+}
+
+.verification__input-container-phone
+	.verification__input-wrapper
+	.verification__input-icon:after {
+	content: '';
+	position: absolute;
+	top: -21px;
+	right: 0;
+	width: 1px;
+	height: 63px;
+	background-color: #343436;
+}
+
+.verification__input-container-phone
+	.verification__input-wrapper
+	.verification__input-input {
+	border-radius: 5px 0 0 5px !important;
+}
+
+.verification__input-container-phone
+	.verification__input-wrapper
+	.verification__input-icon {
+	right: 0;
+}
+
+.verification__input-container-phone
+	.verification__input-wrapper
+	.verification__input-icon
+	img {
+	margin-right: 16px;
+}
+
+.verification__input-container-phone input {
+	border-radius: 0 5px 5px 0;
+	width: 100%;
+}
+
+@media (max-width: 900px) {
+	.verification {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	.verification__box {
+		padding-bottom: 30px;
+	}
+
+	.verification__info {
+		padding-left: 30px;
+	}
+
+	.verification__inputs {
+		padding: 30px;
+	}
+
+	.verification__file {
+		padding: 0 30px 30px 30px;
+	}
+
+	.verification__submit {
+		margin-left: 30px;
+	}
+}
+
+@media (max-width: 750px) {
+	.verification__info {
+		padding-left: 15px;
+	}
+
+	.verification__inputs {
+		padding: 25px 15px 25px 15px;
+	}
+
+	.verification__file {
+		padding: 0 15px 25px 15px;
+	}
+
+	.verification__submit {
+		margin-left: 15px;
+	}
+}
+
+@media (max-width: 700px) {
+	.verification__inputs {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'nameFirst'
+			'nameLast'
+			'country'
+			'address'
+			'phone'
+			'date'
+			'passport'
+			'id';
+	}
+}
+
+@media (max-width: 630px) {
+	.verification__file {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.verification__selfie {
+		margin-top: 30px;
+	}
+
+	.verification__file-box {
+		justify-content: center;
+	}
+
+	.verification__submit-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.verification__submit {
+		margin-left: 0;
+	}
+}
