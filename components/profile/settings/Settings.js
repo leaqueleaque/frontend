@@ -366,7 +366,7 @@ const Seting = () => {
 														<input
 															type='email'
 															className='form-control_blocked'
-															placeholder='user registration email (no change)'
+															placeholder={profile ? profile.email : 'email'}
 															name='email'
 															disabled
 														/>

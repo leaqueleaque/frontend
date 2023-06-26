@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
 
 const Dep = () => {
-	const [activeCoin, setActiveCoin] = useState('')
+	const [activeCoin, setActiveCoin] = useState('btc')
 	const [amount, setAmount] = useState(0)
 
 	const handleCoinClick = coin => {

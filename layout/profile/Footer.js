@@ -55,10 +55,10 @@ const Footer = () => {
                   <a href="/cookies-policy">Cookies policy</a>
                 </li>
                 <li>
-                  <a href="/aml-kyc-policy">Terms of service</a>
+                  <a href="/terms">Terms of service</a>
                 </li>
                 <li>
-                  <a href="/terms">AML &amp; KYC policy</a>
+                  <a href="/aml-kyc-policy">AML &amp; KYC policy</a>
                 </li>
               </ul>
             </div>

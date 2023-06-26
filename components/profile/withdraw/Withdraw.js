@@ -471,7 +471,7 @@ const With = () => {
 			networkFee: '1.11 XTZ',
 		},
 	]
-	const [activeCoin, setActiveCoin] = useState(coinsList[0]?.id)
+	const [activeCoin, setActiveCoin] = useState('btc')
 
 	const handleCoinClick = coin => {
 		setActiveCoin(coin.id)

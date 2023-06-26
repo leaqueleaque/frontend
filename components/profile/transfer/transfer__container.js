@@ -195,7 +195,7 @@ const Transfer__container = () => {
           <div className="transfer__send-available">
             Available:{' '}
             <span id="my_available_balance" onClick={handleBalanceClick}>
-              {balance && balance[activeCoin?.index.toLowerCase()]}
+              {balance && balance[activeCoin?.index.toLowerCase()]} {' '}
             </span>
             <span id="my_available_crypto" onClick={handleBalanceClick}>
               {activeCoin ? activeCoin.index : 'BTC'}

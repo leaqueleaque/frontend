@@ -149,7 +149,8 @@
 	color: #ffffff;
 }
 
-.deposit__crypto-timer{
+.deposit__crypto-timer {
+	transform: translateY(50%);
 	font-size: 14px;
 	color: #919197;
 }

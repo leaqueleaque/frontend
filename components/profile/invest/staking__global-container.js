@@ -405,7 +405,7 @@ const Staking__global = () => {
 								<b>
 									+
 									<span style={{ color: 'white' }} id='expected_profit_amount'>
-										{expectedProfit}
+										{expectedProfit} {' '}
 									</span>
 									<span style={{ color: 'white' }} id='expected_profit_crypto'>
 										{activeCoin ? activeCoin.index : 'BTC'}
@@ -425,7 +425,7 @@ const Staking__global = () => {
 							<div className='profit__numbers'>
 								<b>
 									<span style={{ color: 'white' }} id='total_profit_amount'>
-										{isNaN(totalProfit) ? '0.00000' : totalProfit}
+										{isNaN(totalProfit) ? '0.00000' : totalProfit} {' '}
 									</span>
 									<span style={{ color: 'white' }} id='total_profit_crypto'>
 										{activeCoin ? activeCoin.index : 'BTC'}
