@@ -72,8 +72,8 @@ const With = () => {
 			coinWallet: '0 LTC',
 		},
 		{
-			id: 'usdt trc',
-			name: 'usdt',
+			id: 'usdttrc',
+			name: 'usdttrc',
 			onClick: "setTab('usdttrc')",
 			className: 'rushButton deposit__coin-item',
 			imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',
@@ -90,8 +90,8 @@ const With = () => {
 			coinWallet: '0.00 USDT',
 		},
 		{
-			id: 'usdt bep',
-			name: 'usdt',
+			id: 'usdtbep',
+			name: 'usdtbep',
 			onClick: "setTab('usdtbep')",
 			className: 'rushButton deposit__coin-item',
 			imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',

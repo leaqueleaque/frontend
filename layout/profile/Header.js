@@ -203,7 +203,7 @@ const Header = () => {
 							</a>
 							<a
 								className='header__profile-link header__link-hot'
-								href='/profile/p2p'
+								href='/profile/swap'
 							>
 								Exchange
 							</a>
