@@ -12,7 +12,7 @@ const Started = () => {
             <div className="started__card-img">
               <img src="/main/images/started/shield.png" width="220" alt="" />
             </div>
-            <div className="started__card-title">Create an Цфддуе</div>
+            <div className="started__card-title">Create an wallet</div>
             <div className="started__card-description">
               Create your free account with a quick verification process. It’s easy, we promise!
             </div>

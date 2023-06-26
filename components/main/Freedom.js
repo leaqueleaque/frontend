@@ -9,7 +9,7 @@ const Freedom = () => {
           <div className="freedom__right">
             <div className="freedom__title">
               Delivering
-              <span>Financial Freedom</span>
+              <span> Financial Freedom</span>
             </div>
             <div className="freedom__description">
               Our products set the standard for security, compliance, experience, and investor

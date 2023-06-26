@@ -16,7 +16,7 @@ const Home = () => {
                 assets.
               </div>
               <a className="home__link-start" href="profile/swap">
-                Start trading
+                Get Started
               </a>
               <a className="home__link-invest" href="profile/invest">
                 Invest

@@ -30,7 +30,7 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <a className="header__logo" href="#">
-          <img style={{ width: '33px' }} src="img/default.png" alt="" />
+          <img style={{ width: '50px' }} src="img/default.png" alt="" />
           Leaque{' '}
         </a>
         <div className={ wrapperActive ? "header__wrapper header__wrapper-active" : 'header__wrapper'}>

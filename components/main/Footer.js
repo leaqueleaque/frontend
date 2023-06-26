@@ -62,11 +62,8 @@ const Footer = () => {
           <div className="footer__links">
             <div className="footer__link-box">
               <div className="footer__link-title">Features</div>
-              <span className="footer__link-ref" onClick={() => window?.scrollTo(0, 0)}>
-                Home
-              </span>
-              <a className="footer__link-ref" href={`${profile ? 'profile/p2p' : 'signup' }`}>
-                P2P
+              <a className="footer__link-ref" href={`${profile ? 'profile/wallet' : 'signup' }`}>
+                Wallet
               </a>
               <a className="footer__link-ref" href={`${profile ? 'profile/swap' : 'signup' }`}>
                 Exchange
@@ -74,32 +71,29 @@ const Footer = () => {
               <a className="footer__link-ref" href={`${profile ? 'profile/invest' : 'signup' }`}>
                 Staking
               </a>
-              <a className="footer__link-ref" href={`${profile ? 'profile/wallet' : 'signup' }`}>
-                Wallet
+              <a className="footer__link-ref" href={`${profile ? 'profile/p2p' : 'signup' }`}>
+                P2P
               </a>
             </div>
 
             <div className="footer__link-box">
               <div className="footer__link-title">Legal</div>
-              <a className="footer__link-ref" href="../terms">
-                Terms of service
-              </a>
-              <a className="footer__link-ref" href="../privacy-notice">
-                Privacy notice
+              <a className="footer__link-ref" href="../support">
+                Support
               </a>
               <a className="footer__link-ref" href="../cookies-policy">
                 Cookies policy
               </a>
+              <a className="footer__link-ref" href="../terms">
+                Terms of service
+              </a>
               <a className="footer__link-ref" href="../aml-kyc-policy">
                 AML & KYC policy
-              </a>
-              <a className="footer__link-ref" href="../fees">
-                Fees
               </a>
             </div>
 
             <div className="footer__link-box">
-              <div className="footer__link-title">Exchange Pair</div>
+              <div className="footer__link-title">Exchange</div>
               <a className="footer__link-ref" href="../signin">
                 BTC to USDT
               </a>
