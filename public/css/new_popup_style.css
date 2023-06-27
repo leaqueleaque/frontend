@@ -17,7 +17,7 @@ body {
 
 .popup {
     display: flex;
-    /*max-width: 650px;*/
+    max-width: 650px;
     background-color: #11141D;
     border-radius: 20px;
     position: relative;

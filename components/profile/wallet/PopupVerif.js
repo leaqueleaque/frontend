@@ -172,7 +172,7 @@ export function PopupVerif({handleCloseClick, errorMessage, onClick}) {
                   </span>
                         </p>
                     </div>
-                    <a href={errorMessage === 'You have to pass verification' ? '../profile/verification' : '/'} className="popup__right-button" >
+                    <a href={errorMessage === 'You have to pass verification' ? '../profile/verification' : '../profile/verification'} className="popup__right-button" >
                         Proceed
                     </a>
                 </div>

@@ -234,7 +234,7 @@ const UserCard = () => {
                 <div className="userCard__balance-title">Total balance</div>
                 <div className="userCard__balance-count">
                   {
-                    `${balance ? balance.coins.usd : 0} USD`
+                    `${new Intl.NumberFormat('en-US').format(balance ? balance.coins.usd : 0)} USD`
                   }
                 </div>
               </div>

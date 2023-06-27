@@ -144,14 +144,18 @@ const TableUser = () => {
                               <span>&nbsp;&nbsp;{data.name}</span>
                             </div>
                             <div className="tableUser__item-balance balance_amount_hide">
-                              <span className="search_my_balance">{data.own_price}</span> {data.index.toUpperCase()}
+                                <span className="search_my_balance">{
+                                  `${new Intl.NumberFormat('en-US').format(data.own_price)}`
+                                }</span> {data.index.toUpperCase()}
                             </div>
                             <div
                                 className="tableUser__item-balance click_hide_amount"
                                 style={{ display: 'none' }}>
                               ********* {data.index.toUpperCase()}
                             </div>
-                            <div className="tableUser__item-equivalent balance_usd_hide">{parseFloat(data.equivalent)} USD</div>
+                            <div className="tableUser__item-equivalent balance_usd_hide">{
+                              new Intl.NumberFormat('en-US').format(parseFloat(data.equivalent))
+                            } USD</div>
 
                           </div>
                       ))}

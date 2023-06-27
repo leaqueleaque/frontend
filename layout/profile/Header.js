@@ -116,9 +116,11 @@ const Header = () => {
 							></path>
 						</svg>
 						&nbsp;Wallet:{' '}
-						{balance && balance.coins.usd !== '0.00'
-							? `${balance.coins.usd} USD`
-							: '0 USD'}
+						{
+							balance && balance.coins.usd !== '0.00'
+								? `${new Intl.NumberFormat('en-US').format(balance.coins.usd)} USD`
+								: '0 USD'
+						}
 					</a>
 				</div>
 			</div>
