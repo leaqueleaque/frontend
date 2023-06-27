@@ -405,7 +405,7 @@ const Staking__global = () => {
 								<b>
 									+
 									<span style={{ color: 'white' }} id='expected_profit_amount'>
-										{expectedProfit} {' '}
+										{parseFloat(expectedProfit).toFixed(2)} {' '}
 									</span>
 									<span style={{ color: 'white' }} id='expected_profit_crypto'>
 										{activeCoin ? activeCoin.index : 'BTC'}
@@ -415,7 +415,7 @@ const Staking__global = () => {
 									≈{' '}
 									<span id='expected_profit_usd'>
 										{(parseFloat(expectedProfit) * parseFloat(activeCoin?.price) ).toFixed(2)}
-									</span>
+									</span>{' '}
 									$
 								</span>
 							</div>
@@ -425,7 +425,7 @@ const Staking__global = () => {
 							<div className='profit__numbers'>
 								<b>
 									<span style={{ color: 'white' }} id='total_profit_amount'>
-										{isNaN(totalProfit) ? '0.00000' : totalProfit} {' '}
+										{isNaN(totalProfit) ? '0.00000' : parseFloat(totalProfit).toFixed(2)} {' '}
 									</span>
 									<span style={{ color: 'white' }} id='total_profit_crypto'>
 										{activeCoin ? activeCoin.index : 'BTC'}
@@ -437,7 +437,7 @@ const Staking__global = () => {
 										{isNaN(totalProfit * 17)
 											? '0'
 											: (parseFloat(totalProfit) * parseFloat(activeCoin?.price) ).toFixed(2)}
-									</span>
+									</span>{' '}
 									$
 								</span>
 							</div>

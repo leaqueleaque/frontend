@@ -200,17 +200,10 @@
     pointer-events: none;
 }
 
+
 .header__toggle-img {
-    pointer-events: none;
+    width: 30px !important;
 }
-
-.header__toggle-img,
-.header__profile-toggle .header__toggle-img img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
 .header__profile {
     position: relative;
 }

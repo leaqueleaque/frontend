@@ -221,7 +221,13 @@ const UserCard = () => {
             <div className="userCard__item-left">
               <div className="userCard__user-data">
                 <div className="userCard__img-box">
-                  <img src="/img/avatar.svg" alt="" />
+                  <img
+                      src={'https://leaque.com' + profile?.avatar}
+                      alt=''
+                      style={{
+                        borderRadius: '50%'
+                      }}
+                  />
                 </div>
 
                 <div className="userCard__user-data-box">

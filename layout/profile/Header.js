@@ -129,9 +129,14 @@ const Header = () => {
 				<div className='header__profile'>
 					<div className='header__profile-toggle' onClick={togglePopup}>
 						<div className='header__toggle-name'>{profile?.username}</div>
-						<div className='header__toggle-img'>
-							<img src='/img/avatar.svg' alt='' />
-						</div>
+						<img
+							src={'https://leaque.com' + profile?.avatar}
+							alt=''
+							style={{
+								width: '40px',
+								borderRadius: '50%'
+							}}
+						/>
 						<div className='header__toggle-btn'>
 							<svg width='28' height='28' viewBox='0 0 100 100'>
 								<path
@@ -158,9 +163,12 @@ const Header = () => {
 						<div className='header__profile-top'>
 							<div className='header__profile-img '>
 								<img
-									style={{ width: '64px', height: '64px', borderRadius: '50%' }}
-									src='/img/avatar.svg'
+									src={'https://leaque.com' + profile?.avatar}
 									alt=''
+									style={{
+										width: '60px',
+										borderRadius: '50%'
+									}}
 								/>
 							</div>
 							<div className='header__profile-info'>

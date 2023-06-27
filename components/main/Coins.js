@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import Swiper from 'swiper';
 import axios from "axios";
 import {useState} from "react";
+import {Chart} from "@/components/main/Chart";
 
 function check(item) {
     return 'coins__slide-change coins__slide-change-plus'
@@ -80,19 +81,7 @@ const Coins = () => {
                                     {/*<div className="coins__slide-change coins__slide-change-plus">${(item.price*item.increase*0.001).toFixed(3)} ({item.increase}%)</div>*/}
                                     {/*<div className="coins__slide-change coins__slide-change-plus">$42.52 (2.26%)</div>*/}
                                     <div className="coins__slide-graph">
-                                        <svg
-                                            width="251"
-                                            height="79"
-                                            viewBox="0 0 251 79"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M249.1 43.71L247.1 44.7082C244.667 45.6213 239.965 47.2103 235.1 50.6972C230.235 54.1841 224.965 59.4699 220.1 63.6734C215.235 67.8769 210.965 71.0176 206.1 65.6697C201.235 60.3219 195.965 46.3329 191.1 47.7027C186.235 49.0725 181.965 65.3135 177.1 72.6569C172.235 80.0004 166.965 77.9707 162.1 75.6514C157.235 73.3322 151.965 70.8788 147.1 63.6734C142.235 56.468 137.965 45.4382 133.1 40.7155C128.235 35.9928 122.965 37.8706 118.1 33.7283C113.235 29.586 108.965 18.8594 104.1 14.7631C99.2347 10.6668 93.965 12.7967 89.0999 18.7558C84.2347 24.7148 78.965 35.047 74.0999 34.7265C69.2347 34.4059 64.965 23.5297 60.0999 22.7484C55.2347 21.9672 49.965 30.5241 45.0999 38.7192C40.2347 46.9142 35.965 55.4735 31.0999 49.699C26.2347 43.9245 20.965 24.0271 16.0999 13.7649C11.2347 3.50271 6.53243 2.36435 4.09985 1.78687L1.09985 1.78687"
-                                                stroke="#31AC7C"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                            />
-                                        </svg>
+                                        <Chart positive={item.increase < 0 ? false : true} w={251} h={79}/>
                                     </div>
                                     {/* <div className="coins__slide-date">May 29, 2023, 7:33 pm</div> */}
                                 </div>

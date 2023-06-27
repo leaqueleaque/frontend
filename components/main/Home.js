@@ -19,7 +19,7 @@ const Home = () => {
                 Get Started
               </a>
               <a className="home__link-invest" href="profile/invest">
-                Invest
+                Stake
               </a>
             </div>
 

@@ -112,11 +112,14 @@ const Swap = () => {
 					}
 				)
 
-				if (response.status === 200) {
+				if (response.data.Error) {
+					setPositiveToast(false)
+					setToyMessage(response.data.Error)
+				} else if (response.status === 200) {
 					setPositiveToast(true)
 					setToyMessage('You have successfully swapped')
 					fetchData()
-				} else {
+				}  else {
 					setPositiveToast(false)
 					setToyMessage('Something went wrong')
 				}
@@ -259,7 +262,7 @@ const Swap = () => {
 						<div className='swap__send-available'>
 							Available:{' '}
 							<span id='my_available_balance'>
-								{balance && balance[selectedSendCurrency?.index.toLowerCase()]}{' '}
+								{balance && parseFloat(balance[selectedSendCurrency?.index.toLowerCase()]).toFixed(2) } {' '}
 							</span>
 							<span id='my_available_crypto'>
 								{selectedSendCurrency?.index}

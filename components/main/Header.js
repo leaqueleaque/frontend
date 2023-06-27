@@ -98,9 +98,14 @@ const Header = () => {
             {profile ? (
                 <div className='header__profile'>
                     <div className='header__profile-toggle' onClick={togglePopup}>
-                      <div className='header__toggle-img'>
-                        <img src='/img/avatar.svg' alt=''/>
-                      </div>
+                      <img
+                          src={'https://leaque.com' + profile?.avatar}
+                          alt=''
+                          style={{
+                            width: '50px',
+                            borderRadius: '50%'
+                          }}
+                      />
                     </div>
 
                   {/*<div*/}
