@@ -158,8 +158,7 @@ const Ver = () => {
 							<img src='/img/not-verified.svg' alt='' />
 						</div>
 						<div className='verification__info-text'>Account not verified</div>
-						{firstName}, {lastName}, {country}, {address}: {typeDocument}: ID
-						{idNumber}
+
 					</div>
 					<div className='verification__inputs'>
 						<div className='verification__input verification__input-first'>
