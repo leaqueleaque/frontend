@@ -69,11 +69,21 @@
 }
 
 .validate{
+    position: relative;
     border-bottom: none !important;
     padding-left: 22px !important;
     box-sizing: border-box !important;
     padding-right: 86px !important;
 }
+
+.validate::placeholder {
+    position: absolute;
+    left: 25px !important;
+    font-weight: 400;
+    font-size: 17px;
+    color: #808080;
+}
+
 .formP2p__currency-label{
     font-weight: 400;
     font-size: 15px;

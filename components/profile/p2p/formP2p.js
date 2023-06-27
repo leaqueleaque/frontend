@@ -210,12 +210,8 @@ const FormP2p = () => {
           </div>
 
           <div className="formP2p__currency input-field s6">
-            <input id="coin-one-id" type="text" className="validate" onClick={handleInputClick} onBlur={handleCoinBlur} />
-            <label
-              htmlFor="coin-one-id"
-              className={`formP2p__currency-label ${labelActive ? 'active' : ''}`}>
-              Amount (<span className="label-title-one">{selectedCoin}</span>)
-            </label>
+            <input id="coin-one-id" type="text" className="validate" onClick={handleInputClick} onBlur={handleCoinBlur}
+            placeholder={`Amount ${selectedCoin}`}/>
             <div
               className={`formP2p__coin coin-one ${coinActive ? 'active' : ''}`}
               onClick={handleCoinClick}>
@@ -241,11 +237,8 @@ const FormP2p = () => {
           </div>
 
           <div className="formP2p__currency input-field s6">
-            <input id="coin-two-id" type="text" className="validate" onClick={handleFiatInputClick} onBlur={handleFiatBlur} />
-            <label for="coin-two-id"
-              className={`formP2p__currency-label ${fiatLabelActive ? 'active' : ''}`}>
-              Amount (<span className="label-title-two">{selectedFiat}</span>)
-            </label>
+            <input id="coin-one-id" type="text" className="validate" onClick={handleInputClick} onBlur={handleCoinBlur}
+                   placeholder={`Amount ${selectedFiat}`}/>
             <div
               className={`formP2p__coin coin-two ${fiatActive ? 'active' : ''}`}
               onClick={handleFiatClick}>
