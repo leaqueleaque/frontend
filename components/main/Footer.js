@@ -78,7 +78,7 @@ const Footer = () => {
 
             <div className="footer__link-box">
               <div className="footer__link-title">Legal</div>
-              <a className="footer__link-ref" href="../support">
+              <a className="footer__link-ref" href="../profile/support">
                 Support
               </a>
               <a className="footer__link-ref" href="../cookies-policy">
