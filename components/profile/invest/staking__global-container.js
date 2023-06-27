@@ -414,7 +414,7 @@ const Staking__global = () => {
 								<span>
 									≈{' '}
 									<span id='expected_profit_usd'>
-										{expectedProfit * activeCoin?.price}
+										{(parseFloat(expectedProfit) * parseFloat(activeCoin?.price) ).toFixed(2)}
 									</span>
 									$
 								</span>
@@ -436,7 +436,7 @@ const Staking__global = () => {
 									<span id='total_profit_usd'>
 										{isNaN(totalProfit * 17)
 											? '0'
-											: totalProfit * activeCoin?.price}
+											: (parseFloat(totalProfit) * parseFloat(activeCoin?.price) ).toFixed(2)}
 									</span>
 									$
 								</span>
