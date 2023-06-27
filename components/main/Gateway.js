@@ -24,10 +24,6 @@ const Gateway = () => {
 
   }, []);
 
-  console.log(mainCoins)
-
-
-
   return (
     <section className="gateway">
       <div className="gateway__container">

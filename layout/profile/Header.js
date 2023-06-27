@@ -6,6 +6,7 @@ const Header = () => {
 	const [profile, setProfile] = useState(null)
 	const [balance, setBalance] = useState(null)
 	const [isOpen, setIsOpen] = useState(false)
+
 	const togglePopup = () => {
 		setIsOpen(!isOpen)
 	}

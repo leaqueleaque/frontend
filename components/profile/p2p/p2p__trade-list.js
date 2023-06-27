@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 import {parseCookies} from "nookies";
 import {PopupVerif} from "@/components/profile/wallet/PopupVerif";
+import P2p_error_modal from "@/components/profile/wallet/p2p_error_modal";
 
 const P2p_trade = () => {
     const [traders, setTraders] = useState([])
