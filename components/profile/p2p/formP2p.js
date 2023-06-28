@@ -59,6 +59,11 @@ const FormP2p = () => {
   const [profile, setProfile] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
+  const [wrapper, setWrapper] = useState(false)
+
+  function mobileWrapperOpen() {
+    wrapper ? setWrapper(false) : setWrapper(true)
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -190,13 +195,14 @@ const FormP2p = () => {
         <div className="formP2p__top-btn right active" onClick={openWallet}>SELL</div>
       </div>
 
-      <div className="formP2p__mobile-btn">
+      <div className="formP2p__mobile-btn" onClick={mobileWrapperOpen}>
         <svg width="16" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h16v3.674l-5.818 5.333v6.743L5.818 18V9.007L0 3.674V0Z" fill="#fff"></path>
         </svg>
       </div>
-      <div className="formP2p__form-wrapper">
-        <div className="formP2p__form">
+
+      <div className={wrapper ? 'formP2p__form active' : 'formP2p__form'}>
+        <div className={wrapper ? 'formP2p__form active' : 'formP2p__form'}>
           <div className="formP2p__mobile-filter">Filter</div>
           <div className="formP2p__mobile-close">
             <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">

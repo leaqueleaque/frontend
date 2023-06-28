@@ -36,8 +36,9 @@
 }
 
 @media (max-width: 425px) {
-    .partners__logo img {
-        width: 100px !important;
+    .partners__logos .partners__logo:nth-child(4) img {
+        width: 250px;
+        height: auto;
     }
 }
 

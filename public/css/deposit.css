@@ -427,7 +427,13 @@
 	}
 	.deposit__address__box {
 		position: absolute;
-		bottom: 295px;
+		bottom: 215px;
+	}
+	.deposit__address {
+		transform: translateY(90%);
+	}
+	.deposit__address-btn {
+		transform: translateY(120%);
 	}
 	.deposit__content-list {
 		height: 750px;
