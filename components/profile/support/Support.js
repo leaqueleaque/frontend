@@ -41,6 +41,7 @@ const Sup = () => {
 
         form.append(country, contact)
         form.append('message', testMessage)
+        form.append('mobile', contact)
 
         if (accessToken) {
             axios.post(process.env.NEXT_PUBLIC_BASE_URL + '/chat/', form, {

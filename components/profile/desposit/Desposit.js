@@ -5,11 +5,10 @@ import axios from 'axios'
 const Dep = () => {
 	const [activeCoin, setActiveCoin] = useState('btc')
 	const [amount, setAmount] = useState(0)
-
+const [coins, setCoins] = useState({})
 	const handleCoinClick = coin => {
 		resetState();
 		setActiveCoin(coin.id)
-		// eval(coin.onClick);
 	}
 
 	const fetchData = useCallback(async () => {
@@ -586,6 +585,39 @@ const Dep = () => {
 			}
 		}, 1000));
 	}
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const cookies = parseCookies()
+				const accessToken = cookies.accessToken
+				if (accessToken) {
+					const response = await axios.get(
+						process.env.NEXT_PUBLIC_BASE_URL + '/user/profile/',
+						{
+							headers: {
+								Authorization: `Bearer ${accessToken}`,
+							},
+						}
+					)
+					const coins = response.data.balance.coins
+					setCoins(coins)
+				}
+			} catch (error) {
+				console.log(error)
+			}
+		}
+
+		fetchData()
+	}, [])
+
+	const cryptoDataArray = Object.keys(coins).map(coinKey => ({
+		index: coinKey,
+		own_price: coins[coinKey],
+	}))
+	cryptoDataArray.forEach(coin => {
+		let temp = coinsList.filter(coinData => coinData.name === coin.index)
+		if (temp) temp.forEach(value => (value.coinWallet = coin.own_price))
+	})
 
 	const resetState = () => {
 		setQrCode('');
@@ -594,6 +626,7 @@ const Dep = () => {
 		setShowButton(true);
 		clearInterval(timerInterval);
 	}
+
 
 	return (
 		<div className='col-xl-12'>
@@ -645,9 +678,7 @@ const Dep = () => {
 										<div className='deposit__coin-title'>
 											{coin.coinTitle}
 										</div>
-										<div className='deposit__coin-wallet'>
-											{coin.coinWallet}
-										</div>
+										
 									</div>
 								))}
 
