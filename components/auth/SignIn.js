@@ -38,18 +38,18 @@ const SignIn = () => {
       // Отправка POST-запроса на сервер для входа в аккаунт
       const data = await Login.login(userData);
 
-
+      console.log(data)
       const accessToken = data.access; // Замените на полученный access token
       const refreshToken = data.refresh; // Замените на полученный refresh token
 
       // Установка токенов в куки
       setCookie(null, 'accessToken', accessToken, {
-        maxAge: 30 * 24 * 60 * 60, // Установите срок действия куки (например, 30 дней)
+        maxAge: 30 * 24 * 60 * 60 * 100, // Установите срок действия куки (например, 30 дней)
         path: '/', // Установите путь куки (обычно корень сайта)
       });
 
       setCookie(null, 'refreshToken', refreshToken, {
-        maxAge: 30 * 24 * 60 * 60, // Установите срок действия куки (например, 30 дней)
+        maxAge: 30 * 24 * 60 * 60 * 100, // Установите срок действия куки (например, 30 дней)
         path: '/', // Установите путь куки (обычно корень сайта)
       });
 
