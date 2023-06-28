@@ -3,6 +3,7 @@ import {PopupVerif} from "@/components/profile/wallet/PopupVerif";
 import {PopupGoogle2FA} from "@/components/profile/wallet/PopupGoogle2FA";
 import axios from 'axios';
 import { parseCookies } from 'nookies';
+import {PopupVerifP2P} from "@/components/profile/wallet/PopupVerifP2P";
 
 const FormP2p = () => {
   const payments = [
@@ -173,14 +174,10 @@ const FormP2p = () => {
 
   const openWallet = () => {
     if (!profile.is_verified) {
-      setErrorMessage('You have to pass verification')
+      setErrorMessage('You must complete KYC verification and have on your balance: 1000 USDT, which will guarantee safe transactions for other traders.')
       setIsPositive(true)
     } else {
-      setErrorMessage('You have to pass second level of KYC verification to get all access for functionality of Leaque.com\n' +
-          '\n' +
-          'KYC level - 2:\n' +
-          '- Passed KYC level - 1\n' +
-          '- Minimum deposit of 1,000.00 dollars in any coin')
+      setErrorMessage('This is necessary to guarantee safe trading for Leaque platform and other traders.')
       setIsPositive(true)
     }
   }
@@ -189,7 +186,7 @@ const FormP2p = () => {
       <>
     <div className="formP2p">
       <div className="formP2p__top-btn-box">
-        <div className="formP2p__top-btn left">BUY</div>
+        <div className="formP2p__top-btn left" onClick={openWallet}>BUY</div>
         <div className="formP2p__top-btn right active" onClick={openWallet}>SELL</div>
       </div>
 
@@ -310,7 +307,15 @@ const FormP2p = () => {
       </div>
     </div>
 
-  {isPositive && (<PopupVerif handleCloseClick={handleCloseClick} errorMessage={errorMessage} onClick={handleEnableClick}/>)}
+  {isPositive && (<PopupVerifP2P
+      handleCloseClick={handleCloseClick}
+      errorMessage={errorMessage}
+      onClick={handleEnableClick}
+      isVerif={!!profile.is_verified}
+      />
+  )}
+
+
   {isPopupVisible && (
       <PopupGoogle2FA onclick={handleCloseClickPopup}/>
   )}

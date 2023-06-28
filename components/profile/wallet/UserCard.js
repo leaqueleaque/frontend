@@ -4,6 +4,7 @@ import { parseCookies } from 'nookies';
 import Toy from "@/components/auth/TOOL";
 import {PopupVerif} from "@/components/profile/wallet/PopupVerif";
 import {PopupGoogle2FA} from "@/components/profile/wallet/PopupGoogle2FA";
+import {PopupVerifP2P} from "@/components/profile/wallet/PopupVerifP2P";
 
 
 const navigation = [
@@ -153,14 +154,10 @@ const UserCard = () => {
 
   const openWallet = () => {
     if (!profile.is_verified) {
-      setErrorMessage('You have to pass verification')
+      setErrorMessage('To unlock all features and functionality, you need to obtain Verification. This will only take a few minutes and is required for security and compliance reasons. To start the verification process, please visit your KYC page and complete the necessary steps.')
       setIsPositive(true)
     } else {
-      setErrorMessage('You have to pass second level of KYC verification to get all access for functionality of Leaque.com\n' +
-        '\n' +
-        'KYC level - 2:\n' +
-        '- Passed KYC level - 1\n' +
-        '- Minimum deposit of 1,000.00 dollars in any coin')
+      setErrorMessage('To unlock all the features of the platform, you need to make your first deposit with any coin.')
       setIsPositive(true)
     }
   }
@@ -267,7 +264,26 @@ const UserCard = () => {
           </div>
         </div>
       </section>
-      {isPositive && (<PopupVerif handleCloseClick={handleCloseClick} errorMessage={errorMessage} onClick={handleEnableClick}/>)}
+      {
+
+        isPositive && (
+            (!profile.is_verified ? (<PopupVerif
+          handleCloseClick={handleCloseClick}
+          errorMessage={errorMessage}
+          onClick={handleEnableClick}
+          isVerif={!!profile.is_verified}/>) :
+                    (<PopupVerifP2P
+                            handleCloseClick={handleCloseClick}
+                            errorMessage={errorMessage}
+                            onClick={handleEnableClick}
+                            isVerif={!!profile.is_verified}
+                        />
+                    )
+            )
+          )
+      }
+
+
       {isPopupVisible && (
           <PopupGoogle2FA onclick={handleCloseClickPopup}/>
       )}

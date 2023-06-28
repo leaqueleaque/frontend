@@ -3,11 +3,43 @@ import axios from "axios";
 import {parseCookies} from "nookies";
 import {PopupVerif} from "@/components/profile/wallet/PopupVerif";
 import P2p_error_modal from "@/components/profile/wallet/p2p_error_modal";
+import {PopupVerifP2P} from "@/components/profile/wallet/PopupVerifP2P";
 
 const P2p_trade = () => {
     const [traders, setTraders] = useState([])
     const [errorMessage, setErrorMessage] = useState('');
     const [isPositive, setIsPositive] = useState(false);
+    const [profile, setProfile] = useState(null);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const cookies = parseCookies();
+                const accessToken = cookies.accessToken;
+
+                if (accessToken) {
+                    const response = await axios.get(process.env.NEXT_PUBLIC_BASE_URL + '/user/profile/', {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    });
+                    const { user } = response.data;
+                    setProfile(user);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
+
+        const intervalId = setInterval(() => {
+            fetchData();
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     const handleEnableClick = () => {
         setIsPositive(true); // При клике на кнопку "Enable" делаем попап видимым
@@ -16,18 +48,12 @@ const P2p_trade = () => {
         setIsPositive(false); // При клике на кнопку "Close" скрываем попап
     };
     const openp2p = () => {
-        const cookies = parseCookies();
-        const accessToken = cookies.accessToken;
-
-        if (!accessToken) {
-            setErrorMessage('You have to pass verification')
+        if (!profile.is_verified) {
+            setErrorMessage('You must complete KYC verification and have on your balance: 1000 USDT, which will guarantee safe transactions for other traders.')
             setIsPositive(true)
         } else {
-            setErrorMessage('You have to pass second level of KYC verification to get all access for functionality of Leaque.com\n' +
-                '\n' +
-                'KYC level - 2:\n' +
-                '- Passed KYC level - 1\n' +
-                '- Minimum deposit of 1,000.00 dollars in any coin')
+            setErrorMessage('This is necessary to guarantee safe trading for Leaque platform and other traders.')
+
             setIsPositive(true)
         }
     }
@@ -47,7 +73,13 @@ const P2p_trade = () => {
 
     return (
         <div className="p2p__trade-list">
-            {isPositive && (<PopupVerif handleCloseClick={handleCloseClick} />)}
+            {isPositive && (<PopupVerifP2P
+                handleCloseClick={handleCloseClick}
+                isVerif={!!profile.is_verified}
+                errorMessage={errorMessage}
+                />)}
+
+
             <div className="p2p__item-box p2p__item-title">
                 <div className="p2p__list-title p2p__trader">Trader</div>
                 <div className="p2p__list-title">Payment method</div>
@@ -99,20 +131,21 @@ const P2p_trade = () => {
                     </div>
                 </div>
             ))}
-            {/*<ul className="pagination">*/}
-            {/*<div*/}
-            {/*  onclick="openP2P()"*/}
-            {/*  style={{*/}
-            {/*    padding: '14px',*/}
-            {/*    width: '200px',*/}
-            {/*    textAlign: 'center',*/}
-            {/*    borderRadius: '10px',*/}
-            {/*    cursor: 'pointer',*/}
-            {/*    background: '#333e66',*/}
-            {/*  }}>*/}
-            {/*  <p style={{ display: 'inline-block', color: '#d9d9d9' }}>Load 15 more traders</p>*/}
-            {/*</div>*/}
-            {/*</ul>*/}
+            <ul className="pagination">
+            <div
+              onClick={openp2p}
+              style={{
+                padding: '14px',
+                width: '200px',
+                textAlign: 'center',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                background: '#333e66',
+              }}>
+              <p style={{ display: 'inline-block', color: '#d9d9d9' }}>Load 15 more traders</p>
+            </div>
+            </ul>
+
         </div>
     );
 };

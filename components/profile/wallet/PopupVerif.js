@@ -1,5 +1,4 @@
-export function PopupVerif({handleCloseClick, errorMessage, onClick}) {
-
+export function PopupVerif({handleCloseClick, errorMessage, onClick, isVerif}) {
 
     return (
         <div id="p2p_error_modal" className="popup__container">
@@ -172,8 +171,8 @@ export function PopupVerif({handleCloseClick, errorMessage, onClick}) {
                   </span>
                         </p>
                     </div>
-                    <a href={errorMessage === 'You have to pass verification' ? '../profile/verification' : '../profile/verification'} className="popup__right-button" >
-                        Proceed
+                    <a href={isVerif ? '' : '../profile/verification'} className="popup__right-button" >
+                        {isVerif ? '' : 'Start Verification'}
                     </a>
                 </div>
             </div>
