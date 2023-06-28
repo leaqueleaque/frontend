@@ -193,9 +193,9 @@ const UserCard = () => {
                     </a>
                   ))}
 
-                  <span className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more">
+                  <a href={'/'} className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more">
                     Menu
-                  </span>
+                  </a>
 
                   <div className="menuProfile__more">
                     {nav.map(({ id, title, path, className }) => (

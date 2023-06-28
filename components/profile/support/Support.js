@@ -4,7 +4,9 @@ import {parseCookies} from "nookies";
 
 const Sup = () => {
     const [country, setCountry] = useState('Telegram')
+    const [country1, setCountry1] = useState('Technical support')
     const [countryList, showCountryList] = useState(false);
+    const [countryList1, showCountryList1] = useState(false);
     const [testMessage, setTextMessage] = useState('')
     const [contact, setContact] = useState('')
 
@@ -17,6 +19,10 @@ const Sup = () => {
         let set = (!countryList)
         showCountryList(set)
     }
+    const handleCountryListClick1 = () => {
+        let set = (!countryList1)
+        showCountryList1(set)
+    }
     const handleTextMessage = (e) => {
         setTextMessage(e.target.value)
     }
@@ -24,10 +30,15 @@ const Sup = () => {
         let country = e.target.innerText
         setCountry(country)
     }
+    const selectedCountry1 = (e) => {
+        let country1 = e.target.innerText
+        setCountry1(country1)
+    }
     const submitMessage = () => {
         const cookies = parseCookies();
         const accessToken = cookies.accessToken;
         const form = new FormData();
+
         form.append(country, contact)
         form.append('message', testMessage)
 
@@ -50,7 +61,7 @@ const Sup = () => {
             <div className="verification__container">
                 <div className="chat__title">
                     <img className="chat__img" src="/img/support_avatar.png" alt=""/>
-                    <div className="chat__title-name">Live support service</div>
+                    <div className="chat__title-name1">Online support service</div>
                     <span
                         className="support_online"
                         title="Support Online"
@@ -59,80 +70,103 @@ const Sup = () => {
           </span>
                 </div>
 
-                <div className="chat__title chat__title-border">
-                    <div className="chat__title-name">Chat</div>
-                </div>
-                <div className="chat__container">
-                    <div className="chat__content" id="chat_content">
-                        <div className="no_messages_block">
-                            <img
-                                style={{
-                                    maxWidth: '100px',
-                                    height: 'auto',
-                                    marginBottom: '18px',
-                                }}
-                                src="/img/message.png"
-                                alt="no_messages"
-                            />
-                            <h4>No Messages</h4>
-                            <p>Chat messages will appear here</p>
-                            <div></div>
-                        </div>
-                    </div>
 
-                </div>
+                <div className="chat__title-name">Your contact</div>
                 <div className="chat__type-message">
                     <textarea
                         className="chat__message-input"
-                        placeholder="Type a contact data"
+                        placeholder="Enter your name"
                         value={contact}
                         onChange={handleContact}
                     ></textarea>
                     <img
                         id="output"
                         style={{
-                            width: '100px',
+                            width: '10px',
                             marginRight: '27px',
                             border: '3px solid #007dfe',
                             borderRadius: '10px',
                             height: '49px',
-                            display: 'none',
+                            visibility: 'hidden',
                         }}
                     />
-                    <div className="verification__input verification__input-country"
-                         onClick={handleCountryListClick}>
-                        <div className="verification__input-input" id="verificationCountry">
-                            <span className="verification__input-value">{country}</span>
-                            <div className="verification__input-icon">
-                                <img src="/img/arrow.svg" alt=""/>
-                            </div>
+                </div>
+
+                <div className="chat__title-name">Choose the right department</div>
+                <div className="verification__input verification__input-country chat__type-message"
+                     onClick={handleCountryListClick1}>
+                    <div className="verification__input-input" id="verificationCountry">
+                        <span className="verification__input-value">{country1}</span>
+                        <div className="verification__input-icon">
+                            <img src="/img/arrow.svg" alt=""/>
                         </div>
-                        <div className={countryList ? "verification__input" : "verification__input-list"}>
-                            <div className="verificztion__input-box">
-                                <div
-                                    onClick={selectedCountry}
-                                    className="verification__input-list-item">
-                                    telegram
-                                </div>
-                                <div
-                                    onClick={selectedCountry}
-                                    className="verification__input-list-item">
-                                    mobile
-                                </div>
-                                <div
-                                    onClick={selectedCountry}
-                                    className="verification__input-list-item">
-                                    email
-                                </div>
+                    </div>
+                    <div className={countryList1 ? "verification__input" : "verification__input-list"}>
+                        <div className="verificztion__input-box">
+                            <div
+                                onClick={selectedCountry1}
+                                className="verification__input-list-item">
+                                Technical support
+                            </div>
+                            <div
+                                onClick={selectedCountry1}
+                                className="verification__input-list-item">
+                                Finance department
+                            </div>
+                            <div
+                                onClick={selectedCountry1}
+                                className="verification__input-list-item">
+                                Verification center
+                            </div>
+                            <div
+                                onClick={selectedCountry1}
+                                className="verification__input-list-item">
+                                Another problem
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div className="chat__title-name">Choose how to contact you</div>
+                <div className="verification__input verification__input-country chat__type-message"
+                     onClick={handleCountryListClick}>
+                    <div className="verification__input-input" id="verificationCountry">
+                        <span className="verification__input-value">{country}</span>
+                        <div className="verification__input-icon">
+                            <img src="/img/arrow.svg" alt=""/>
+                        </div>
+                    </div>
+                    <div className={countryList ? "verification__input" : "verification__input-list"}>
+                        <div className="verificztion__input-box">
+                            <div
+                                onClick={selectedCountry}
+                                className="verification__input-list-item">
+                                Phone number
+                            </div>
+                            <div
+                                onClick={selectedCountry}
+                                className="verification__input-list-item">
+                                Email
+                            </div>
+                            <div
+                                onClick={selectedCountry}
+                                className="verification__input-list-item">
+                                Telegram
+                            </div>
+                            <div
+                                onClick={selectedCountry}
+                                className="verification__input-list-item">
+                                WhatsApp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="chat__type-message">
                     <div className="chat__message-box">
                         <textarea
                             className="chat__message-input"
-                            placeholder="Type a message"
+                            placeholder="Describe your problem"
                             value={testMessage}
                             onChange={handleTextMessage}
                         ></textarea>

@@ -2092,7 +2092,7 @@ background: linear-gradient(90deg, rgba(0,188,82,1) 0%, rgba(0,129,112,1) 100%);
       display: inline-block; }
 
       .section-padding {
-        padding: 100px 0px; }
+        padding: 60px 0;}
         @media only screen and (max-width: 1199px) {
           .section-padding {
             padding: 70px 0px; } }

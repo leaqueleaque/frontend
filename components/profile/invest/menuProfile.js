@@ -79,7 +79,8 @@ const MenuProfile = () => {
               </a>
             ))}
 
-            <span className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more">Menu</span>
+            <a href={'/'} className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more">
+              Menu</a>
 
             <div className="menuProfile__more">
               {nav.map(({ id, title, path, className }) => (
