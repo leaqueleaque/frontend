@@ -86,7 +86,7 @@ const With = () => {
 			onClick: "setTab('usdt')",
 			className: 'rushButton deposit__coin-item',
 			imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',
-			coinTitle: 'USDT ERC-20',
+			coinTitle: 'USDT TRC-20',
 			coinWallet: '0.00 USDT',
 		},
 		{
@@ -333,9 +333,9 @@ const With = () => {
 			addressPlaceholder: "Please enter recipient's USDT address",
 			amountTitle: 'Amount USDT',
 			amountPlaceholder: 'Please enter an amount in USDT',
-			networkTitle: 'USDT ERC-20 Network Fee',
+			networkTitle: 'USDT TRC-20 Network Fee',
 			networkDescription:
-				'Transactions on the USDT ERC-20 network are prioritized by fees',
+				'Transactions on the USDT TRC-20 network are prioritized by fees',
 			networkFee: '1.00 USDT',
 		},
 		{
@@ -614,7 +614,7 @@ const With = () => {
 										/>
 										<div className='deposit__coin-title'>{coin.coinTitle}</div>
 										<div className='deposit__coin-wallet'>
-											{coin.coinWallet} {coin.name.toUpperCase()}
+											{coin.name.toUpperCase()}
 										</div>
 									</div>
 								))}

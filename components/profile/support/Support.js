@@ -39,9 +39,26 @@ const Sup = () => {
         const accessToken = cookies.accessToken;
         const form = new FormData();
 
+        function processContact(country) {
+            let result;
+
+            if (country === "Phone number") {
+                result = "mobile";
+            } else if (country === "Email") {
+                result = "email";
+            } else if (country === "Telegram") {
+                result = "telegram";
+            } else if (country === "WhatsApp") {
+                result = "telegram";
+            } else {
+                result = "Unknown";
+            }
+
+            return result;
+        }
         form.append(country, contact)
         form.append('message', testMessage)
-        form.append('mobile', contact)
+        form.append(processContact(country), contact)
 
         if (accessToken) {
             axios.post(process.env.NEXT_PUBLIC_BASE_URL + '/chat/', form, {
@@ -69,28 +86,6 @@ const Sup = () => {
                         style={{marginLeft: '40px', marginTop: '-30px'}}>
             0
           </span>
-                </div>
-
-
-                <div className="chat__title-name">Your contact</div>
-                <div className="chat__type-message">
-                    <textarea
-                        className="chat__message-input"
-                        placeholder="Type a contact data"
-                        value={contact}
-                        onChange={handleContact}
-                    ></textarea>
-                    <img
-                        id="output"
-                        style={{
-                            width: '10px',
-                            marginRight: '27px',
-                            border: '3px solid #007dfe',
-                            borderRadius: '10px',
-                            height: '49px',
-                            visibility: 'hidden',
-                        }}
-                    />
                 </div>
 
                 <div className="chat__title-name">Choose the right department</div>
@@ -163,7 +158,26 @@ const Sup = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="chat__title-name">Your contact</div>
+                <div className="chat__type-message">
+                    <textarea
+                        className="chat__message-input"
+                        placeholder="Type a contact data"
+                        value={contact}
+                        onChange={handleContact}
+                    ></textarea>
+                    <img
+                        id="output"
+                        style={{
+                            width: '10px',
+                            marginRight: '27px',
+                            border: '3px solid #007dfe',
+                            borderRadius: '10px',
+                            height: '49px',
+                            visibility: 'hidden',
+                        }}
+                    />
+                </div>
                 <div className="chat__type-message">
                     <div className="chat__message-box">
                         <textarea

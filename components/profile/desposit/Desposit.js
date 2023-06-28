@@ -148,7 +148,7 @@ const [coins, setCoins] = useState({})
 		},
 		{
 			id: 'usdt',
-			title: 'USDT USDT ERC-20',
+			title: 'USDT USDT TRC-20',
 			wallet: '0.00',
 			depositTextItems: [
 				'Coins will be deposited after 3 network confirmations.',
@@ -158,7 +158,7 @@ const [coins, setCoins] = useState({})
 		},
 		{
 			id: 'usdtbep',
-			title: 'USDT USDT BEP-20',
+			title: 'USDT USDT TRC-20',
 			wallet: '0.00',
 			depositTextItems: [
 				'Coins will be deposited after 3 network confirmations.',
@@ -397,7 +397,7 @@ const [coins, setCoins] = useState({})
 			onClick: "setTab('usdt')",
 			className: 'rushButton deposit__coin-item',
 			imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',
-			coinTitle: 'USDT ERC-20',
+			coinTitle: 'USDT TRC-20',
 			coinWallet: '0.00 USDT',
 		},
 		{
@@ -678,7 +678,9 @@ const [coins, setCoins] = useState({})
 										<div className='deposit__coin-title'>
 											{coin.coinTitle}
 										</div>
-										
+										<div className='deposit__coin-wallet'>
+											{coin.id.toUpperCase()}
+										</div>
 									</div>
 								))}
 
