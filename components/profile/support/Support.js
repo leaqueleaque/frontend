@@ -75,7 +75,7 @@ const Sup = () => {
                 <div className="chat__type-message">
                     <textarea
                         className="chat__message-input"
-                        placeholder="Enter your name"
+                        placeholder="Type a contact data"
                         value={contact}
                         onChange={handleContact}
                     ></textarea>
@@ -128,6 +128,7 @@ const Sup = () => {
                 </div>
 
                 <div className="chat__title-name">Choose how to contact you</div>
+
                 <div className="verification__input verification__input-country chat__type-message"
                      onClick={handleCountryListClick}>
                     <div className="verification__input-input" id="verificationCountry">
