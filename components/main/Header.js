@@ -99,7 +99,7 @@ const Header = () => {
                 <div className='header__profile'>
                     <div className='header__profile-toggle' onClick={togglePopup}>
                       <img
-                          src={'https://leaque.com' + profile?.avatar}
+                          src={`${profile?.avatar ? 'https://leaque.com' + profile?.avatar : '/img/avatar.svg'}`}
                           alt=''
                           style={{
                             width: '50px',

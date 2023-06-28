@@ -28,7 +28,7 @@ const HomePage = () => {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/main/style/swiper-bundle.min.css" />
-        <link rel="icon" href="/main/images/home/favicon.ico" />
+        <link rel="icon" href="../img/default.png" />
         <link rel="stylesheet" href="/main/style/normalize.css" />
         <link rel="stylesheet" href="/main/style/global.css" />
         <link rel="stylesheet" href="/main/style/header.css" />
@@ -43,7 +43,7 @@ const HomePage = () => {
         <link rel="stylesheet" href="/main/style/partners.css" />
         <link rel="stylesheet" href="/main/style/calculator.css" />
         <link rel="stylesheet" href="/main/style/footer.css" />
-        <link rel="icon" href="/main/assets/img/logos/default.png" />
+        <link rel="icon" href="../img/default.png" />
       </Head>
       <div className="container__global">
         <div className="main__global">

@@ -75,7 +75,7 @@ const Trans = () => {
                       ))
                   ) : (
                       <tr>
-                        <td colSpan="7">No data transactions</td>
+                        <td colSpan="7" className={'colSpanNodata'}>No data transactions</td>
                       </tr>
                   )}
                   </tbody>

@@ -94,10 +94,19 @@ const Staking__global = () => {
 
 	const handleAmountChange = event => {
 		const newAmount = event.target.value
-		setAmount(newAmount)
-		calculateProfits(newAmount, selectedPlan)
-	}
+		if (newAmount >= 0) {
+			setAmount(newAmount);
+			calculateProfits(newAmount, selectedPlan)
+		} else {
+			setAmount(0);
+		}
 
+	}
+	const handleKeyPress = (event) => {
+		if (event.key === '-' || event.key === '+') {
+			event.preventDefault();
+		}
+	};
 	const calculateProfits = (amount, plan) => {
 		let duration = 0
 		let percent = 0
@@ -267,10 +276,12 @@ const Staking__global = () => {
 							<div className='staking__send-input'>
 								<input
 									type='number'
-									placeholder='0'
+									placeholder="Enter amount"
 									id='amount_input'
 									value={amount}
 									onChange={handleAmountChange}
+									onKeyPress={handleKeyPress}
+									min={0}
 								/>
 							</div>
 

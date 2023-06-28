@@ -110,7 +110,6 @@ const Transfer__container = () => {
           setShowToast(true)
         }
         console.log(toyMessage)
-        console.log(response.data)
       }
     } catch (error) {
       console.error(error);
@@ -123,7 +122,11 @@ const Transfer__container = () => {
     const balanceValue = balance && balance[activeCoin?.index.toLowerCase()];
     setAmount(balanceValue || 0);
   };
-
+  const handleKeyPress = (event) => {
+    if (event.key === '-' || event.key === '+') {
+      event.preventDefault();
+    }
+  };
   return (
       <>
       <Toy visible={showToast} message={toyMessage} positive={positiveToast} />
@@ -190,6 +193,8 @@ const Transfer__container = () => {
               id="amount_input"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
+              onKeyPress={handleKeyPress}
+              min={0}
             />
           </div>
           <div className="transfer__send-available">

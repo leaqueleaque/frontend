@@ -38,7 +38,6 @@ const SignIn = () => {
       // Отправка POST-запроса на сервер для входа в аккаунт
       const data = await Login.login(userData);
 
-      console.log(data); // Вывод ответа от сервера
 
       const accessToken = data.access; // Замените на полученный access token
       const refreshToken = data.refresh; // Замените на полученный refresh token

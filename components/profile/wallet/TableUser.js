@@ -128,8 +128,7 @@ const TableUser = () => {
                       .filter((data) => !hideZeroBalances || parseFloat(data.own_price) !== 0)
                       .filter(
                           (data) =>
-                              data.index.toLowerCase().includes(searchValue.toLowerCase()) ||
-                              data.name.toLowerCase().includes(searchValue.toLowerCase()),
+                              data.index.toLowerCase().includes(searchValue.toLowerCase())
                       )
                       .map((data) => (
 

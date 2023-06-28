@@ -42,7 +42,7 @@ const Benefits = () => {
                 features, high execution speed and low fees. Buy and trade all your favorite tokens
                 effortlessly, anytime and anywhere.
               </div>
-              <a href="signup" className="benefits__link">
+              <a href="../profile/swap" className="benefits__link">
                 Get Started
                 <svg
                   width="13"

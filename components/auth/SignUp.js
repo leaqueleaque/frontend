@@ -31,7 +31,6 @@ const SignUp = () => {
       // Отправка POST-запроса на сервер для регистрации
       const data = await UserApi.register(userData);
 
-      console.log(data);
 
       const accessToken = data.access;
       const refreshToken = data.refresh; // Замените на полученный access token

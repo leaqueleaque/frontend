@@ -506,6 +506,8 @@ header .nav-link.btn {
     margin-bottom: 0;
 }
 
+
+
 .table td {
     font-size: 13px;
     padding: 18px 18px;
@@ -2490,7 +2492,7 @@ select.form-control:focus::-ms-value {
   background: #00CCD3; }
 
 .table tr td:last-child, .table tr th:last-child {
-    text-align: right;
+    text-align: center;
 }
 
 .important-info ul {
@@ -3633,5 +3635,4 @@ padding-top: 30px;
 }
 .bottom .bottom-widget ul li a:hover {
  color:#fff;   
-}
 }

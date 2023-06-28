@@ -1,4 +1,9 @@
 const AFF = () => {
+  const handleCopyClick = () => {
+    const input = document.getElementById('link_text');
+    input.select();
+    document.execCommand('copy');
+  };
   return (
     <div className="content-body">
       <div className="container">
@@ -22,7 +27,7 @@ const AFF = () => {
                   </div>
                   <div className="col-xl-5 col-lg-6">
                     <h5 style={{ color: '#ffffff' }}>Share your link</h5>
-                    <form action="#">
+                    <form>
                       <div className="input-group">
                         <input
                           id="link_text"
@@ -31,7 +36,8 @@ const AFF = () => {
                           value="https://leaque.com/signup?ref=135214936"
                         />
                         <div className="input-group-append">
-                          <button id="copy_link" className="input-group-text bg-primary text-white">
+                          <button id="copy_link" className="input-group-text bg-primary text-white" onClick={handleCopyClick}
+                          >
                             Copy
                           </button>
                         </div>

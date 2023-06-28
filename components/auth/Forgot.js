@@ -14,10 +14,6 @@ const Forgot = () => {
         email: email,
       });
 
-      // Handle successful response from the server
-      console.log(response.data);
-
-      // Redirect to the signin page
       router.push('/signin');
     } catch (error) {
       // Handle errors

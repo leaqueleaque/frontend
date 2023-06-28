@@ -53,8 +53,8 @@ background: linear-gradient(110deg, rgba(19,23,34,1) 56%, rgba(36,37,82,1) 56%);
 }
 
 .userCard__balance-count{
-    font-weight: 700;
-    font-size: 26px;
+    font-size: 21px;
+    font-weight: 600;
     line-height: 39px;
     color: #FFFFFF;
     margin-top: 3px;

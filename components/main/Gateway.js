@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Chart} from "@/components/main/Chart";
+import {ChartMin} from "@/components/main/ChartMin";
 
 const Gateway = () => {
   const [coins, setCoins] = useState([]);
@@ -50,7 +51,7 @@ const Gateway = () => {
                   {increase}%
                 </div>
                 <div className="gateway__table-chart">
-                  <Chart positive={increase < 0 ? false : true} w={138} h={45}/>
+                  <ChartMin positive={increase < 0 ? false : true}/>
                 </div>
                 <div className="gateway__table-trade">
                   <a className="gateway__table-trade-link" href={url}>

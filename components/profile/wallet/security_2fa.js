@@ -42,7 +42,6 @@ const UserAttention = () => {
     fetchData()
   }, [])
 
-  //console.log('p', profile);
   if (profile?.is_2fa) return;
 
   return (
