@@ -560,14 +560,18 @@ const With = () => {
 			console.log(error)
 		}
 	}
+	const [depActive ,setDepActive] = useState(false)
 
+	function depToggle() {
+		setDepActive(!depActive)
+	}
 	return (
 		<div className='col-xl-12'>
 			<Toy visible={showToast} message={toyMessage} positive={positiveToast} />
 
 			<div className='deposit'>
 				<div className='deposit__box'>
-					<div className='deposit__mobile-btn'>
+					<div className='deposit__mobile-btn' onClick={depToggle}>
 						Coins&nbsp;&nbsp;
 						<svg
 							width='14'
@@ -583,9 +587,9 @@ const With = () => {
 						</svg>
 					</div>
 
-					<div className='deposit__coin-list-box'>
+					<div className={depActive ? 'deposit__coin-list-box active' : 'deposit__coin-list-box'}>
 						<div className='deposit__coin-list-wrapper'>
-							<div className='deposit__close-list'>
+							<div className='deposit__close-list' onClick={depToggle}>
 								<svg
 									width='16px'
 									height='16px'

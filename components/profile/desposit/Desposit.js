@@ -11,6 +11,12 @@ const [coins, setCoins] = useState({})
 		setActiveCoin(coin.id)
 	}
 
+	const [depActive ,setDepActive] = useState(false)
+
+	function depToggle() {
+		setDepActive(!depActive)
+	}
+
 	const fetchData = useCallback(async () => {
 		try {
 			const cookies = parseCookies()
@@ -632,7 +638,7 @@ const [coins, setCoins] = useState({})
 		<div className='col-xl-12'>
 			<div className='deposit'>
 				<div className='deposit__box'>
-					<div className='deposit__mobile-btn'>
+					<div className='deposit__mobile-btn' onClick={depToggle}>
 						Coins&nbsp;&nbsp;
 						<svg
 							width='14'
@@ -647,9 +653,11 @@ const [coins, setCoins] = useState({})
 							></path>
 						</svg>
 					</div>
-					<div className='deposit__coin-list-box'>
+
+
+					<div className={depActive ? 'deposit__coin-list-box active' : 'deposit__coin-list-box'}>
 						<div className='deposit__coin-list-wrapper'>
-							<div className='deposit__close-list'>
+							<div className='deposit__close-list' onClick={depToggle}>
 								<svg
 									width='16px'
 									height='16px'

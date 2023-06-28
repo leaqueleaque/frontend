@@ -61,7 +61,7 @@ const FormP2p = () => {
 
   const [wrapper, setWrapper] = useState(false)
 
-  function mobileWrapperOpen() {
+  function mobileWrapperToggle() {
     wrapper ? setWrapper(false) : setWrapper(true)
   }
   useEffect(() => {
@@ -195,16 +195,16 @@ const FormP2p = () => {
         <div className="formP2p__top-btn right active" onClick={openWallet}>SELL</div>
       </div>
 
-      <div className="formP2p__mobile-btn" onClick={mobileWrapperOpen}>
+      <div className="formP2p__mobile-btn" onClick={mobileWrapperToggle}>
         <svg width="16" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h16v3.674l-5.818 5.333v6.743L5.818 18V9.007L0 3.674V0Z" fill="#fff"></path>
         </svg>
       </div>
 
-      <div className={wrapper ? 'formP2p__form active' : 'formP2p__form'}>
-        <div className={wrapper ? 'formP2p__form active' : 'formP2p__form'}>
+      <div className={wrapper ? 'formP2p__form-wrapper active' : 'formP2p__form-wrapper'}>
+        <div className='formP2p__form'>
           <div className="formP2p__mobile-filter">Filter</div>
-          <div className="formP2p__mobile-close">
+          <div className="formP2p__mobile-close" onClick={mobileWrapperToggle}>
             <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M5.584 6.999.876 11.708l1.414 1.414 4.708-4.709 4.709 4.71 1.414-1.415-4.708-4.709 5.291-5.292L12.29.293 6.998 5.585 1.708.293.292 1.707 5.584 7Z"
