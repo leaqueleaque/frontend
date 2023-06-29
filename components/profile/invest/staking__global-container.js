@@ -154,7 +154,7 @@ const Staking__global = () => {
 			const response = await axios.post(
 				'https://leaque.com/api/transactions/staking/',
 				{
-					days: selectedPlan, // Передайте значение selectedPlan в поле days
+					days: selectedPlan,
 					percentage:
 						selectedPlan === 1
 							? 1.3
@@ -168,8 +168,8 @@ const Staking__global = () => {
 				},
 				{
 					headers: {
-						Authorization: `Bearer ${accessToken}`, // Добавьте заголовок авторизации с токеном доступа
-					}, // Передайте значение активной монеты
+						Authorization: `Bearer ${accessToken}`,
+					},
 				}
 			)
 
@@ -181,14 +181,13 @@ const Staking__global = () => {
 
 			setShowToast(true)
 
-			// Обработка успешного ответа от сервера
-			console.log(response) // Выведите ответ сервера в консоль или выполните дополнительные действия
+			console.log(response)
 		} catch (error) {
 			// Обработка ошибок
 			setPositiveToast(false)
 			setToyMessage('Something went wrong')
 			setShowToast(true)
-			console.error(error) // Выведите ошибку в консоль или выполните дополнительные действия
+			console.error(error)
 		}
 	}
 	return (
@@ -414,7 +413,7 @@ const Staking__global = () => {
 							Expected profit
 							<div className='profit__numbers'>
 								<b>
-									+
+									+{' '}
 									<span style={{ color: 'white' }} id='expected_profit_amount'>
 										{parseFloat(expectedProfit).toFixed(2)} {' '}
 									</span>

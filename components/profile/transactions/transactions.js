@@ -20,6 +20,7 @@ const Trans = () => {
             },
           });
           setTransactions(response.data)
+
         }
       } catch (error) {
         console.log(error);
@@ -34,7 +35,6 @@ const Trans = () => {
 
     return () => clearInterval(intervalId);
   }, []);
-
 
   return (
     <div className="col-xl-12 col-lg-12 col-md-12">

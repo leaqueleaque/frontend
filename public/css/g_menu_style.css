@@ -42,6 +42,8 @@
 
 .header__link {
     position: relative;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 
 .header__link.header__link-new:after,
@@ -196,6 +198,8 @@
 }
 
 .header__toggle-name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     padding-right: 15px;
     color: #FFFF;
     pointer-events: none;
@@ -251,10 +255,16 @@
     display: flex;
     font-size: 14px;
     padding: 5px 20px;
- 
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     position: relative;
     width: fit-content;
     color:  white;
+}
+.header__profile-link span {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 
 .header__profile-link:hover {

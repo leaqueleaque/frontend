@@ -617,6 +617,7 @@ const With = () => {
 	const [activeCoin, setActiveCoin] = useState('btc')
 
 	const handleCoinClick = coin => {
+		setDepActive(!depActive)
 		setActiveCoin(coin.id)
 		eval(coin.onClick)
 	}
