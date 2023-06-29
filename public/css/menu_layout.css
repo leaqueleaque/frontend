@@ -51,6 +51,7 @@
 }
 
 .menuProfile__menu-item{
+    font-family: "Poppins", sans-serif;
     padding: 0 12px 0 32px;
     position: relative;
     display: flex;

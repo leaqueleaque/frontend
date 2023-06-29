@@ -161,7 +161,7 @@ const Ver = () => {
 
 					</div>
 					<div className='verification__inputs'>
-						<div className='verification__input verification__input-first'>
+						<div className='verification__input verification__input-first' style={{background: 'none'}}>
 							<label className='verification__input-label' for='kyc_first_name'>
 								First name
 							</label>
@@ -174,7 +174,7 @@ const Ver = () => {
 							/>
 						</div>
 
-						<div className='verification__input verification__input-last'>
+						<div className='verification__input verification__input-last' style={{background: 'none'}}>
 							<label className='verification__input-label' for='kyc_last_name'>
 								Last name
 							</label>
@@ -189,6 +189,7 @@ const Ver = () => {
 						<div
 							className='verification__input verification__input-country'
 							onClick={handleCountryListClick}
+							style={{background: 'none'}}
 						>
 							<div className='verification__input-label'>Select country</div>
 							<div
@@ -1683,7 +1684,7 @@ const Ver = () => {
 							</div>
 						</div>
 
-						<div className='verification__input verification__input-address'>
+						<div className='verification__input verification__input-address' style={{background: 'none'}}>
 							<label className='verification__input-label' for='kyc_address'>
 								Address
 							</label>
@@ -1696,10 +1697,10 @@ const Ver = () => {
 							/>
 						</div>
 
-						<div className='verification__input verification__input-phone'>
+						<div className='verification__input verification__input-phone' style={{background: 'none'}}>
 							<div className='verification__input-label'>Phone number</div>
-							<div className='verification__input-container verification__input-container-phone'>
-								<div className='verification__input-list verification__input-list-phone'>
+							<div className='verification__input-container verification__input-container-phone' >
+								<div className='verification__input-list verification__input-list-phone' >
 									<div className='verification__input-box'>
 										<div className='verification__input-list-item'>
 											<img src='/img/DE.svg' alt='' />
@@ -1723,7 +1724,7 @@ const Ver = () => {
 							</div>
 						</div>
 
-						<div className='verification__input verification__input-date'>
+						<div className='verification__input verification__input-date' style={{background: 'none'}}>
 							<label
 								className='verification__input-label'
 								for='kyc_date_of_birth'
@@ -1741,6 +1742,7 @@ const Ver = () => {
 						<div
 							className='verification__input verification__input-passport'
 							onClick={handleTypesListClick}
+							style={{background: 'none'}}
 						>
 							<div className='verification__input-label'>Select ID type</div>
 							<div
@@ -1787,7 +1789,7 @@ const Ver = () => {
 							</div>
 						</div>
 
-						<div className='verification__input verification__input-id'>
+						<div className='verification__input verification__input-id' style={{background: 'none'}}>
 							<label className='verification__input-label' for='kyc_id_number'>
 								ID number
 							</label>

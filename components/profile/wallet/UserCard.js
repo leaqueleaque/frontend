@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { parseCookies } from 'nookies';
 import Toy from "@/components/auth/TOOL";
@@ -175,7 +175,12 @@ const UserCard = () => {
     setIsPositive(false)
   };
 
+  const [isMenu, setIsMenu] = useState(false)
 
+
+  function menuToggle() {
+    setIsMenu(!isMenu)
+  }
   return (
     <>
       <section className="userCard">
@@ -183,7 +188,7 @@ const UserCard = () => {
 
         <div className="userCard__container">
           <section className="menuProfile">
-            <div className="menuProfile__more-bg"></div>
+            <div className={isMenu ? "menuProfile__more-bg menuProfile__more-bg-active" : "menuProfile__more-bg"}></div>
             <div className="menuProfile__container">
               <div className="menuProfile__box">
                 <div className="menuProfile__menu-box">
@@ -193,11 +198,14 @@ const UserCard = () => {
                     </a>
                   ))}
 
-                  <a href={'/'} className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more">
-                    Menu
-                  </a>
+                  <button
+                      className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more"
+                      style={{background: 'none', border: 'none'}}
+                      onClick={menuToggle}
+                  >
+                    Menu</button>
 
-                  <div className="menuProfile__more">
+                  <div className={ isMenu ? "menuProfile__more menuProfile__more-active" : 'menuProfile__more'}>
                     {nav.map(({ id, title, path, className }) => (
                       <a key={id} href={path} className={className}>
                         {title}
@@ -230,7 +238,16 @@ const UserCard = () => {
                 <div className="userCard__user-data-box">
                   <div className="userCard__user-name">{profile?.username}</div>
                   <div className="userCard__user-email">{profile?.email}</div>
-                  <div className="userCard__user-id">ID: 135214936</div>
+                  <div className={profile?.is_verified ? "userCard__user-verif" : "userCard__user-noverif" } style={{marginTop: '5px'}}>
+                    <img src={profile?.is_verified ? '../img/verif.png' : '../img/noverif.png'}
+                         style={{
+                           width: '20px',
+                           position: 'absolute',
+                           left: '-7px',
+                           top: '3px'
+                         }}/>
+                    {profile?.is_verified ? 'verified' : 'no verified'}
+                  </div>
                 </div>
               </div>
               <div className="userCard__balance">
@@ -273,6 +290,7 @@ const UserCard = () => {
           onClick={handleEnableClick}
           isVerif={!!profile.is_verified}/>) :
                     (<PopupVerifP2P
+                            userCard={true}
                             handleCloseClick={handleCloseClick}
                             errorMessage={errorMessage}
                             onClick={handleEnableClick}

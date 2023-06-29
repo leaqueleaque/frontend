@@ -58,14 +58,18 @@ const MenuProfile = () => {
 
   const router = useRouter();
   const [activeLink, setActiveLink] = useState(navigation[0].id);
+  const [isMenu, setIsMenu] = useState(false)
 
   const handleLinkClick = (id) => {
     setActiveLink(id);
   };
 
+  function menuToggle() {
+    setIsMenu(!isMenu)
+  }
   return (
     <section className="menuProfile">
-      <div className="menuProfile__more-bg"></div>
+      <div className={isMenu ? "menuProfile__more-bg menuProfile__more-bg-active" : "menuProfile__more-bg"}></div>
       <div className="menuProfile__container">
         <div className="menuProfile__box">
           <div className="menuProfile__menu-box">
@@ -79,10 +83,14 @@ const MenuProfile = () => {
               </a>
             ))}
 
-            <a href={'/'} className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more">
-              Menu</a>
+            <button
+                className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more"
+                style={{background: 'none', border: 'none'}}
+            onClick={menuToggle}
+            >
+              Menu</button>
 
-            <div className="menuProfile__more">
+            <div className={ isMenu ? "menuProfile__more menuProfile__more-active" : 'menuProfile__more'}>
               {nav.map(({ id, title, path, className }) => (
                 <a
                   key={id}

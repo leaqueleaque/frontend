@@ -1,4 +1,4 @@
-export function PopupVerifP2P({handleCloseClick, errorMessage, isVerif}) {
+export function PopupVerifP2P({handleCloseClick, errorMessage, isVerif, userCard = false}) {
 
     return (
         <div id="p2p_error_modal" className="popup__container">
@@ -16,9 +16,9 @@ export function PopupVerifP2P({handleCloseClick, errorMessage, isVerif}) {
                             d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"></path>
                     </svg>
                 </div>
-                <div className="popup__left">
+                <div className="popup__left" style={{width: '300px'}}>
                     {isVerif ? (
-                            <img src="https://cdn-icons-png.flaticon.com/512/2266/2266216.png" alt="" style={{width: '191px', height: '190px', top: '21%', left: '-15%'}}/>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2266/2266216.png" alt="" style={{width: '200px', height: '200px', top: '23%', left: '-3%'}}/>
                         ) :
                         (<svg
                             width="181"
@@ -155,7 +155,12 @@ export function PopupVerifP2P({handleCloseClick, errorMessage, isVerif}) {
                     <div className="popup__right-description">
                         <p>
                   <span style={{fontWeight: 400}}>
-                      {isVerif ? 'To participate in P2P bidding, make a security deposit of 1000 USDT to your account.' : 'To participate in P2P bidding on Leaque'}
+                      {!userCard ?
+                      (isVerif ? 'To participate in P2P bidding, make a security deposit of 1000 USDT to your account.' :
+                          'To participate in P2P bidding on Leaque')
+                       : (isVerif ? 'We noticed that you still do not have full access to the Leaque platform functionality!' :
+                              'To participate in P2P bidding on Leaque')
+                      }
                   </span>
                         </p>
                         <br/>

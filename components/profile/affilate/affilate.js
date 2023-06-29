@@ -7,7 +7,7 @@ const AFF = () => {
   return (
     <div className="content-body">
       <div className="container">
-        <div className="row">
+        <div className="row aliffate">
           <div className="col-xl-12">
             <div className="card">
               <div className="card-header">

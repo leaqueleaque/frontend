@@ -98,6 +98,43 @@ background: linear-gradient(110deg, rgba(19,23,34,1) 56%, rgba(36,37,82,1) 56%);
     padding-left: 20px;
 }
 
+.userCard__user-verif {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+    position: relative;
+    padding-left: 20px;
+}
+
+/*.userCard__user-verif:before{*/
+/*    content: "";*/
+/*    width: 16px;*/
+/*    height: 16px;*/
+/*    background-image: url('../img/verif.png');*/
+/*    position: absolute;*/
+/*    left: -5px;*/
+/*    top: 3px;*/
+/*}*/
+/*.userCard__user-noverif:before{*/
+/*    content: "";*/
+/*    width: 16px;*/
+/*    height: 16px;*/
+/*    background-image: url('../img/noverif.png');*/
+/*    position: absolute;*/
+/*    left: -5px;*/
+/*    top: 3px;*/
+/*}*/
+
+.userCard__user-noverif {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+    position: relative;
+    padding-left: 20px;
+}
+
 .userCard__user-name:before{
     content: "";
     width: 16px;

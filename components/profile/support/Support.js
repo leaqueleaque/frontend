@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {parseCookies} from "nookies";
+import Toy from "@/components/auth/TOOL";
 
 const Sup = () => {
     const [country, setCountry] = useState('Telegram')
@@ -10,6 +11,9 @@ const Sup = () => {
     const [testMessage, setTextMessage] = useState('')
     const [contact, setContact] = useState('')
 
+    const [succesMessage, setSuccesMessage] = useState('')
+    const [toast, setToast] = useState(false)
+    const [positive, setPositive] = useState(true)
 
     const handleContact = (e) => {
         setContact(e.target.value)
@@ -39,6 +43,14 @@ const Sup = () => {
         const accessToken = cookies.accessToken;
         const form = new FormData();
 
+        if (!testMessage || !contact) {
+            setSuccesMessage('Fill in all fields')
+            setToast(true)
+            setPositive(false)
+            return
+        }
+
+
         function processContact(country) {
             let result;
 
@@ -67,15 +79,33 @@ const Sup = () => {
                 }
             })
                 .then((data) => {
-                    alert('application successfully sent')
+                    setSuccesMessage('Your message was sent successfully')
+                    setToast(true)
+                    setPositive(true)
                 })
                 .catch((err) => {
-                    alert(err)
+                    setSuccesMessage(err)
+                    setToast(true)
+                    setPositive(false)
                 })
         }
     }
+
+    useEffect(() => {
+        let timeout
+
+        if (toast) {
+            timeout = setTimeout(() => {
+                setToast(false)
+            }, 3000)
+        }
+
+        return () => clearTimeout(timeout)
+    }, [toast])
+
     return (
         <section className="verification" style={{marginTop: '10px'}}>
+            <Toy visible={toast} message={succesMessage} positive={positive} />
             <div className="verification__container">
                 <div className="chat__title">
                     <img className="chat__img" src="/img/support_avatar.png" alt=""/>
@@ -87,7 +117,24 @@ const Sup = () => {
             0
           </span>
                 </div>
-
+                <div className="chat__title-name">Your name</div>
+                <div className="chat__type-message">
+                    <textarea
+                        className="chat__message-input"
+                        placeholder="Enter your name"
+                    ></textarea>
+                    <img
+                        id="output"
+                        style={{
+                            width: '10px',
+                            marginRight: '27px',
+                            border: '3px solid #007dfe',
+                            borderRadius: '10px',
+                            height: '49px',
+                            visibility: 'hidden',
+                        }}
+                    />
+                </div>
                 <div className="chat__title-name">Choose the right department</div>
                 <div className="verification__input verification__input-country chat__type-message"
                      onClick={handleCountryListClick1}>

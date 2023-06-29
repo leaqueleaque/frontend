@@ -632,7 +632,19 @@ const [coins, setCoins] = useState({})
 		setShowButton(true);
 		clearInterval(timerInterval);
 	}
+	useEffect(() => {
+		const handleScroll = (e) => {
+			if (depActive) {
+				e.preventDefault();
+			}
+		};
 
+		window.addEventListener('wheel', handleScroll, { passive: false });
+
+		return () => {
+			window.removeEventListener('wheel', handleScroll);
+		};
+	}, [depActive]);
 
 	return (
 		<div className='col-xl-12'>
