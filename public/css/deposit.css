@@ -155,6 +155,13 @@
 	font-size: 14px;
 	color: #919197;
 }
+@media (max-width: 500px) {
+	.deposit__crypto-timer {
+		transform: translate(-360%, 455%);
+
+	}
+}
+
 .deposit__crypto-timer span{
 	font-size: 16px;
 	color: white;

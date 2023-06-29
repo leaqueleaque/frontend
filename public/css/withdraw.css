@@ -350,6 +350,8 @@ background-color: #000;
     line-height: 15px;
 }
 
+
+
 .withdraw__address-input,
 .withdraw__amount-input {
     width: 323px;
@@ -538,6 +540,6 @@ color:#fff;
     }
 
     .withdraw__address-input, .withdraw__amount-input {
-        width: 270px; 
+        width: 220px;
     }
 }

@@ -7,6 +7,7 @@ const Dep = () => {
 	const [amount, setAmount] = useState(0)
 const [coins, setCoins] = useState({})
 	const handleCoinClick = coin => {
+		depToggle()
 		resetState();
 		setActiveCoin(coin.id)
 	}
