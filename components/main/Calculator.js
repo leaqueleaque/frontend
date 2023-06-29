@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Calculator = () => {
   const [inputValue, setInputValue] = useState(0);
-  const [multiplicationNumberTotal, setMultiplicationNumberTotal] = useState(1.1);
+  const [multiplicationNumberTotal, setMultiplicationNumberTotal] = useState(1.04);
 
   useEffect(() => {
     const totalValue = Math.floor(inputValue * multiplicationNumberTotal);
@@ -125,7 +125,7 @@ const Calculator = () => {
               </div>
               <div className="calculator__profit-item">
                 <div className="calculator__profit-name">Percentage</div>
-                <div className="calculator__profit-value percentage">10%</div>
+                <div className="calculator__profit-value percentage">4%</div>
               </div>
             </div>
           </div>
