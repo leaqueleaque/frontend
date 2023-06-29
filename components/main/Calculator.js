@@ -41,20 +41,20 @@ const Calculator = () => {
 
     switch (target.innerText) {
       case '1 week':
-        newMultiplicationNumberTotal = 1.1;
-        percentageText = '10%';
-        break;
-      case '2 week':
-        newMultiplicationNumberTotal = 1.25;
-        percentageText = '25%';
+        newMultiplicationNumberTotal = 1.04;
+        percentageText = '4%';
         break;
       case '1 month':
+        newMultiplicationNumberTotal = 1.20;
+        percentageText = '20%';
+        break;
+      case '3 month':
         newMultiplicationNumberTotal = 1.7;
         percentageText = '70%';
         break;
-      case '3 month':
-        newMultiplicationNumberTotal = 3.5;
-        percentageText = '250%';
+      case '6 month':
+        newMultiplicationNumberTotal = 2.5;
+        percentageText = '150%';
         break;
       default:
         break;
@@ -109,9 +109,9 @@ const Calculator = () => {
               <div className="calculator__select-title">Select the investment period</div>
               <div className="calculator__select-buttons" onClick={handleButtonClick}>
                 <button className="calculator__select-btn active">1 week</button>
-                <button className="calculator__select-btn">2 week</button>
                 <button className="calculator__select-btn">1 month</button>
                 <button className="calculator__select-btn">3 month</button>
+                <button className="calculator__select-btn">6 month</button>
               </div>
             </div>
             <div className="calculator__profit">

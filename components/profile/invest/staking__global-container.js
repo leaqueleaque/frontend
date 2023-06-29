@@ -114,19 +114,19 @@ const Staking__global = () => {
 		switch (plan) {
 			case 1:
 				duration = 7
-				percent = 1.3
+				percent = 0.57
 				break
 			case 2:
-				duration = 14
-				percent = 1.6
+				duration = 30
+				percent = 0.66
 				break
 			case 3:
-				duration = 30
-				percent = 2.1
+				duration = 90
+				percent = 0.77
 				break
 			case 4:
-				duration = 90
-				percent = 2.6
+				duration = 180
+				percent = 0.83
 				break
 			default:
 				duration = 0
@@ -157,12 +157,12 @@ const Staking__global = () => {
 					days: selectedPlan,
 					percentage:
 						selectedPlan === 1
-							? 1.3
+							? 1.04
 							: selectedPlan === 2
-							? 1.6
+							? 1.2
 							: selectedPlan === 3
-							? 2.1
-							: 2.6,
+							? 1.7
+							: 2.5,
 					amount: amount, // Передайте значение amount
 					currency: activeCoin ? activeCoin.index : 'BTC',
 				},
@@ -317,8 +317,8 @@ const Staking__global = () => {
 								<span className='staking__select-button-line'></span>
 
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-percent'>1.3%</span>
-									<span className='staking__select-button-text'>Per day</span>
+									<span className='staking__select-button-percent'>4%</span>
+									<span className='staking__select-button-text'>0,57% per day</span>
 								</div>
 							</div>
 
@@ -329,15 +329,15 @@ const Staking__global = () => {
 								onClick={() => selectPlan(2)}
 							>
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-day'>14 days</span>
+									<span className='staking__select-button-day'>30 days</span>
 									<span className='staking__select-button-text'>Duration</span>
 								</div>
 
 								<span className='staking__select-button-line'></span>
 
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-percent'>1.6%</span>
-									<span className='staking__select-button-text'>Per day</span>
+									<span className='staking__select-button-percent'>20%</span>
+									<span className='staking__select-button-text'>0,66% per day</span>
 								</div>
 							</div>
 
@@ -348,15 +348,15 @@ const Staking__global = () => {
 								onClick={() => selectPlan(3)}
 							>
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-day'>30 days</span>
+									<span className='staking__select-button-day'>90 days</span>
 									<span className='staking__select-button-text'>Duration</span>
 								</div>
 
 								<span className='staking__select-button-line'></span>
 
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-percent'>2.1%</span>
-									<span className='staking__select-button-text'>Per day</span>
+									<span className='staking__select-button-percent'>70%</span>
+									<span className='staking__select-button-text'>0,77 per day</span>
 								</div>
 							</div>
 
@@ -367,15 +367,15 @@ const Staking__global = () => {
 								onClick={() => selectPlan(4)}
 							>
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-day'>90 days</span>
+									<span className='staking__select-button-day'>180 days</span>
 									<span className='staking__select-button-text'>Duration</span>
 								</div>
 
 								<span className='staking__select-button-line'></span>
 
 								<div className='staking__select-button-container'>
-									<span className='staking__select-button-percent'>2.6%</span>
-									<span className='staking__select-button-text'>Per day</span>
+									<span className='staking__select-button-percent'>150%</span>
+									<span className='staking__select-button-text'>0,83% per day</span>
 								</div>
 							</div>
 						</div>

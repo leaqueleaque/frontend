@@ -5,12 +5,8 @@ import axios from 'axios'
 const Dep = () => {
 	const [activeCoin, setActiveCoin] = useState('btc')
 	const [amount, setAmount] = useState(0)
-const [coins, setCoins] = useState({})
-	const handleCoinClick = coin => {
-		depToggle()
-		resetState();
-		setActiveCoin(coin.id)
-	}
+	const [coins, setCoins] = useState({})
+
 
 	const [depActive ,setDepActive] = useState(false)
 
@@ -24,7 +20,7 @@ const [coins, setCoins] = useState({})
 			const accessToken = cookies.accessToken
 
 			if (accessToken) {
-				const response = await axios.get(
+				const response1 = await axios.get(
 					process.env.NEXT_PUBLIC_BASE_URL + '/transactions/crypto/',
 					{
 						headers: {
@@ -32,12 +28,13 @@ const [coins, setCoins] = useState({})
 						},
 					}
 				)
-				const crypto = response.data
+				const crypto = response1.data
 				let newCoinsArray = [];
 				crypto.forEach(element => {
 					newCoinsArray = newCoinsArray.concat(coinsData.filter((coinData) => element.index == coinData.id.toUpperCase()));
 				});
 				setCoinsList(newCoinsArray)
+
 			}
 		} catch (error) {
 			console.log(error)
@@ -47,10 +44,20 @@ const [coins, setCoins] = useState({})
 	useEffect(() => {
 		fetchData()
 	}, [])
-	
+
+	const [qrCode, setQrCode] = useState('');
+	const [address, setAddress] = useState('');
+	const [data, setData] = useState([]);
+	const [coinID, setCoinID] = useState(0);
+
+
+	const [timerText, setTimerText] = useState('');
+	const [showButton, setShowButton] = useState(true);
+	const [timerInterval, setTimerInterval] = useState();
+	const [coinsList, setCoinsList] = useState([]);
+
 
 	const viewAddBlock = async id => {
-		resetState();
 		try {
 			const cookies = parseCookies()
 			const accessToken = cookies.accessToken
@@ -93,23 +100,61 @@ const [coins, setCoins] = useState({})
 						},
 					}
 				)
-
-				setQrCode(response.data[0].qrcode);
-				setAddress(response.data[0].address);
+				setAddress(response.data[coinID].address);
+				setQrCode(response.data[coinID].qrcode)
 				setShowButton(false)
 				startTimer();
+				console.log(data)
 			}
 		} catch (error) {
 			console.log(error)
 		}
 	}
 
-	const [qrCode, setQrCode] = useState('');
-	const [address, setAddress] = useState('');
-	const [timerText, setTimerText] = useState('');
-	const [showButton, setShowButton] = useState(true);
-	const [timerInterval, setTimerInterval] = useState();
-	const [coinsList, setCoinsList] = useState([]);
+	const dataCoins = async () => {
+		try {
+			const cookies = parseCookies()
+			const accessToken = cookies.accessToken
+
+			if (accessToken) {
+				const response = await axios.get(
+					process.env.NEXT_PUBLIC_BASE_URL + '/transactions/crypto/',
+					{
+						params: {
+							currency: activeCoin.toUpperCase(),
+							amount,
+						},
+						headers: {
+							Authorization: `Bearer ${accessToken}`,
+						},
+					}
+				)
+				setData(response.data)
+			}
+		} catch (error) {
+			console.log(error)
+		}
+	};
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			dataCoins();
+		}, 5000);
+
+		return () => clearInterval(intervalId);
+
+		dataCoins();
+	}, []);
+
+	const handleCoinClick = (coin, id) => {
+		dataCoins()
+		setCoinID(id)
+		depToggle()
+		resetState();
+		setActiveCoin(coin.id)
+
+	}
+
 
 	const textData = [
 		{
@@ -627,25 +672,11 @@ const [coins, setCoins] = useState({})
 	})
 
 	const resetState = () => {
-		setQrCode('');
-		setAddress('');
+		setQrCode('')
 		setTimerText('');
 		setShowButton(true);
 		clearInterval(timerInterval);
 	}
-	useEffect(() => {
-		const handleScroll = (e) => {
-			if (depActive) {
-				e.preventDefault();
-			}
-		};
-
-		window.addEventListener('wheel', handleScroll, { passive: false });
-
-		return () => {
-			window.removeEventListener('wheel', handleScroll);
-		};
-	}, [depActive]);
 
 	return (
 		<div className='col-xl-12'>
@@ -684,10 +715,10 @@ const [coins, setCoins] = useState({})
 							</div>
 							<div id='btnBox' className='deposit__coin-list'>
 
-								{coinsList.map(coin => (
+								{coinsList.map((coin, index) => (
 									<div
 										key={coin.id}
-										onClick={() => handleCoinClick(coin)}
+										onClick={() => handleCoinClick(coin, index)}
 										className={`${coin.className} ${activeCoin === coin.id ? 'buttonActiveNew' : ''
 											}`}
 									>
@@ -797,7 +828,7 @@ const [coins, setCoins] = useState({})
 
 								<div
 									className='deposit__address__box isset_memo__add_bottom'
-									style={address ? {} : { display: 'none' }}
+									style={!showButton ? {} : { display: 'none' }}
 									id={`view_addresses_${data.id}`}
 								>
 									<label style={{ width: '100%' }}>
@@ -805,7 +836,7 @@ const [coins, setCoins] = useState({})
 											id={`address_${data.id}`}
 											className='deposit__address'
 											type='text'
-											value={address}
+											value={data[0] ? data[coinID].address : address}
 											readOnly
 										/>
 										<button
