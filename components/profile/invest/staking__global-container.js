@@ -356,7 +356,7 @@ const Staking__global = () => {
 
 								<div className='staking__select-button-container'>
 									<span className='staking__select-button-percent'>70%</span>
-									<span className='staking__select-button-text'>0,77 per day</span>
+									<span className='staking__select-button-text'>0,77% per day</span>
 								</div>
 							</div>
 

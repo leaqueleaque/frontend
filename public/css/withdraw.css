@@ -350,6 +350,10 @@ background-color: #000;
     line-height: 15px;
 }
 
+.withdraw__amount-description.green {
+    color: #3e8149;
+    font-size: 13px;
+}
 
 
 .withdraw__address-input,
