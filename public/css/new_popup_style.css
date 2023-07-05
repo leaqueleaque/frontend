@@ -46,6 +46,20 @@ body {
     height: -webkit-fill-available;
 }
 
+.popup__leftSecur {
+    width: 358px;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.popup__leftSecur img {
+    position: absolute;
+    width: 140px;
+    top: 33%;
+    left: 14%;
+}
+
 .popup__right {
     background-color: #181E2B;
     border-top-right-radius: 20px;

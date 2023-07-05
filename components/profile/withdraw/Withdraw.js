@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { parseCookies } from 'nookies';
 import Toy from '@/components/auth/TOOL';
+import { SecurePopup } from '@/components/profile/wallet/SecurePopup';
+import { PopupGoogle2FA } from '@/components/profile/wallet/PopupGoogle2FA';
 
 const With = () => {
     const [tab, setTab] = useState('btc');
@@ -16,6 +18,38 @@ const With = () => {
     const [wallet, setWallet] = useState([]);
 
     const [available, setAvailable] = useState(null);
+
+    const [profile, setProfile] = useState(null);
+
+    const [secureShow, setSecureShow] = useState(false);
+
+    const [isPopupVisible, setPopupVisible] = useState(false);
+
+    const fetchDataProfile = useCallback(async () => {
+        try {
+            const cookies = parseCookies();
+            const accessToken = cookies.accessToken;
+
+            if (accessToken) {
+                const responseUser = await axios.get(
+                    process.env.NEXT_PUBLIC_BASE_URL + '/user/profile/',
+                    {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    }
+                );
+                const { user } = responseUser.data;
+                setProfile(user);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
+
+    useEffect(() => {
+        fetchDataProfile();
+    }, []);
 
     const fetchData = useCallback(async () => {
         try {
@@ -37,7 +71,7 @@ const With = () => {
                     newCoinsArray = newCoinsArray.concat(
                         coinsData.filter(
                             (coinData) =>
-                                element.index == coinData.id.toUpperCase()
+                                element.index === coinData.id.toUpperCase()
                         )
                     );
                 });
@@ -501,7 +535,7 @@ const With = () => {
             amountPlaceholder: 'Please enter an amount in SHIB',
             networkTitle: 'BEP-20 Network Fee',
             networkDescription:
-                'Transactions on the EOS network are prioritized by fees',
+                'Transactions on the BEP-20 network are prioritized by fees',
             networkFee: '0.0041 BNB',
         },
         {
@@ -683,15 +717,22 @@ const With = () => {
         if (temp) temp.forEach((value) => (value.coinWallet = coin.own_price));
     });
 
+    const handleClose = () => {
+        setSecureShow(false);
+    };
+
     const withdraw = async (tab, event) => {
-        console.log(available, amount);
-        if (amount > available || available <= 0) {
-            setPositiveToast(false);
-            setToyMessage("You don't have enough balance to withdraw!");
-            setShowToast(true);
-        } else if (amount <= 0) {
+        if (!profile?.is_2fa) {
+            setSecureShow(true);
+            return;
+        }
+        if (amount <= 0) {
             setPositiveToast(false);
             setToyMessage('Enter the amount!');
+            setShowToast(true);
+        } else if (amount > available || available <= 0) {
+            setPositiveToast(false);
+            setToyMessage("You don't have enough balance to withdraw!");
             setShowToast(true);
         } else {
             try {
@@ -788,6 +829,14 @@ const With = () => {
         fetchData();
     }, []);
 
+    const handleCloseClickPopup = () => {
+        setPopupVisible(false);
+    };
+
+    const handleOpenClickPopup = () => {
+        setPopupVisible(true);
+    };
+
     return (
         <div className="col-xl-12">
             <Toy
@@ -795,6 +844,16 @@ const With = () => {
                 message={toyMessage}
                 positive={positiveToast}
             />
+
+            <SecurePopup
+                secureVisible={secureShow}
+                handleCloseClick={handleClose}
+                onBtn={handleOpenClickPopup}
+            />
+
+            {isPopupVisible && (
+                <PopupGoogle2FA onclick={handleCloseClickPopup} />
+            )}
 
             <div className="deposit">
                 <div className="deposit__box">
