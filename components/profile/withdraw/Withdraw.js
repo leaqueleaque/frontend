@@ -249,8 +249,43 @@ const With = () => {
         setOTPvisible(false);
     };
 
+    async function withdrawNow() {
+        try {
+            const cookies = parseCookies();
+            const accessToken = cookies.accessToken;
+
+            if (accessToken) {
+                const response = await axios.post(
+                    process.env.NEXT_PUBLIC_BASE_URL +
+                        '/transactions/withdraw/',
+                    {
+                        address: address,
+                        amount: amount,
+                        index: tab.coin,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    }
+                );
+
+                if (response.status === 200) {
+                    setPositiveToast(true);
+                    setToyMessage('You have successfully withdrawn');
+                } else {
+                    setPositiveToast(false);
+                    setToyMessage('Something went wrong');
+                }
+
+                setShowToast(true);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     async function onClickBtn(activateCode) {
-        console.log(profile);
         try {
             const cookies = parseCookies();
             const accessToken = cookies.accessToken;
@@ -266,40 +301,7 @@ const With = () => {
                     }
                 );
                 console.log(response);
-
-                try {
-                    const cookies = parseCookies();
-                    const accessToken = cookies.accessToken;
-
-                    if (accessToken) {
-                        const response = await axios.post(
-                            process.env.NEXT_PUBLIC_BASE_URL +
-                                '/transactions/withdraw/',
-                            {
-                                address: address,
-                                amount: amount,
-                                index: tab.coin,
-                            },
-                            {
-                                headers: {
-                                    Authorization: `Bearer ${accessToken}`,
-                                },
-                            }
-                        );
-
-                        if (response.status === 200) {
-                            setPositiveToast(true);
-                            setToyMessage('You have successfully withdrawn');
-                        } else {
-                            setPositiveToast(false);
-                            setToyMessage('Something went wrong');
-                        }
-
-                        setShowToast(true);
-                    }
-                } catch (error) {
-                    console.log(error);
-                }
+                withdrawNow();
             }
         } catch (error) {
             console.log(error);

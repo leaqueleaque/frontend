@@ -78,42 +78,6 @@ export function PopupGoogle2FA({ onclick }) {
             setPositiveToast(false);
             setToyMessage('Something went wrong');
         }
-
-        if (1) {
-            // try {
-            //     const cookies = parseCookies();
-            //     const accessToken = cookies.accessToken;
-            //
-            //     if (accessToken) {
-            //         const response = await axios.post(
-            //             process.env.NEXT_PUBLIC_BASE_URL +
-            //                 '/transactions/withdraw/',
-            //             {
-            //                 address: address,
-            //                 amount: amount,
-            //                 index: tab.coin,
-            //             },
-            //             {
-            //                 headers: {
-            //                     Authorization: `Bearer ${accessToken}`,
-            //                 },
-            //             }
-            //         );
-            //
-            //         if (response.status === 200) {
-            //             setPositiveToast(true);
-            //             setToyMessage('you have successfully withdrawn');
-            //         } else {
-            //             setPositiveToast(false);
-            //             setToyMessage('Something went wrong');
-            //         }
-            //
-            //         setShowToast(true);
-            //     }
-            // } catch (error) {
-            //     console.log(error);
-            // }
-        }
     };
 
     useEffect(() => {

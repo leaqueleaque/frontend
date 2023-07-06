@@ -3,7 +3,7 @@ import { useState } from 'react';
 export function OTPverif({ handleCloseClick, secureVisible, onCheck, error }) {
     if (!secureVisible) return null;
 
-    const [activateCode, setActivateCode] = useState(null);
+    const [activateCode, setActivateCode] = useState();
 
     const handleChange = (e) => {
         const value = e.target.value;
