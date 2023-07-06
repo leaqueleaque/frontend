@@ -90,32 +90,27 @@ const AFF = () => {
                                             <tr>
                                                 <th>Index</th>
                                                 <th>Total</th>
-                                                <th>Previous Day</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Invites</td>
                                                 <td>0 User</td>
-                                                <td>0 User</td>
                                             </tr>
                                             <tr>
-                                                <td>Total Turnover</td>
-                                                <td>0.000 BTC</td>
-                                                <td>0.000 BTC</td>
+                                                <td>Total invite bonus</td>
+                                                <td>0.00 USDT</td>
                                             </tr>
                                             <tr>
-                                                <td>Free Paid</td>
-                                                <td>0.000 BTC</td>
-                                                <td>0.000 BTC</td>
+                                                <td>Referral turnover bonus</td>
+                                                <td>0.00 USDT</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    Affiliate Level (% of
-                                                    Commissions)
+                                                    Affiliate Level ( % of
+                                                    referrals turnover )
                                                 </td>
-                                                <td>25%</td>
-                                                <td></td>
+                                                <td>10%</td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
@@ -124,25 +119,11 @@ const AFF = () => {
                                                     style={{ color: '#ffffff' }}
                                                 >
                                                     Affiliate Payouts
-                                                    <br />
-                                                    <small
-                                                        style={{
-                                                            color: '#ffffff',
-                                                        }}
-                                                    >
-                                                        Not listed on affiliate
-                                                        leaderboard
-                                                    </small>
                                                 </th>
                                                 <th
                                                     style={{ color: '#ffffff' }}
                                                 >
-                                                    0.000 BTC
-                                                </th>
-                                                <th
-                                                    style={{ color: '#ffffff' }}
-                                                >
-                                                    0.000 BTC
+                                                    0.00 USDT
                                                 </th>
                                             </tr>
                                         </tfoot>

@@ -7,6 +7,7 @@ import { PopupGoogle2FA } from '@/components/profile/wallet/PopupGoogle2FA';
 import { OTPverif } from '@/components/profile/wallet/OTPverif';
 import { coinsData } from '@/components/helper';
 import { tabs } from '@/components/helper';
+import { useRouter } from 'next/router';
 
 const With = () => {
     const [tab, setTab] = useState('btc');
@@ -31,6 +32,8 @@ const With = () => {
     const [OTPvisible, setOTPvisible] = useState(false);
 
     const [tabb, setTabb] = useState(null);
+
+    const router = useRouter();
 
     const fetchDataProfile = useCallback(async () => {
         try {
@@ -277,10 +280,10 @@ const With = () => {
                     setPositiveToast(true);
                     setToyMessage('You have successfully withdrawn');
                     setOTPvisible(false);
+                    router.push('/profile/settings');
                 } else {
                     setPositiveToast(false);
                     setToyMessage('Something went wrong');
-                    setOTPvisible(false);
                 }
 
                 setShowToast(true);
@@ -344,7 +347,10 @@ const With = () => {
             />
 
             {isPopupVisible && (
-                <PopupGoogle2FA onclick={handleCloseClickPopup} />
+                <PopupGoogle2FA
+                    onclick={handleCloseClickPopup}
+                    onCompleted={fetchDataProfile}
+                />
             )}
 
             <div className="deposit">

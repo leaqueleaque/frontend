@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useCallback, useState } from 'react';
 import Toy from '@/components/auth/TOOL';
 
-export function PopupGoogle2FA({ onclick }) {
+export function PopupGoogle2FA({ onclick, onCompleted }) {
     const [profile, setProfile] = useState(null);
     const [qrcode, setQrcode] = useState('');
     const [token, setToken] = useState('');
@@ -72,6 +72,7 @@ export function PopupGoogle2FA({ onclick }) {
                     'You have successfully enabled your two-factor authentication'
                 );
                 onclick();
+                onCompleted();
             }
         } catch (error) {
             console.log(error);
