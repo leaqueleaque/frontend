@@ -158,7 +158,7 @@ const With = () => {
         setSecureShow(false);
     };
 
-    const withdraw = async (tab, event) => {
+    const withdraw = async (tab) => {
         setTabb(tab);
         if (!profile?.is_2fa) {
             setSecureShow(true);
@@ -276,9 +276,11 @@ const With = () => {
                 if (response.status === 200) {
                     setPositiveToast(true);
                     setToyMessage('You have successfully withdrawn');
+                    setOTPvisible(false);
                 } else {
                     setPositiveToast(false);
                     setToyMessage('Something went wrong');
+                    setOTPvisible(false);
                 }
 
                 setShowToast(true);
