@@ -161,51 +161,22 @@ const With = () => {
             setSecureShow(true);
             return;
         }
-        if (amount <= 0) {
+        if (parseFloat(amount) <= 0) {
             setPositiveToast(false);
             setToyMessage('Enter the amount!');
             setShowToast(true);
-        } else if (amount > available || available <= 0) {
+            return;
+        }
+        if (
+            parseFloat(amount) > parseFloat(available) ||
+            parseFloat(available) <= 0
+        ) {
             setPositiveToast(false);
             setToyMessage("You don't have enough balance to withdraw!");
             setShowToast(true);
-        } else {
-            setOTPvisible(true);
-
-            // try {
-            //     const cookies = parseCookies();
-            //     const accessToken = cookies.accessToken;
-            //
-            //     if (accessToken) {
-            //         const response = await axios.post(
-            //             process.env.NEXT_PUBLIC_BASE_URL +
-            //                 '/transactions/withdraw/',
-            //             {
-            //                 address: address,
-            //                 amount: amount,
-            //                 index: tab.coin,
-            //             },
-            //             {
-            //                 headers: {
-            //                     Authorization: `Bearer ${accessToken}`,
-            //                 },
-            //             }
-            //         );
-            //
-            //         if (response.status === 200) {
-            //             setPositiveToast(true);
-            //             setToyMessage('you have successfully withdrawn');
-            //         } else {
-            //             setPositiveToast(false);
-            //             setToyMessage('Something went wrong');
-            //         }
-            //
-            //         setShowToast(true);
-            //     }
-            // } catch (error) {
-            //     console.log(error);
-            // }
+            return;
         }
+        setOTPvisible(true);
     };
     const [depActive, setDepActive] = useState(false);
 
@@ -215,7 +186,7 @@ const With = () => {
 
     const handleKeyPress = (e) => {
         const charCode = e.charCode;
-        const decimalSeparator = e.key === '.' || e.key === ',';
+        const decimalSeparator = e.key === '.';
         const currentValue = e.target.value;
         const cursorPosition = e.target.selectionStart;
 
@@ -278,6 +249,72 @@ const With = () => {
         setOTPvisible(false);
     };
 
+    async function onClickBtn(activateCode) {
+        console.log(profile);
+        try {
+            const cookies = parseCookies();
+            const accessToken = cookies.accessToken;
+
+            if (accessToken) {
+                const response = await axios.post(
+                    `${process.env.NEXT_PUBLIC_BASE_URL}/user/totp/login/${activateCode}/`,
+                    profile,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    }
+                );
+                console.log(response);
+
+                try {
+                    const cookies = parseCookies();
+                    const accessToken = cookies.accessToken;
+
+                    if (accessToken) {
+                        const response = await axios.post(
+                            process.env.NEXT_PUBLIC_BASE_URL +
+                                '/transactions/withdraw/',
+                            {
+                                address: address,
+                                amount: amount,
+                                index: tab.coin,
+                            },
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`,
+                                },
+                            }
+                        );
+
+                        if (response.status === 200) {
+                            setPositiveToast(true);
+                            setToyMessage('You have successfully withdrawn');
+                        } else {
+                            setPositiveToast(false);
+                            setToyMessage('Something went wrong');
+                        }
+
+                        setShowToast(true);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        } catch (error) {
+            console.log(error);
+            setShowToast(true);
+            setPositiveToast(false);
+            setToyMessage('Something went wrong');
+        }
+    }
+
+    function onOTPerror(errMessage) {
+        setPositiveToast(false);
+        setToyMessage(errMessage);
+        setShowToast(true);
+    }
+
     return (
         <div className="col-xl-12">
             <Toy
@@ -295,6 +332,8 @@ const With = () => {
             <OTPverif
                 secureVisible={OTPvisible}
                 handleCloseClick={handleCloseOTP}
+                onCheck={onClickBtn}
+                error={onOTPerror}
             />
 
             {isPopupVisible && (

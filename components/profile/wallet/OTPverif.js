@@ -1,8 +1,24 @@
-export function OTPverif({ handleCloseClick, secureVisible }) {
+import { useState } from 'react';
+
+export function OTPverif({ handleCloseClick, secureVisible, onCheck, error }) {
     if (!secureVisible) return null;
 
-    function onClickBtn() {
-        console.log(123);
+    const [activateCode, setActivateCode] = useState(null);
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        if (value.length <= 6) {
+            setActivateCode(value);
+        }
+    };
+
+    function handleClick() {
+        if (activateCode.length < 6) {
+            error('Enter the full code');
+            return;
+        }
+
+        onCheck(activateCode);
     }
 
     return (
@@ -38,11 +54,34 @@ export function OTPverif({ handleCloseClick, secureVisible }) {
                             </span>
                         </p>
                         <br />
+                        <input
+                            id="code_2fa"
+                            type="number"
+                            placeholder="******"
+                            style={{
+                                display: 'block',
+                                background: 'black',
+                                border: 'none',
+                                borderRadius: '10px',
+                                padding: '11px',
+                                color: 'white',
+                                paddingBottom: '6px',
+                                width: '150px',
+                                marginTop: '6px',
+                                fontSize: '17px',
+                                outline: 'none',
+                                letterSpacing: '10px',
+                                paddingLeft: '5px',
+                            }}
+                            value={activateCode}
+                            maxLength="6"
+                            onChange={(e) => handleChange(e)}
+                        />
                     </div>
                     <a
                         className="popup__right-button"
                         style={{ color: 'white' }}
-                        onClick={onClickBtn}
+                        onClick={handleClick}
                     >
                         Submit
                     </a>
