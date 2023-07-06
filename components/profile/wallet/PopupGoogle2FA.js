@@ -71,6 +71,7 @@ export function PopupGoogle2FA({ onclick }) {
                 setToyMessage(
                     'You have successfully enabled your two-factor authentication'
                 );
+                onclick();
             }
         } catch (error) {
             console.log(error);
@@ -182,6 +183,7 @@ export function PopupGoogle2FA({ onclick }) {
                                 id="code_2fa"
                                 type="number"
                                 placeholder="******"
+                                maxLength={6}
                                 style={{
                                     display: 'block',
                                     background: '#eaeaff',
