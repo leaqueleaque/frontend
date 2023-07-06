@@ -30,6 +30,8 @@ const With = () => {
 
     const [OTPvisible, setOTPvisible] = useState(false);
 
+    const [tabb, setTabb] = useState(null);
+
     const fetchDataProfile = useCallback(async () => {
         try {
             const cookies = parseCookies();
@@ -157,6 +159,7 @@ const With = () => {
     };
 
     const withdraw = async (tab, event) => {
+        setTabb(tab);
         if (!profile?.is_2fa) {
             setSecureShow(true);
             return;
@@ -261,7 +264,7 @@ const With = () => {
                     {
                         address: address,
                         amount: amount,
-                        index: tab.coin,
+                        index: tabb.coin,
                     },
                     {
                         headers: {
