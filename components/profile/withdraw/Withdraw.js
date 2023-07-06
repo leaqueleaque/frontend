@@ -4,6 +4,9 @@ import { parseCookies } from 'nookies';
 import Toy from '@/components/auth/TOOL';
 import { SecurePopup } from '@/components/profile/wallet/SecurePopup';
 import { PopupGoogle2FA } from '@/components/profile/wallet/PopupGoogle2FA';
+import { OTPverif } from '@/components/profile/wallet/OTPverif';
+import { coinsData } from '@/components/helper';
+import { tabs } from '@/components/helper';
 
 const With = () => {
     const [tab, setTab] = useState('btc');
@@ -24,6 +27,8 @@ const With = () => {
     const [secureShow, setSecureShow] = useState(false);
 
     const [isPopupVisible, setPopupVisible] = useState(false);
+
+    const [OTPvisible, setOTPvisible] = useState(false);
 
     const fetchDataProfile = useCallback(async () => {
         try {
@@ -86,576 +91,6 @@ const With = () => {
         fetchData();
     }, []);
 
-    const coinsData = [
-        {
-            id: 'btc',
-            name: 'btc',
-            onClick: "setTab('btc')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=025',
-            coinTitle: 'Bitcoin',
-            coinWallet: '0 BTC',
-        },
-        {
-            id: 'eth',
-            name: 'eth',
-            onClick: "setTab('eth')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=025',
-            coinTitle: 'Ethereum',
-            coinWallet: '0 ETH',
-        },
-        {
-            id: 'ltc',
-            name: 'ltc',
-            onClick: "setTab('ltc')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/litecoin-ltc-logo.svg?v=025',
-            coinTitle: 'Litecoin',
-            coinWallet: '0 LTC',
-        },
-        {
-            id: 'usdttrc',
-            name: 'usdttrc',
-            onClick: "setTab('usdttrc')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',
-            coinTitle: 'USDT TRC-20',
-            coinWallet: '0.00 USDT',
-        },
-        {
-            id: 'usdt',
-            name: 'usdt',
-            onClick: "setTab('usdt')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',
-            coinTitle: 'USDT TRC-20',
-            coinWallet: '0.00 USDT',
-        },
-        {
-            id: 'usdtbep',
-            name: 'usdtbep',
-            onClick: "setTab('usdtbep')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/tether-usdt-logo.svg?v=025',
-            coinTitle: 'USDT BEP-20',
-            coinWallet: '0.00 USDT',
-        },
-        {
-            id: 'trx',
-            name: 'trx',
-            onClick: "setTab('trx')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/tron-trx-logo.svg?v=025',
-            coinTitle: 'Tron',
-            coinWallet: '0.00 TRX',
-        },
-        {
-            id: 'usdc',
-            name: 'usdc',
-            onClick: "setTab('usdc')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=025',
-            coinTitle: 'USD Coin ERC-20',
-            coinWallet: '0.00 USDC',
-        },
-        {
-            id: 'bnb',
-            name: 'bnb',
-            onClick: "setTab('bnb')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=025',
-            coinTitle: 'BNB BEP-20',
-            coinWallet: '0.00 BNB',
-        },
-        {
-            id: 'bch',
-            name: 'bch',
-            onClick: "setTab('bch')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/bitcoin-cash-bch-logo.svg?v=025',
-            coinTitle: 'Bitcoin Cash',
-            coinWallet: '0.00 BCH',
-        },
-        {
-            id: 'doge',
-            name: 'doge',
-            onClick: "setTab('doge')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/dogecoin-doge-logo.svg?v=025',
-            coinTitle: 'Dogecoin',
-            coinWallet: '0.00 DOGE',
-        },
-        {
-            id: 'xmr',
-            name: 'xmr',
-            onClick: "setTab('xmr')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/monero-xmr-logo.svg?v=025',
-            coinTitle: 'Monero',
-            coinWallet: '0.00 XMR',
-        },
-        {
-            id: 'xlm',
-            name: 'xlm',
-            onClick: "setTab('xlm')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/stellar-xlm-logo.svg?v=025',
-            coinTitle: 'Stellar',
-            coinWallet: '0.00 XLM',
-        },
-        {
-            id: 'xtz',
-            name: 'xtz',
-            onClick: "setTab('xtz')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/tezos-xtz-logo.svg?v=025',
-            coinTitle: 'Tezos',
-            coinWallet: '0.00 XTZ',
-        },
-        {
-            id: 'eos',
-            name: 'eos',
-            onClick: "setTab('eos')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/eos-eos-logo.svg?v=025',
-            coinTitle: 'EOS',
-            coinWallet: '0.00 EOS',
-        },
-        {
-            id: 'shib',
-            name: 'shib',
-            onClick: "setTab('shib')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/shiba-inu-shib-logo.svg?v=025',
-            coinTitle: 'SHIBA INU BEP-20',
-            coinWallet: '0.00 SHIB',
-        },
-        {
-            id: 'link',
-            name: 'link',
-            onClick: "setTab('link')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/chainlink-link-logo.svg?v=025',
-            coinTitle: 'Chainlink ERC-20',
-            coinWallet: '0.00 LINK',
-        },
-        {
-            id: 'btg',
-            name: 'btg',
-            onClick: "setTab('btg')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/bitcoin-gold-btg-logo.svg?v=025',
-            coinTitle: 'Bitcoin Gold',
-            coinWallet: '0.00 BTG',
-        },
-        {
-            id: 'etc',
-            name: 'etc',
-            onClick: "setTab('etc')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/ethereum-classic-etc-logo.svg?v=025',
-            coinTitle: 'Ethereum Classic',
-            coinWallet: '0.00 ETC',
-        },
-        {
-            id: 'xrp',
-            name: 'xrp',
-            onClick: "setTab('xrp')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/xrp-xrp-logo.svg?v=025',
-            coinTitle: 'Ripple',
-            coinWallet: '0.00 XRP',
-        },
-        {
-            id: 'ada',
-            name: 'ada',
-            onClick: "setTab('ada')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/cardano-ada-logo.svg?v=025',
-            coinTitle: 'Cardano',
-            coinWallet: '0.00 ADA',
-        },
-        {
-            id: 'dash',
-            name: 'dash',
-            onClick: "setTab('dash')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/dash-dash-logo.svg?v=025',
-            coinTitle: 'Dash',
-            coinWallet: '0.00 DASH',
-        },
-        {
-            id: 'zec',
-            name: 'zec',
-            onClick: "setTab('zec')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/zcash-zec-logo.svg?v=025',
-            coinTitle: 'Zcash',
-            coinWallet: '0.00 ZEC',
-        },
-        {
-            id: 'sol',
-            name: 'sol',
-            onClick: "setTab('sol')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/solana-sol-logo.svg?v=025',
-            coinTitle: 'SOL',
-            coinWallet: '0.00 SOL',
-        },
-        {
-            id: 'busd',
-            name: 'busd',
-            onClick: "setTab('busd')",
-            className: 'rushButton deposit__coin-item',
-            imgUrl: 'https://cryptologos.cc/logos/binance-usd-busd-logo.svg?v=025',
-            coinTitle: 'BUSD',
-            coinWallet: '0.00 BUSD',
-        },
-    ];
-
-    const tabs = [
-        {
-            id: 'tab_btc',
-            className: 'deposit__content-item deposit__content-item-active',
-            coin: 'BTC',
-            addressTitle: 'Destination BTC address',
-            addressPlaceholder: 'Please enter recipient’s BTC address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in BTC',
-            networkTitle: 'Bitcoin Network Fee',
-            networkDescription:
-                'Transactions on the Bitcoin network are prioritized by fees',
-            networkFee: '0.000037 BTC',
-        },
-        {
-            id: 'tab_eth',
-            className: 'deposit__content-item',
-            coin: 'ETH',
-            addressTitle: 'Destination ETH address',
-            addressPlaceholder: 'Please enter recipient’s ETH address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in ETH',
-            networkTitle: 'Ethereum Network Fee',
-            networkDescription:
-                'Transactions on the Ethereum network are prioritized by fees',
-            networkFee: '0.000536 ETH',
-        },
-        {
-            id: 'tab_ltc',
-            className: 'deposit__content-item',
-            coin: 'LTC',
-            addressTitle: 'Destination LTC address',
-            addressPlaceholder: 'Please enter recipient’s LTC address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in LTC',
-            networkTitle: 'Litecoin Network Fee',
-            networkDescription:
-                'Transactions on the Litecoin network are prioritized by fees',
-            networkFee: '0.010801 LTC',
-        },
-        {
-            id: 'tab_usdttrc',
-            className: 'deposit__content-item',
-            coin: 'USDT TRC',
-            addressTitle: 'Destination USDT TRC address',
-            addressPlaceholder: 'Please enter recipient’s USDT TRC address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in USDT TRC',
-            networkTitle: 'USDT TRC-20 Network Fee',
-            networkDescription:
-                'Transactions on the USDT TRC-20 network are prioritized by fees',
-            networkFee: '1.00 USDT',
-        },
-        {
-            id: 'tab_usdt',
-            className: 'deposit__content-item',
-            coin: 'USDT',
-            addressTitle: 'Destination USDT address',
-            addressPlaceholder: "Please enter recipient's USDT address",
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in USDT',
-            networkTitle: 'USDT TRC-20 Network Fee',
-            networkDescription:
-                'Transactions on the USDT TRC-20 network are prioritized by fees',
-            networkFee: '1.00 USDT',
-        },
-        {
-            id: 'tab_usdtbep',
-            className: 'deposit__content-item',
-            coin: 'USDT BEP',
-            addressTitle: 'Destination USDT BEP address',
-            addressPlaceholder: "Please enter recipient's USDT BEP address",
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in USDT BEP',
-            networkTitle: 'USDT BEP-20 Network Fee',
-            networkDescription:
-                'Transactions on the USDT BEP-20 network are prioritized by fees',
-            networkFee: '1.00 USDT',
-        },
-        {
-            id: 'tab_trx',
-            className: 'deposit__content-item',
-            coin: 'TRX',
-            addressTitle: 'Destination TRX address',
-            addressPlaceholder: "Please enter recipient's TRX address",
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in TRX',
-            networkTitle: 'Tron Network Fee',
-            networkDescription:
-                'Transactions on the Tron network are prioritized by fees',
-            networkFee: '12.24 TRX',
-        },
-        {
-            id: 'tab_usdc',
-            className: 'deposit__content-item',
-            coin: 'USDC',
-            addressTitle: 'Destination USDC address',
-            addressPlaceholder: "Please enter recipient's USDC address",
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in USDC',
-            networkTitle: 'USD Coin ERC-20 Network Fee',
-            networkDescription:
-                'Transactions on the USD Coin ERC-20 network are prioritized by fees',
-            networkFee: '1.00 USDC',
-        },
-        {
-            id: 'tab_bnb',
-            className: 'deposit__content-item',
-            coin: 'BNB',
-            addressTitle: 'Destination BNB 20 address',
-            addressPlaceholder: "Please enter recipient's BNB 20 address",
-            memoTitle: 'Destination BNB 20 memo',
-            memoPlaceholder: 'Please enter memo number',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in BNB 20',
-            networkTitle: 'BNB BEP-20 Network Fee',
-            networkDescription:
-                'Transactions on the BNB BEP-20 network are prioritized by fees',
-            networkFee: '0.003327 BNB',
-        },
-        {
-            id: 'tab_bch',
-            className: 'deposit__content-item',
-            coin: 'BCH',
-            addressTitle: 'Destination BCH address',
-            addressPlaceholder: "Please enter recipient's BCH address",
-            memoTitle: 'Destination BCH memo',
-            memoPlaceholder: 'Please enter memo number',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in BCH',
-            networkTitle: 'Bitcoin Cash Network Fee',
-            networkDescription:
-                'Transactions on the Bitcoin Cash network are prioritized by fees',
-            networkFee: '0.008818 BCH',
-        },
-        {
-            id: 'tab_doge',
-            className: 'deposit__content-item',
-            coin: 'DOGE',
-            addressTitle: 'Destination DOGE address',
-            addressPlaceholder: "Please enter recipient's DOGE address",
-            memoTitle: 'Destination DOGE memo',
-            memoPlaceholder: 'Please enter memo number',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in DOGE',
-            networkTitle: 'Dogecoin Network Fee',
-            networkDescription:
-                'Transactions on the Dogecoin network are prioritized by fees',
-            networkFee: '13.97 DOGE',
-        },
-        {
-            id: 'tab_xmr',
-            className: 'deposit__content-item',
-            coin: 'XMR',
-            addressTitle: 'Destination XMR address',
-            addressPlaceholder: "Please enter recipient's XMR address",
-            memoTitle: 'Destination XMR memo',
-            memoPlaceholder: 'Please enter memo number',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in XMR',
-            networkTitle: 'Monero Network Fee',
-            networkDescription:
-                'Transactions on the Monero network are prioritized by fees',
-            networkFee: '0.006868 XMR',
-        },
-        {
-            id: 'tab_xlm',
-            className: 'deposit__content-item ',
-            coin: 'XLM',
-            addressTitle: 'Destination XLM address',
-            addressDescription: 'Please double check this address',
-            addressPlaceholder: 'Please enter recipient’s XLM address',
-            memoTitle: 'Destination XLM memo',
-            memoDescription: 'Please double check this memo',
-            memoPlaceholder: 'Please enter memo number',
-            amountTitle: 'Available:',
-            amountDescription: 'Maximum amount: 54308.80 XLM',
-            amountPlaceholder: 'Please enter an amount in XLM',
-            networkTitle: 'Stellar Network Fee',
-            networkDescription:
-                'Transactions on the Stellar network are prioritized by fees',
-            networkFee: '10.98 XLM',
-        },
-        {
-            id: 'tab_xtz',
-            className: 'deposit__content-item ',
-            coin: 'XTZ',
-            addressTitle: 'Destination XTZ address',
-            addressDescription: 'Please double check this address',
-            addressPlaceholder: 'Please enter recipient’s XTZ address',
-            amountTitle: 'Available:',
-            amountDescription: 'Maximum amount: 4337.85 XTZ',
-            amountPlaceholder: 'Please enter an amount in XTZ',
-            networkTitle: 'Tezos Network Fee',
-            networkDescription:
-                'Transactions on the Tezos network are prioritized by fees',
-            networkFee: '1.11 XTZ',
-        },
-        {
-            id: 'tab_eos',
-            className: 'deposit__content-item',
-            coin: 'EOS',
-            addressTitle: 'Destination EOS address',
-            addressPlaceholder: 'Please enter recipient’s EOS address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in EOS',
-            networkTitle: 'EOS Network Fee',
-            networkDescription:
-                'Transactions on the EOS network are prioritized by fees',
-            networkFee: '0.010801 EOS',
-        },
-        {
-            id: 'tab_shib',
-            className: 'deposit__content-item',
-            coin: 'SHIB',
-            addressTitle: 'Destination SHIB address',
-            addressPlaceholder: 'Please enter recipient’s SHIB address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in SHIB',
-            networkTitle: 'BEP-20 Network Fee',
-            networkDescription:
-                'Transactions on the BEP-20 network are prioritized by fees',
-            networkFee: '0.0041 BNB',
-        },
-        {
-            id: 'tab_link',
-            className: 'deposit__content-item',
-            coin: 'LINK',
-            addressTitle: 'Destination LINK address',
-            addressPlaceholder: 'Please enter recipient’s LINK address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in LINK',
-            networkTitle: 'LINK Network Fee',
-            networkDescription:
-                'Transactions on the LINK network are prioritized by fees',
-            networkFee: '0.010801 LINK',
-        },
-        {
-            id: 'tab_btg',
-            className: 'deposit__content-item',
-            coin: 'BTG',
-            addressTitle: 'Destination BTG address',
-            addressPlaceholder: 'Please enter recipient’s BTG address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in BTG',
-            networkTitle: 'BTG Network Fee',
-            networkDescription:
-                'Transactions on the BTG network are prioritized by fees',
-            networkFee: '0.010801 BTG',
-        },
-        {
-            id: 'tab_etc',
-            className: 'deposit__content-item',
-            coin: 'ETC',
-            addressTitle: 'Destination ETC address',
-            addressPlaceholder: 'Please enter recipient’s ETC address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in ETC',
-            networkTitle: 'ETC Network Fee',
-            networkDescription:
-                'Transactions on the ETC network are prioritized by fees',
-            networkFee: '0.010801 ETC',
-        },
-        {
-            id: 'tab_xrp',
-            className: 'deposit__content-item',
-            coin: 'XRP',
-            addressTitle: 'Destination XRP address',
-            addressPlaceholder: 'Please enter recipient’s XRP address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in XRP',
-            networkTitle: 'XRP Network Fee',
-            networkDescription:
-                'Transactions on the XRP network are prioritized by fees',
-            networkFee: '0.010801 XRP',
-        },
-        {
-            id: 'tab_ada',
-            className: 'deposit__content-item',
-            coin: 'ADA',
-            addressTitle: 'Destination ADA address',
-            addressPlaceholder: 'Please enter recipient’s ADA address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in ADA',
-            networkTitle: 'ADA Network Fee',
-            networkDescription:
-                'Transactions on the ADA network are prioritized by fees',
-            networkFee: '0.010801 ADA',
-        },
-        {
-            id: 'tab_dash',
-            className: 'deposit__content-item',
-            coin: 'DASH',
-            addressTitle: 'Destination DASH address',
-            addressPlaceholder: 'Please enter recipient’s DASH address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in DASH',
-            networkTitle: 'DASH Network Fee',
-            networkDescription:
-                'Transactions on the DASH network are prioritized by fees',
-            networkFee: '0.010801 DASH',
-        },
-        {
-            id: 'tab_zec',
-            className: 'deposit__content-item',
-            coin: 'ZEC',
-            addressTitle: 'Destination ZEC address',
-            addressPlaceholder: 'Please enter recipient’s ZEC address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in ZEC',
-            networkTitle: 'ZEC Network Fee',
-            networkDescription:
-                'Transactions on the ZEC network are prioritized by fees',
-            networkFee: '0.010801 ZEC',
-        },
-        {
-            id: 'tab_sol',
-            className: 'deposit__content-item',
-            coin: 'SOL',
-            addressTitle: 'Destination SOL address',
-            addressPlaceholder: 'Please enter recipient’s SOL address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in SOL',
-            networkTitle: 'SOL Network Fee',
-            networkDescription:
-                'Transactions on the SOL network are prioritized by fees',
-            networkFee: '0.010801 SOL',
-        },
-        {
-            id: 'tab_busd',
-            className: 'deposit__content-item',
-            coin: 'BUSD',
-            addressTitle: 'Destination BUSD address',
-            addressPlaceholder: 'Please enter recipient’s BUSD address',
-            amountTitle: 'Available:',
-            amountPlaceholder: 'Please enter an amount in BUSD',
-            networkTitle: 'BUSD Network Fee',
-            networkDescription:
-                'Transactions on the BUSD network are prioritized by fees',
-            networkFee: '0.010801 BUSD',
-        },
-    ];
     const [activeCoin, setActiveCoin] = useState('btc');
 
     const handleCoinClick = (coin) => {
@@ -735,39 +170,41 @@ const With = () => {
             setToyMessage("You don't have enough balance to withdraw!");
             setShowToast(true);
         } else {
-            try {
-                const cookies = parseCookies();
-                const accessToken = cookies.accessToken;
+            setOTPvisible(true);
 
-                if (accessToken) {
-                    const response = await axios.post(
-                        process.env.NEXT_PUBLIC_BASE_URL +
-                            '/transactions/withdraw/',
-                        {
-                            address: address,
-                            amount: amount,
-                            index: tab.coin,
-                        },
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`,
-                            },
-                        }
-                    );
-
-                    if (response.status === 200) {
-                        setPositiveToast(true);
-                        setToyMessage('you have successfully withdrawn');
-                    } else {
-                        setPositiveToast(false);
-                        setToyMessage('Something went wrong');
-                    }
-
-                    setShowToast(true);
-                }
-            } catch (error) {
-                console.log(error);
-            }
+            // try {
+            //     const cookies = parseCookies();
+            //     const accessToken = cookies.accessToken;
+            //
+            //     if (accessToken) {
+            //         const response = await axios.post(
+            //             process.env.NEXT_PUBLIC_BASE_URL +
+            //                 '/transactions/withdraw/',
+            //             {
+            //                 address: address,
+            //                 amount: amount,
+            //                 index: tab.coin,
+            //             },
+            //             {
+            //                 headers: {
+            //                     Authorization: `Bearer ${accessToken}`,
+            //                 },
+            //             }
+            //         );
+            //
+            //         if (response.status === 200) {
+            //             setPositiveToast(true);
+            //             setToyMessage('you have successfully withdrawn');
+            //         } else {
+            //             setPositiveToast(false);
+            //             setToyMessage('Something went wrong');
+            //         }
+            //
+            //         setShowToast(true);
+            //     }
+            // } catch (error) {
+            //     console.log(error);
+            // }
         }
     };
     const [depActive, setDepActive] = useState(false);
@@ -837,6 +274,10 @@ const With = () => {
         setPopupVisible(true);
     };
 
+    const handleCloseOTP = () => {
+        setOTPvisible(false);
+    };
+
     return (
         <div className="col-xl-12">
             <Toy
@@ -849,6 +290,11 @@ const With = () => {
                 secureVisible={secureShow}
                 handleCloseClick={handleClose}
                 onBtn={handleOpenClickPopup}
+            />
+
+            <OTPverif
+                secureVisible={OTPvisible}
+                handleCloseClick={handleCloseOTP}
             />
 
             {isPopupVisible && (

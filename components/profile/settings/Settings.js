@@ -11,6 +11,7 @@ const Seting = () => {
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [fullname, setFullname] = useState('');
+    const [email, setEmail] = useState('');
     const [date_of_birth, setDateOfBirth] = useState('');
     const [present_address, setPresentAddress] = useState('');
     const [permanent_address, setPermanentAddress] = useState('');
@@ -39,15 +40,18 @@ const Seting = () => {
                 );
                 const { user } = response.data;
 
-                setCity(user.city);
-                setCountry(user.country);
-                setFullname(user.full_name);
-                setPhoneNumber(user.mobile);
-                setPermanentAddress(user.permanent_address);
-                setPresentAddress(user.present_address);
-                setPostalCode(user.postal_code);
-                setUserName(user.username);
-                setDateOfBirth(user.birthday);
+                if (!profile) {
+                    setCity(user.city);
+                    setCountry(user.country);
+                    setFullname(user.full_name);
+                    setPhoneNumber(user.mobile);
+                    setPermanentAddress(user.permanent_address);
+                    setPresentAddress(user.present_address);
+                    setPostalCode(user.postal_code);
+                    setUserName(user.username);
+                    setDateOfBirth(user.birthday);
+                }
+
                 setProfile(user);
             }
         } catch (error) {
@@ -55,53 +59,61 @@ const Seting = () => {
         }
     }, []);
 
-    const handleSubmit = async (e, type = 'PERSONAL_INFO') => {
+    const handleSubmit = async (e, type = '1') => {
         e.preventDefault();
-
         try {
             const cookies = parseCookies();
             const accessToken = cookies.accessToken;
-            const formData = new FormData();
 
-            if (type === 'AVATAR_AND_USERNAME') {
-                formData.append('username', userName);
-                formData.append('avatar', photo);
-            }
-            if (type === 'PHONE_AND_PASSWORD') {
-                formData.append('mobile', phoneNumber);
-                formData.append('old_password', oldPassword);
-                formData.append('new_password', newPassword);
-            }
-            if (type === 'PERSONAL_INFO') {
+            if (accessToken) {
+                const formData = new FormData();
                 formData.append('full_name', fullname);
+                formData.append('mobile', phoneNumber);
                 formData.append('present_address', present_address);
                 formData.append('permanent_address', permanent_address);
                 formData.append('country', country);
                 formData.append('city', city);
                 formData.append('postal_code', postalCode);
+                formData.append('old_password', oldPassword);
+                formData.append('new_password', newPassword);
+                formData.append('username', userName);
                 formData.append('birthday', date_of_birth);
-            }
+                formData.append('avatar', photo);
 
-            const response = await axios.post(
-                process.env.NEXT_PUBLIC_BASE_URL + '/user/settings/',
-                formData,
-                {
-                    headers: {
-                        Authorization: `Bearer ${accessToken}`,
-                    },
+                const response = await axios.post(
+                    process.env.NEXT_PUBLIC_BASE_URL + '/user/settings/',
+                    // {
+                    // 	full_name: fullname,
+                    // 	mobile: phoneNumber,
+                    // 	present_address,
+                    // 	permanent_address,
+                    // 	country,
+                    // 	city,
+                    // 	postal_code: postalCode,
+                    // 	old_password: oldPassword,
+                    // 	new_password: newPassword,
+                    // 	username: userName,
+                    // 	birthday: date_of_birth,
+                    // },
+                    formData,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    }
+                );
+
+                if (response.status === 200) {
+                    setPositiveToast(true);
+                    setToyMessage('You have successfully saved your profile');
+                    fetchData();
+                } else {
+                    setPositiveToast(false);
+                    setToyMessage('Something went wrong');
                 }
-            );
 
-            if (response.status === 200) {
-                setPositiveToast(true);
-                setToyMessage('You have successfully saved your profile');
-                fetchData();
-            } else {
-                setPositiveToast(false);
-                setToyMessage('Something went wrong111');
+                setShowToast(true);
             }
-
-            setShowToast(true);
         } catch (error) {
             console.log(error);
             setPositiveToast(false);
@@ -223,7 +235,9 @@ const Seting = () => {
                                     <div className="card">
                                         <div className="card-body">
                                             <form
-                                                onSubmit={handleSubmit}
+                                                onSubmit={(e) =>
+                                                    handleSubmit(e, '1')
+                                                }
                                                 enctype="multipart/form-data"
                                             >
                                                 <input
@@ -315,12 +329,6 @@ const Seting = () => {
                                                         <button
                                                             id="save_img_login"
                                                             className="btn btn-success waves-effect px-4"
-                                                            onClick={(e) =>
-                                                                handleSubmit(
-                                                                    e,
-                                                                    'AVATAR_AND_USERNAME'
-                                                                )
-                                                            }
                                                         >
                                                             Save
                                                         </button>
@@ -333,7 +341,11 @@ const Seting = () => {
                                 <div className="col-xl-6 col-md-6">
                                     <div className="card">
                                         <div className="card-body">
-                                            <form onSubmit={handleSubmit}>
+                                            <form
+                                                onSubmit={(e) =>
+                                                    handleSubmit(e, '2')
+                                                }
+                                            >
                                                 <div className="form-row">
                                                     <div className="form-group col-xl-12">
                                                         <label className="mr-sm-2">
@@ -396,12 +408,6 @@ const Seting = () => {
                                                         <button
                                                             id="user_profile_save"
                                                             className="btn btn-success waves-effect px-4"
-                                                            onClick={(e) =>
-                                                                handleSubmit(
-                                                                    e,
-                                                                    'PHONE_AND_PASSWORD'
-                                                                )
-                                                            }
                                                         >
                                                             Save
                                                         </button>
@@ -425,7 +431,9 @@ const Seting = () => {
                                         <div className="card-body">
                                             <form
                                                 className="personal_validate"
-                                                onSubmit={handleSubmit}
+                                                onSubmit={(e) =>
+                                                    handleSubmit(e, '3')
+                                                }
                                             >
                                                 <div className="form-row">
                                                     <div className="form-group col-xl-6 col-md-6">
@@ -1378,12 +1386,6 @@ const Seting = () => {
                                                         <button
                                                             id="update_person_info"
                                                             className="btn btn-success px-4"
-                                                            onClick={(e) =>
-                                                                handleSubmit(
-                                                                    e,
-                                                                    'PERSONAL_INFO'
-                                                                )
-                                                            }
                                                         >
                                                             Save
                                                         </button>
