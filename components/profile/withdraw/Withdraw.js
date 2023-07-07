@@ -163,10 +163,10 @@ const With = () => {
 
     const withdraw = async (tab) => {
         setTabb(tab);
-        if (!profile?.is_2fa) {
-            setSecureShow(true);
-            return;
-        }
+        // if (!profile?.is_2fa) {
+        //     setSecureShow(true);
+        //     return;
+        // }
         if (parseFloat(amount) <= 0) {
             setPositiveToast(false);
             setToyMessage('Enter the amount!');
@@ -182,7 +182,8 @@ const With = () => {
             setShowToast(true);
             return;
         }
-        setOTPvisible(true);
+        // setOTPvisible(true);
+        withdrawNow(tab);
     };
     const [depActive, setDepActive] = useState(false);
 
@@ -255,7 +256,7 @@ const With = () => {
         setOTPvisible(false);
     };
 
-    async function withdrawNow() {
+    async function withdrawNow(tab) {
         try {
             const cookies = parseCookies();
             const accessToken = cookies.accessToken;
@@ -267,7 +268,7 @@ const With = () => {
                     {
                         address: address,
                         amount: amount,
-                        index: tabb.coin,
+                        index: tab.coin,
                     },
                     {
                         headers: {
@@ -280,7 +281,7 @@ const With = () => {
                     setPositiveToast(true);
                     setToyMessage('You have successfully withdrawn');
                     setOTPvisible(false);
-                    router.push('/profile/settings');
+                    router.push('/profile/transactions');
                 } else {
                     setPositiveToast(false);
                     setToyMessage('Something went wrong');
