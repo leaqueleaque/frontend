@@ -24,8 +24,6 @@ const Ver = () => {
 
     const router = useRouter();
 
-    // const [countryName, setCountryName] = useState('United Kingdom')
-
     const [documentFiles, setDocumentFiles] = useState([]);
     const [documentFileName, setDocumentFileName] = useState('No file chosen');
 
@@ -78,30 +76,30 @@ const Ver = () => {
         setSelfieFileName(e.target.files[0].name);
     };
 
-    const areAllFieldsFilled = () => {
-        return (
-            firstName &&
-            lastName &&
-            address &&
-            country &&
-            dateOfBirth &&
-            phone &&
-            typeDocument &&
-            idNumber &&
-            documentFiles.length > 0 &&
-            selfieFiles.length > 0
-        );
-    };
+    // const areAllFieldsFilled = () => {
+    //     return (
+    //         firstName &&
+    //         lastName &&
+    //         address &&
+    //         country &&
+    //         dateOfBirth &&
+    //         phone &&
+    //         typeDocument &&
+    //         idNumber &&
+    //         documentFiles.length > 0 &&
+    //         selfieFiles.length > 0
+    //     );
+    // };
 
     const submitForm = async (e) => {
         e.preventDefault();
 
-        if (!areAllFieldsFilled()) {
-            setPositiveToast(false);
-            setToyMessage("You haven't filled all inputs");
-            setShowToast(true);
-            return;
-        }
+        // if (!areAllFieldsFilled()) {
+        //     setPositiveToast(false);
+        //     setToyMessage("You haven't filled all inputs");
+        //     setShowToast(true);
+        //     return;
+        // }
 
         let form = new FormData();
         form.append('first_name', firstName);
@@ -127,7 +125,6 @@ const Ver = () => {
                     },
                 }
             );
-            console.log(response);
 
             if (response.status === 200) {
                 router.push('/profile/settings');
@@ -164,7 +161,10 @@ const Ver = () => {
 
             <div className="verification__container">
                 <div className="verification__title">KYC verification</div>
-                <div className="verification__box">
+                <form
+                    className="verification__box"
+                    onSubmit={(e) => submitForm(e)}
+                >
                     <div className="verification__info verification__info-not">
                         <div className="verification__info-img">
                             <img src="/img/not-verified.svg" alt="" />
@@ -1920,12 +1920,11 @@ const Ver = () => {
                             className="verification__submit"
                             type="submit"
                             id="submit_btn"
-                            onClick={(e) => submitForm(e)}
                         >
                             Submit for review
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     );

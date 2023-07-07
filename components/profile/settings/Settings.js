@@ -55,7 +55,6 @@ const Seting = () => {
                     setIsFirst(true);
                 }
                 setProfile(user);
-                console.log(user);
             }
         } catch (error) {
             console.log(error);
