@@ -1757,7 +1757,7 @@ const Ver = () => {
 
                                 <input
                                     id="kyc_phone"
-                                    type="number"
+                                    type="tel"
                                     value={phone}
                                     onChange={handlePhoneChange}
                                     placeholder="Enter your phone number"
@@ -1779,7 +1779,7 @@ const Ver = () => {
                                 id="kyc_date_of_birth"
                                 type="date"
                                 onChange={handleDateOfBirth}
-                                max="2023-01-01"
+                                max="2222-01-01"
                                 value={dateOfBirth}
                             />
                         </div>
