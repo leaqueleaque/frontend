@@ -284,9 +284,7 @@
 	cursor: pointer;
 }
 
-.verification__submit:hover {
-	background: linear-gradient(270deg, #8c4adf 13.55%, #5d78ff 89.46%);
-}
+
 
 .verification input,
 .verification__input-country .verification__input-input,
@@ -533,5 +531,7 @@
 
 	.verification__submit {
 		margin-left: 0;
+		padding: 21px 30px 21px 30px;
+
 	}
 }

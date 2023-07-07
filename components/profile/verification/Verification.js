@@ -1918,8 +1918,6 @@ const Ver = () => {
                     <div className="verification__submit-container">
                         <button
                             className="verification__submit"
-                            type="submit"
-                            id="submit_btn"
                             onClick={(e) => submitForm(e)}
                         >
                             Submit for review
