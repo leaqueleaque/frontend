@@ -24,6 +24,8 @@ const Seting = () => {
     const [toyMessage, setToyMessage] = useState('');
     const [positiveToast, setPositiveToast] = useState(false);
 
+    const [isFirst, setIsFirst] = useState(false);
+
     const fetchData = useCallback(async () => {
         try {
             const cookies = parseCookies();
@@ -40,7 +42,8 @@ const Seting = () => {
                 );
                 const { user } = response.data;
 
-                if (!profile) {
+                if (!isFirst) {
+                    console.log(isFirst);
                     setCity(user.city);
                     setCountry(user.country);
                     setFullname(user.full_name);
@@ -50,6 +53,7 @@ const Seting = () => {
                     setPostalCode(user.postal_code);
                     setUserName(user.username);
                     setDateOfBirth(user.birthday);
+                    setIsFirst(true);
                 }
 
                 setProfile(user);
