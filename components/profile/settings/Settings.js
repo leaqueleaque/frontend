@@ -26,7 +26,7 @@ const Seting = () => {
 
     const [isFirst, setIsFirst] = useState(false);
 
-    const fetchData = useCallback(async () => {
+    const fetchData = async () => {
         try {
             const cookies = parseCookies();
             const accessToken = cookies.accessToken;
@@ -43,7 +43,6 @@ const Seting = () => {
                 const { user } = response.data;
 
                 if (!isFirst) {
-                    console.log(isFirst);
                     setCity(user.city);
                     setCountry(user.country);
                     setFullname(user.full_name);
@@ -55,13 +54,17 @@ const Seting = () => {
                     setDateOfBirth(user.birthday);
                     setIsFirst(true);
                 }
-
                 setProfile(user);
+                console.log(user);
             }
         } catch (error) {
             console.log(error);
         }
-    }, []);
+    };
+
+    if (!isFirst) {
+        fetchData();
+    }
 
     const handleSubmit = async (e, type = '1') => {
         e.preventDefault();
@@ -125,16 +128,6 @@ const Seting = () => {
             setShowToast(true);
         }
     };
-
-    useEffect(() => {
-        fetchData();
-
-        const intervalId = setInterval(() => {
-            fetchData();
-        }, 5000);
-
-        return () => clearInterval(intervalId);
-    }, []);
 
     useEffect(() => {
         let timeout;
