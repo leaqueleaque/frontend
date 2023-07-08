@@ -2,11 +2,13 @@ import { parseCookies } from 'nookies';
 import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import Toy from '@/components/auth/TOOL';
+import { useRouter } from 'next/router';
 
 const Dep = () => {
     const [activeCoin, setActiveCoin] = useState('btc');
     const [amount, setAmount] = useState(0);
     const [coins, setCoins] = useState({});
+    const router = useRouter();
 
     const [depActive, setDepActive] = useState(false);
 
@@ -656,13 +658,11 @@ const Dep = () => {
         let timePassed = 0;
         setTimerInterval(
             setInterval(() => {
-                // Количество времени, которое прошло, увеличивается на  1
                 timePassed = timePassed += 1;
                 let timeLeft = TIME_LIMIT - timePassed;
                 let minutesLeft = Math.floor(timeLeft / 60);
                 let secondsLeft = timeLeft % 60;
 
-                // Обновляем метку оставшегося времени
                 setTimerText(
                     `${minutesLeft.toString().padStart(2, '0')}:${secondsLeft
                         .toString()
@@ -670,10 +670,12 @@ const Dep = () => {
                 );
                 if (timeLeft <= 0) {
                     resetState();
+                    router.push('/profile/transactions');
                 }
             }, 1000)
         );
     };
+
     useEffect(() => {
         const fetchData = async () => {
             try {
