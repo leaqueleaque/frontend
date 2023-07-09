@@ -52,7 +52,7 @@ const Trans = () => {
                                     <thead>
                                         <tr>
                                             <th>Transaction ID</th>
-                                            <th>Date Time</th>
+                                            <th>Date&nbsp;&nbsp;Time</th>
                                             <th>Type</th>
                                             <th>Amount</th>
                                             <th>Address</th>

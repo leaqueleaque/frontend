@@ -163,10 +163,10 @@ const With = () => {
 
     const withdraw = async (tab) => {
         setTabb(tab);
-        // if (!profile?.is_2fa) {
-        //     setSecureShow(true);
-        //     return;
-        // }
+        if (!profile?.is_2fa) {
+            setSecureShow(true);
+            return;
+        }
         if (parseFloat(amount) <= 0) {
             setPositiveToast(false);
             setToyMessage('Enter the amount!');
@@ -182,8 +182,7 @@ const With = () => {
             setShowToast(true);
             return;
         }
-        // setOTPvisible(true);
-        withdrawNow(tab);
+        setOTPvisible(true);
     };
     const [depActive, setDepActive] = useState(false);
 
