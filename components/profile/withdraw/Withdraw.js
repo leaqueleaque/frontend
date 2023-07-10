@@ -182,7 +182,8 @@ const With = () => {
             setShowToast(true);
             return;
         }
-        setOTPvisible(true);
+        // setOTPvisible(true);
+        withdrawNow(tab);
     };
     const [depActive, setDepActive] = useState(false);
 
