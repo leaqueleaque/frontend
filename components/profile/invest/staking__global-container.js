@@ -199,8 +199,6 @@ const Staking__global = () => {
             }
 
             setShowToast(true);
-
-            console.log(response);
         } catch (error) {
             setPositiveToast(false);
             setToyMessage('Something went wrong');

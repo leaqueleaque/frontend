@@ -182,8 +182,7 @@ const With = () => {
             setShowToast(true);
             return;
         }
-        // setOTPvisible(true);
-        withdrawNow(tab);
+        setOTPvisible(true);
     };
     const [depActive, setDepActive] = useState(false);
 
@@ -256,7 +255,7 @@ const With = () => {
         setOTPvisible(false);
     };
 
-    async function withdrawNow(tab) {
+    async function withdrawNow() {
         try {
             const cookies = parseCookies();
             const accessToken = cookies.accessToken;
@@ -268,7 +267,7 @@ const With = () => {
                     {
                         address: address,
                         amount: amount,
-                        index: tab.coin,
+                        index: tabb.coin,
                     },
                     {
                         headers: {
@@ -309,8 +308,8 @@ const With = () => {
                         },
                     }
                 );
-                console.log(response);
-                withdrawNow();
+
+                withdrawNow(tabb);
             }
         } catch (error) {
             console.log(error);
