@@ -276,8 +276,13 @@ const With = () => {
                         },
                     }
                 );
-                console.log(tabb);
-                if (response.status === 200) {
+                console.log(response);
+
+                if (response.data.Error && response.status === 200) {
+                    setPositiveToast(false);
+                    setToyMessage(response.data.Error);
+                    setOTPvisible(false);
+                } else if (response.status === 200 && !response.data.Error) {
                     setPositiveToast(true);
                     setToyMessage('You have successfully withdrawn');
                     setOTPvisible(false);
