@@ -286,7 +286,10 @@ const With = () => {
                     setPositiveToast(true);
                     setToyMessage('You have successfully withdrawn');
                     setOTPvisible(false);
-                    router.push('/profile/transactions');
+
+                    setTimeout(() => {
+                        router.push('/profile/transactions');
+                    }, 2000);
                 } else {
                     setPositiveToast(false);
                     setToyMessage('Something went wrong');
