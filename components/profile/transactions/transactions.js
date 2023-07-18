@@ -71,7 +71,9 @@ const Trans = () => {
                                                     </td>
                                                     <td>
                                                         {transaction.date} |{' '}
-                                                        {transaction.time}
+                                                        {
+                                                            transaction.time_of_transaction
+                                                        }
                                                     </td>
                                                     <td>
                                                         {

@@ -268,7 +268,7 @@ const With = () => {
                     {
                         address: address,
                         amount: amount,
-                        index: tabb.coin,
+                        index: tab.toUpperCase(),
                     },
                     {
                         headers: {
@@ -276,7 +276,7 @@ const With = () => {
                         },
                     }
                 );
-
+                console.log(tabb);
                 if (response.status === 200) {
                     setPositiveToast(true);
                     setToyMessage('You have successfully withdrawn');
