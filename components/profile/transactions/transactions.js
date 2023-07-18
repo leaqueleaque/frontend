@@ -69,7 +69,10 @@ const Trans = () => {
                                                             transaction.transaction_id
                                                         }
                                                     </td>
-                                                    <td>{transaction.time}</td>
+                                                    <td>
+                                                        {transaction.date} |{' '}
+                                                        {transaction.time}
+                                                    </td>
                                                     <td>
                                                         {
                                                             transaction.transaction_type

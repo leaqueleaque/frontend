@@ -84,6 +84,11 @@ body {
     /* max-width: 321px; */
 }
 
+.popup__right-description span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
 .popup__right-button {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;

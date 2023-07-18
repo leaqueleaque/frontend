@@ -45,17 +45,17 @@
 
 .investments__table-name-coin,
 .investments__table-coin {
-    width: 200px;
+    width: 180px;
 }
 
 .investments__table-name-plan,
 .investments__table-plan {
-    width: 108px;
+    width: 135px;
 }
 
 .investments__table-name-left,
 .investments__table-left {
-    width: 94px;
+    width: 140px;
 }
 
 .investments__table-name-profit,
@@ -75,6 +75,7 @@
 
 .investments__table-value {
     display: flex;
+    align-items: center;
     padding: 21px 45px 23px 44px;
 }
 
@@ -130,18 +131,13 @@
     margin-top: 5px;
 }
 
-.investments__table-cansel {
-    background: #414b64;
+.closeBtn {
+    background: none;
+    padding: 4px;
     border-radius: 5px;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    border: none;
-    cursor: pointer;
-}
-
-.investments__table-cansel:hover {
-background:#4d5976;
+    border: 1.5px solid #3f3f98;
+    outline: none;
+    width: 100px;
 }
 
 

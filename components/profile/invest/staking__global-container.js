@@ -196,6 +196,8 @@ const Staking__global = () => {
                 setPositiveToast(true);
                 setToyMessage('You have successfully invested');
                 fetchData();
+                setAmount('');
+                location.reload();
             }
 
             setShowToast(true);
