@@ -127,9 +127,11 @@ const Ver = () => {
             );
 
             if (response.status === 200) {
-                router.push('/profile/settings');
                 setPositiveToast(true);
                 setToyMessage('You have successfully verified account');
+                setInterval(() => {
+                    router.push('/profile/settings');
+                }, 1500);
             } else {
                 setPositiveToast(false);
                 setToyMessage('Something went wrong');
