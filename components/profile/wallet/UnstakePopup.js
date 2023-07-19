@@ -54,6 +54,7 @@ export function UnstakePopup({ handleCloseClick }) {
                     <a
                         href={'/profile/support'}
                         className="popup__right-button"
+                        style={{ textDecoration: 'none' }}
                     >
                         Write to Support
                     </a>

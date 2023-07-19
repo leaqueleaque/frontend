@@ -100,11 +100,15 @@ body {
     border-radius: 5px;
 }
 
+a:hover {
+    text-decoration: none !important
+}
+
 .popup__right-button:hover {
 
 background: rgb(81,115,213);
 background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100%);
-    
+    text-decoration: none;
 }
 
 
