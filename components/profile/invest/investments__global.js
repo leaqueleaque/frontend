@@ -15,7 +15,8 @@ const End = () => {
 
                 if (accessToken) {
                     const response = await axios.get(
-                        process.env.NEXT_PUBLIC_BASE_URL + '/transactions',
+                        process.env.NEXT_PUBLIC_BASE_URL +
+                            '/transactions/user-staking/',
                         {
                             headers: {
                                 Authorization: `Bearer ${accessToken}`,
@@ -23,15 +24,7 @@ const End = () => {
                         }
                     );
 
-                    console.log(response.data);
-
-                    const stakingTransactions = response.data.filter(
-                        (transaction) =>
-                            transaction.transaction_type === 'Staking'
-                    );
-
-                    console.log(stakingTransactions);
-                    setTransactions(stakingTransactions);
+                    setTransactions(response.data);
                 }
             } catch (error) {
                 console.log(error);
@@ -50,6 +43,21 @@ const End = () => {
     const handleUnstake = () => {
         setPopVisible(true);
     };
+
+    function planViewer(plan) {
+        const percent = parseFloat(plan).toFixed();
+        if (percent == 4) {
+            return '7 Days 4%';
+        } else if (percent == 20) {
+            return '30 Days 20%';
+        } else if (percent == 70) {
+            return '90 Days 70%';
+        } else if (percent == 150) {
+            return '180 Days 150%';
+        } else {
+            return '0%';
+        }
+    }
 
     return (
         <section className="investments__global-container">
@@ -97,19 +105,23 @@ const End = () => {
                                     >
                                         <div className="investments__table-value">
                                             <div className=" investments__table-name-coin">
-                                                {transaction.amount}
+                                                {transaction?.currency.name}{' '}
+                                                {transaction?.currency.index}
                                             </div>
                                             <div className=" investments__table-name-plan">
-                                                Plan
+                                                {planViewer(
+                                                    transaction?.percentage
+                                                )}
                                             </div>
                                             <div className=" investments__table-name-left">
-                                                {transaction.time}
+                                                {transaction?.date_start}
                                             </div>
                                             <div className=" investments__table-name-profit">
-                                                Expiration Date
+                                                {transaction?.date_expiration}
                                             </div>
                                             <div className=" investments__table-name-invested">
-                                                {transaction.amount}
+                                                {transaction?.amount}{' '}
+                                                {transaction?.currency.index}
                                             </div>
                                             <button
                                                 className="closeBtn"
