@@ -26,14 +26,11 @@ const Coins = () => {
         };
         fetchData();
 
-        // Initialize Swiper slider when the component mounts
         const swiper = new Swiper('.coins__slider', {
             slidesPerView: 'auto',
             spaceBetween: 16,
-            // Add any additional Swiper options here
         });
 
-        // Clean up Swiper instance when the component unmounts
         return () => {
             swiper.destroy();
         };
