@@ -1,5 +1,6 @@
 const AFF = () => {
-    const handleCopyClick = () => {
+    const handleCopyClick = (e) => {
+        e.preventDefault();
         const input = document.getElementById('link_text');
         input.select();
         document.execCommand('copy');
@@ -53,8 +54,8 @@ const AFF = () => {
                                                     <button
                                                         id="copy_link"
                                                         className="input-group-text bg-primary text-white"
-                                                        onClick={
-                                                            handleCopyClick
+                                                        onClick={(e) =>
+                                                            handleCopyClick(e)
                                                         }
                                                     >
                                                         Copy

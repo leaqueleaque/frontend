@@ -308,6 +308,7 @@
 
 @media (max-width: 768px) {
     .home__title {
+        margin-top: 60px;
         font-size: 55px;
         line-height: 65px;
     }
@@ -334,15 +335,16 @@
 
 @media (max-width: 500px) {
     .home__title {
-        font-size: 38px;
+        font-size: 34px;
         line-height: 50px;
     }
 }
 
 @media (max-width: 400px) {
     .home__title div {
+        text-align: center;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
     }
 }
 

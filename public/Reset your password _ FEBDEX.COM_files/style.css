@@ -3207,6 +3207,7 @@ padding-top: 30px;
 .form__container {
     display: flex;
     margin: 104px auto;
+    margin-top: 400px;
     max-width: 755px;
     padding: 0 20px;
     color:  white;

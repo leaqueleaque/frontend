@@ -469,7 +469,7 @@ const With = () => {
                                                             )
                                                         }
                                                         id={`${tab.coin.toLowerCase()}_address`}
-                                                        className="withdraw__address-input"
+                                                        className="withdraw__address-input withdrawinput"
                                                         type="text"
                                                         placeholder={
                                                             tab.addressPlaceholder
@@ -498,7 +498,7 @@ const With = () => {
                                                             handleKeyPress
                                                         }
                                                         id={`${tab.coin.toLowerCase()}_amount`}
-                                                        className="withdraw__amount-input"
+                                                        className="withdraw__amount-input withdrawinput"
                                                         type="text"
                                                         placeholder={
                                                             tab.amountPlaceholder

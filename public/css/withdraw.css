@@ -437,6 +437,8 @@ color:#fff;
     .withdraw__address-input, .withdraw__amount-input {
         width: 300px;
     }
+
+
 }
 
 @media (max-width: 1050px) {
@@ -544,6 +546,18 @@ color:#fff;
     }
 
     .withdraw__address-input, .withdraw__amount-input {
-        width: 220px;
+        width: 200px;
+    }
+
+    .withdrawinput {
+        width: 300px !important;
+    }
+}
+
+@media (max-width: 350px) {
+
+
+    .withdrawinput {
+        max-width: 240px !important;
     }
 }

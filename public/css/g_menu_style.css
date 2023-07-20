@@ -401,6 +401,10 @@ color:#638bff;
         height: 30px;
     }
 
+    .header__profile-toggle img {
+        margin-right: 20px;
+    }
+
     .header__toggle-btn svg {
         pointer-events: none;
     }

@@ -876,7 +876,11 @@ const Dep = () => {
                                 <div className="deposit__center-content">
                                     <img
                                         className="deposit__qr-code"
-                                        style={qrCode ? {} : { opacity: 0 }}
+                                        style={
+                                            qrCode
+                                                ? { display: 'block' }
+                                                : { display: 'none' }
+                                        }
                                         id={`view_qr_code_${data.id}`}
                                         src={'https://leaque.com' + qrCode}
                                         alt=""

@@ -582,7 +582,8 @@ background: linear-gradient(90deg, #4242d5 0%, #50a6ab 100%);
 
 @media (max-width: 570px) {
     .staking__box {
-        max-width: fit-content;
+        max-width: 95%;
+        margin: 0 auto;
     }
 
     .staking__select-buttons {
@@ -634,8 +635,11 @@ background: linear-gradient(90deg, #4242d5 0%, #50a6ab 100%);
 
 @media (max-width: 450px) {
     .staking__select-buttons {
-        grid-template-columns: repeat(2, 150px);
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
     }
+
 
     .staking__you {
         margin-top: 30px;
@@ -680,12 +684,13 @@ background: linear-gradient(90deg, #4242d5 0%, #50a6ab 100%);
         height: auto;
     }
 
-    .staking__select-buttons {
-        gap: 16px 10px;
-    }
 }
 
 @media (max-width: 400px) {
+    .staking__box {
+        max-width: 91%;
+        margin: 0 auto;
+    }
     .staking__logo,
     .staking__logo img {
         width: 160px;
@@ -735,7 +740,7 @@ background: linear-gradient(90deg, #4242d5 0%, #50a6ab 100%);
     }
 
     .staking__sub-description {
-        padding: 0 15px 15px 15px;
+        padding: 0 5px 5px 5px;
     }
 
     .profit__main {
