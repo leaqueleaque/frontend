@@ -128,8 +128,8 @@ export function PopupGoogle2FA({ onclick, onCompleted }) {
                             height: '145px',
                             top: 'unset',
                             left: 'unset',
-                            marginTop: '262px',
-                            marginLeft: '21px',
+                            marginTop: '285px',
+                            marginLeft: '18px',
                             position: 'fixed',
                         }}
                     />
@@ -145,7 +145,7 @@ export function PopupGoogle2FA({ onclick, onCompleted }) {
                                 target="_blank"
                                 href="https://support.google.com/accounts/answer/1066447"
                             >
-                                Google Authenticator app
+                                Google Authenticator
                             </a>
                             <img
                                 style={{

@@ -6,28 +6,28 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 const Deposit = () => {
-  useEffect(() => {
-    document?.body?.classList.add("dark-body")
-    document?.body?.classList.add("stop-scrolling")
-  }, [])
-  return (
-    <>
-      <Head>
-        <link rel="icon" href="/img/default.png" />
-        <link rel="stylesheet" href="/css/g_menu_normalize.css" />
-        <link rel="stylesheet" href="/css/g_menu_style.css" />
-        <link rel="stylesheet" href="/css/style.css?v=3" />
-        <link rel="stylesheet" href="/css/custom.css?v=3" />
-        <link rel="stylesheet" href="/css/toastr.css" />
-        <link rel="stylesheet" href="/css/popap-style.css" />
-        <link rel="stylesheet" href="/css/stake.css" />
-        <link rel="stylesheet" href="/css/popup-verifi.css" />
-        <link rel="stylesheet" href="/css/available.css" />
-        <link rel="stylesheet" href="/css/new_popup_style.css" />
-        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    useEffect(() => {
+        document?.body?.classList.add('dark-body');
+        document?.body?.classList.add('stop-scrolling');
+    }, []);
+    return (
+        <>
+            <Head>
+                <link rel="icon" href="/img/default.png" />
+                <link rel="stylesheet" href="/css/g_menu_normalize.css" />
+                <link rel="stylesheet" href="/css/g_menu_style.css" />
+                <link rel="stylesheet" href="/css/style.css?v=3" />
+                <link rel="stylesheet" href="/css/custom.css?v=3" />
+                <link rel="stylesheet" href="/css/toastr.css" />
+                <link rel="stylesheet" href="/css/popap-style.css" />
+                <link rel="stylesheet" href="/css/stake.css" />
+                <link rel="stylesheet" href="/css/popup-verifi.css" />
+                <link rel="stylesheet" href="/css/available.css" />
+                <link rel="stylesheet" href="/css/new_popup_style.css" />
+                <link rel="stylesheet" href="/css/bootstrap.min.css" />
 
-        <style>
-          {`.userNavigation__tabBtn_wc {
+                <style>
+                    {`.userNavigation__tabBtn_wc {
     font-family: 'Roboto', 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 14px;
@@ -55,16 +55,19 @@ const Deposit = () => {
 background: rgb(58 151 57);
     background: linear-gradient(90deg, rgb(86 75 181) 0%, rgb(86 48 98) 100%);
 }`}
-        </style>
+                </style>
 
-        <link rel="stylesheet" href="/css/materialdesignicons.min.css" />
-        <link rel="stylesheet" href="/css/menu_layout.css?v=2" />
-        {/* <body id="dark" className="stop-scrolling" /> */}
-        <link rel="stylesheet" href="/css/styleNew.css" />
-        <link rel="stylesheet" href="/css/available.css" />
+                <link
+                    rel="stylesheet"
+                    href="/css/materialdesignicons.min.css"
+                />
+                <link rel="stylesheet" href="/css/menu_layout.css?v=2" />
+                {/* <body id="dark" className="stop-scrolling" /> */}
+                <link rel="stylesheet" href="/css/styleNew.css" />
+                <link rel="stylesheet" href="/css/available.css" />
 
-        <style type="text/css">
-          {`@media (max-width: 1220px) {
+                <style type="text/css">
+                    {`@media (max-width: 1220px) {
     .content-body {
         margin-left: 0px !important;
         margin-right: 0px !important;
@@ -72,33 +75,35 @@ background: rgb(58 151 57);
 }
 
 @media (max-width: 525px) {
-    .isset_memo__add_bottom {
-        bottom: 270px !important;
-    }
+   
 
     .deposit__text-items {
-        margin-top: 40px !important;
+        margin-top: 45px !important;
     }
+    
 }`}
-        </style>
+                </style>
 
-        <link rel="stylesheet" href="/css/materialdesignicons.min.css" />
-        <link rel="stylesheet" href="/css/menu_layout.css?v=2" />
-      </Head>
+                <link
+                    rel="stylesheet"
+                    href="/css/materialdesignicons.min.css"
+                />
+                <link rel="stylesheet" href="/css/menu_layout.css?v=2" />
+            </Head>
 
-      <ProfileLayout>
-        <div className="content-body">
-          <div className="container">
-            <div className="row">
-              <MenuProfile />
-              <Dep />
-            </div>
-          </div>
-        </div>
-        <P2p_error_modal />
-      </ProfileLayout>
-    </>
-  );
+            <ProfileLayout>
+                <div className="content-body">
+                    <div className="container">
+                        <div className="row">
+                            <MenuProfile />
+                            <Dep />
+                        </div>
+                    </div>
+                </div>
+                <P2p_error_modal />
+            </ProfileLayout>
+        </>
+    );
 };
 
 export default Deposit;

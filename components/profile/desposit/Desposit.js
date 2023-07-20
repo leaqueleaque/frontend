@@ -818,7 +818,13 @@ const Dep = () => {
                         </div>
                     </div>
 
-                    <div className="deposit__content-list">
+                    <div
+                        className={
+                            showButton
+                                ? 'deposit__content-list short'
+                                : 'deposit__content-list'
+                        }
+                    >
                         {textData.map((data) => (
                             <div
                                 id={`tab_${data.id}`}
@@ -900,7 +906,11 @@ const Dep = () => {
                                 </div>
 
                                 <div
-                                    className="deposit__address__box"
+                                    className={
+                                        showButton
+                                            ? 'deposit__address__box'
+                                            : 'deposit__address__box activedep'
+                                    }
                                     id={`remove_add_block_${data.id}`}
                                 >
                                     <label style={{ width: '100%' }}>
@@ -932,7 +942,11 @@ const Dep = () => {
                                 </div>
 
                                 <div
-                                    className="deposit__address__box isset_memo__add_bottom"
+                                    className={
+                                        showButton
+                                            ? 'deposit__address__box'
+                                            : 'deposit__address__box activedep'
+                                    }
                                     style={
                                         !showButton ? {} : { display: 'none' }
                                     }

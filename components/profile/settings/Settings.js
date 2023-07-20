@@ -271,8 +271,10 @@ const Seting = () => {
                                                                           profile?.avatar
                                                                         : '/img/avatar.svg'
                                                                 }`}
-                                                                width="50"
-                                                                height="50"
+                                                                style={{
+                                                                    width: '50px',
+                                                                    height: '50px',
+                                                                }}
                                                                 alt=""
                                                             />
                                                             <div className="media-body">

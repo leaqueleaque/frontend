@@ -268,8 +268,14 @@
 }
 
 .header__profile-link:hover {
-color:#638bff;
+    color:#638bff;
 }
+
+.header__profile-link:last-child:hover {
+    color: #ff231f !important;
+}
+
+
 
 .header__profile-info {
     display: flex;
@@ -318,6 +324,12 @@ color:#638bff;
 .header__profile-img {
     position: relative;
     width: 64px;
+    height: 64px;
+}
+
+.header__profile-img img {
+    width: 64px;
+    height: 64px;
 }
 
 .header__profile-kyc:before {

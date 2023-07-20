@@ -158,7 +158,7 @@
 }
 @media (max-width: 500px) {
 	.deposit__crypto-timer {
-		transform: translate(-250%, 455%);
+		transform: translate(-135%, 475%);
 
 	}
 }
@@ -183,6 +183,7 @@
 	max-width: 348px;
 	padding-top: 9px;
 }
+
 
 .deposit__text-item {
 	font-weight: 400;
@@ -450,8 +451,12 @@
 	}
 	.deposit__address__box {
 		position: absolute;
-		top: 50%
+		bottom: 30px;
 	}
+	.activedep {
+		bottom: 35.6%;
+	}
+
 	.deposit__address {
 		transform: translateY(90%);
 	}
@@ -460,6 +465,9 @@
 	}
 	.deposit__content-list {
 		height: 750px;
+	}
+	.short {
+		height: 500px;
 	}
 	.deposit__center-content {
 		margin: 20px auto 0;
@@ -473,5 +481,23 @@
 	}
 	.deposit__center-content {
 		row-gap: 85px;
+	}
+}
+
+@media (max-width: 405px) {
+	.deposit__content-list {
+		height: 800px;
+	}
+
+	.deposit__address__box {
+		bottom: 50px;
+	}
+
+	.activedep {
+		bottom: 38.6%;
+	}
+
+	.short {
+		height: 550px;
 	}
 }
