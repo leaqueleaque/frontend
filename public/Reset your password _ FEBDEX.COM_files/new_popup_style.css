@@ -109,8 +109,15 @@ background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100
     }
 }
 
+
+
 @media (max-width: 450px) {
     .popup {
+        padding: 10px;
+        margin-top:-50px;
+    }
+
+    .popup__right {
         padding: 10px;
     }
 }

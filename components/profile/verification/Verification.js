@@ -131,7 +131,7 @@ const Ver = () => {
                 setToyMessage('You have successfully verified account');
                 setInterval(() => {
                     router.push('/profile/settings');
-                }, 1500);
+                }, 1000);
             } else {
                 setPositiveToast(false);
                 setToyMessage('Something went wrong');

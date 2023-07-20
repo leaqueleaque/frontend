@@ -264,6 +264,7 @@ body {
 
 @media (max-width: 370px) {
     .swap__benefits {
+        align-items: center;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;

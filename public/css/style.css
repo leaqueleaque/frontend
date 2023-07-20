@@ -2070,10 +2070,11 @@ background: linear-gradient(90deg, rgba(0,188,82,1) 0%, rgba(0,129,112,1) 100%);
 
 .bottom {
 	position:relative;
-	z-index:6;
+	z-index:1;
     background: #131722;
     font-size: 14px;
 }
+
     .bottom .bottom-logo p {
       line-height: 30px;
       font-weight: 400; }
@@ -2742,6 +2743,14 @@ padding-top: 10px;
     transform: translateX(-2.5%);
 }
 
+@media (max-width: 1260px) {
+    .aliffate {
+        transform: translateX(0);
+    }
+}
+
+
+
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
@@ -2751,6 +2760,9 @@ padding-top: 10px;
     border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
   .card-header + .list-group .list-group-item:first-child {
     border-top: 0; }
+
+
+
 
 .card-footer {
   padding: 0.75rem 1.25rem;
@@ -2790,6 +2802,7 @@ padding-top: 10px;
   width: 100%;
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px); }
+
 
 .card-deck {
   display: flex;
@@ -3645,4 +3658,16 @@ padding-top: 30px;
 }
 .bottom .bottom-widget ul li a:hover {
  color:#fff;   
+}
+
+@media (max-width: 400px) {
+    .card-header {
+        padding: 25px 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-header h4 {
+        font-size: 20px;
+    }
 }

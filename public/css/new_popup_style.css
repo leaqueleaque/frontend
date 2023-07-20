@@ -112,14 +112,20 @@ background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100
 }
 
 
+
 @media (max-width: 730px) {
     .popup {
         flex-direction: column;
     }
 
     .popup__left {
-        height: 55px;
+        height: 30px;
         border-radius: 20px;
+    }
+
+    .popup__close {
+        top: 3px;
+        right: 10px;
     }
 
     .popup__left img {
@@ -127,10 +133,16 @@ background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100
     }
 
     .popup__right {
-        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
         position: relative;
         z-index: 2;
-        padding: 50px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .popup__right-button {
+        transform: translate( 60%, -220%);
+        padding: 5px 15px;
     }
 }
 
@@ -139,4 +151,10 @@ background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100
         padding: 10px;
         margin-top:-50px;
     }
+
+    .popup__right {
+        padding: 10px;
+    }
 }
+
+
