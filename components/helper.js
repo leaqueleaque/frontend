@@ -568,3 +568,258 @@ export const tabs = [
         networkFee: '0.010801 BUSD',
     },
 ];
+
+export const textData = [
+    {
+        id: 'btc',
+        title: 'BTC Bitcoin',
+        wallet: '0',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only BTC to this deposit address. Sending coin or token other than BTC to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.0011',
+        ],
+    },
+    {
+        id: 'eth',
+        title: 'ETH Ethereum',
+        wallet: '0',
+        depositTextItems: [
+            'We accept only ERC-20 network for deposit! Do not send tokens via BEP-20 network, in this case you will lose your deposit.',
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only ETH to this deposit address. Sending coin or token other than ETH to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.016072',
+        ],
+    },
+    {
+        id: 'ltc',
+        title: 'LTC Litecoin',
+        wallet: '0',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only LTC to this deposit address. Sending coin or token other than LTC to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.323590',
+        ],
+    },
+    {
+        id: 'usdttrc',
+        title: 'USDT USDT TRC-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only USDT to this deposit address. Sending coin or token other than USDT to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 30.00',
+        ],
+    },
+    {
+        id: 'usdt',
+        title: 'USDT USDT TRC-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only USDT to this deposit address. Sending coin or token other than USDT to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 30.00',
+        ],
+    },
+    {
+        id: 'usdtbep',
+        title: 'USDT USDT TRC-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only USDT to this deposit address. Sending coin or token other than USDT to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 30.00',
+        ],
+    },
+    {
+        id: 'trx',
+        title: 'TRX Tron',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only TRX to this deposit address. Sending coin or token other than TRX to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 368.505098',
+        ],
+    },
+    {
+        id: 'usdc',
+        title: 'USDC USD Coin ERC-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only USDC to this deposit address. Sending coin or token other than USDC to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 30.00',
+        ],
+    },
+    {
+        id: 'bnb',
+        title: 'BNB BNB BEP-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only BNB to this deposit address. Sending coin or token other than BNB to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.099800',
+        ],
+    },
+    {
+        id: 'bch',
+        title: 'BCH Bitcoin Cash',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only BCH to this deposit address. Sending coin or token other than BCH to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.264085',
+        ],
+    },
+    {
+        id: 'doge',
+        title: 'DOGE Dogecoin',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only DOGE to this deposit address. Sending coin or token other than DOGE to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 418.293363',
+        ],
+    },
+    {
+        id: 'xmr',
+        title: 'XMR Monero',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only XMR to this deposit address. Sending coin or token other than XMR to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.205620',
+        ],
+    },
+    {
+        id: 'xlm',
+        title: 'XLM Stellar',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only XLM to this deposit address. Sending coin or token other than XLM to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 328.947368',
+        ],
+    },
+    {
+        id: 'xtz',
+        title: 'XTZ Tezos',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only XTZ to this deposit address. Sending coin or token other than XTZ to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 33.370412',
+        ],
+    },
+    {
+        id: 'eos',
+        title: 'EOS EOS',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only EOS to this deposit address. Sending coin or token other than EOS to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 33.112583',
+        ],
+    },
+    {
+        id: 'shib',
+        title: 'SHIB SHIBA INU BEP-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only SHIB to this deposit address. Sending coin or token other than SHIB to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 3000000.000000',
+        ],
+    },
+    {
+        id: 'link',
+        title: 'LINK Chainlink ERC-20',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only LINK to this deposit address. Sending coin or token other than LINK to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 4.709576',
+        ],
+    },
+    {
+        id: 'btg',
+        title: 'BTG Bitcoin Gold',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only BTG to this deposit address. Sending coin or token other than BTG to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 3.00',
+        ],
+    },
+    {
+        id: 'etc',
+        title: 'ETC Ethereum Classic',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only ETC to this deposit address. Sending coin or token other than ETC to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 1.669449',
+        ],
+    },
+    {
+        id: 'xrp',
+        title: 'XRP Ripple',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only XRP to this deposit address. Sending coin or token other than XRP to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 56.401579',
+        ],
+    },
+    {
+        id: 'ada',
+        title: 'ADA Cardano',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only ADA to this deposit address. Sending coin or token other than ADA to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 80.299786',
+        ],
+    },
+    {
+        id: 'dash',
+        title: 'DASH Dash',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only DASH to this deposit address. Sending coin or token other than DASH to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.718735',
+        ],
+    },
+    {
+        id: 'zec',
+        title: 'ZEC Zcash',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only ZEC to this deposit address. Sending coin or token other than ZEC to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 0.955414',
+        ],
+    },
+    {
+        id: 'sol',
+        title: 'SOL SOL',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only SOL to this deposit address. Sending coin or token other than SOL to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 1.388889',
+        ],
+    },
+
+    {
+        id: 'busd',
+        title: 'BUSD BUSD',
+        wallet: '0.00',
+        depositTextItems: [
+            'Coins will be deposited after 3 network confirmations.',
+            'Send only BUSD to this deposit address. Sending coin or token other than BUSD to this address may result in the loss of your deposit.',
+            'Minimum deposit amount: 30.00',
+        ],
+    },
+];

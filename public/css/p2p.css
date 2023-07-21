@@ -7,6 +7,9 @@
     justify-content: space-between;
     column-gap: 30px;
 }
+body.deposit__coin-list-box-active {
+    overflow: hidden;
+}
 
 .formP2p{
     width: 380px;

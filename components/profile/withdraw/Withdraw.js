@@ -334,6 +334,14 @@ const With = () => {
         setShowToast(true);
     }
 
+    useEffect(() => {
+        if (depActive) {
+            document.body.classList.add('deposit__coin-list-box-active');
+        } else {
+            document.body.classList.remove('deposit__coin-list-box-active');
+        }
+    }, [depActive]);
+
     return (
         <div className="col-xl-12">
             <Toy

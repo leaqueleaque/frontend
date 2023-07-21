@@ -219,6 +219,14 @@ const FormP2p = () => {
         }
     };
 
+    useEffect(() => {
+        if (wrapper) {
+            document.body.classList.add('deposit__coin-list-box-active');
+        } else {
+            document.body.classList.remove('deposit__coin-list-box-active');
+        }
+    }, [wrapper]);
+
     return (
         <>
             <div className="formP2p">

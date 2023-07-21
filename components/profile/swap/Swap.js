@@ -157,6 +157,14 @@ const Swap = () => {
         return () => clearTimeout(timeout);
     }, [showToast]);
 
+    useEffect(() => {
+        if (listCoinOneActive || listCoinTwoActive) {
+            document.body.classList.add('deposit__coin-list-box-active');
+        } else {
+            document.body.classList.remove('deposit__coin-list-box-active');
+        }
+    }, [listCoinOneActive, listCoinTwoActive]);
+
     return (
         <section className="swap">
             <Toy
