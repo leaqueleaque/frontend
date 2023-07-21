@@ -457,7 +457,7 @@ body.deposit__coin-list-box-active {
 	}
 	.deposit__address__box {
 		position: absolute;
-		bottom: 30px;
+		bottom: 10px;
 	}
 	.activedep {
 		bottom: 35.6%;
@@ -496,7 +496,7 @@ body.deposit__coin-list-box-active {
 	}
 
 	.deposit__address__box {
-		bottom: 50px;
+		bottom: 15px;
 	}
 
 	.activedep {
