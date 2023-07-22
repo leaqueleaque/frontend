@@ -26,6 +26,13 @@ body.deposit__coin-list-box-active {
     padding: 0 15px;
 }
 
+@media (max-width: 600px) {
+    .swap {
+        margin: 33px 0 51px 0;
+
+    }
+}
+
 .swap__block {
     background-color: #171C28;
     border-radius: 10px;

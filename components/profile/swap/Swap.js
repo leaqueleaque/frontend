@@ -276,7 +276,9 @@ const Swap = () => {
                                                 {currency.index}
                                             </div>
                                             <div className="swapForm__currency-title">
-                                                {currency.name}
+                                                {currency.index === 'USDT'
+                                                    ? 'Tether USDT'
+                                                    : currency.name}
                                             </div>
                                         </div>
                                     </div>
@@ -377,7 +379,9 @@ const Swap = () => {
                                                 {currency.index}
                                             </div>
                                             <div className="swapForm__currency-title">
-                                                {currency.name}
+                                                {currency.index === 'USDT'
+                                                    ? 'Tether USDT'
+                                                    : currency.name}
                                             </div>
                                         </div>
                                     </div>

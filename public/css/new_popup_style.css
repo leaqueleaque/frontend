@@ -90,6 +90,7 @@ body {
     }
     .popup {
         margin-top: 0 !important;
+        background: #181E2B;
     }
 }
 
@@ -158,6 +159,7 @@ background: linear-gradient(90deg, rgba(81,115,213,1) 0%, rgba(155,72,227,1) 100
 @media (max-width: 450px) {
     .popup {
         padding: 10px;
+        background: #181E2B;
     }
 
     .popup__right {

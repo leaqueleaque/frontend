@@ -293,8 +293,8 @@ const UserCard = () => {
                                         alt=""
                                         style={{
                                             borderRadius: '50%',
-                                            width: '40px',
-                                            height: '40px',
+                                            width: '70px',
+                                            height: '70px',
                                         }}
                                     />
                                 </div>

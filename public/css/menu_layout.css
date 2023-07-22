@@ -178,3 +178,13 @@
         padding: 0 10px;
     }
 }
+
+.hiddenDesktop {
+    display: none !important;
+}
+
+@media (max-width: 1040px) {
+    .hiddenDesktop {
+        display: flex !important;
+    }
+}

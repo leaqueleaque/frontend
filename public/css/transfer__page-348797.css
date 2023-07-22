@@ -241,6 +241,12 @@ input[type=number] {
     font-weight: 500;
 }
 
+@media (max-width: 500px) {
+    .transferForm__currency-title {
+        font-weight: 400 !important;
+    }
+}
+
 .transferForm__currency-content{
     display: flex;
     flex-direction: column;

@@ -1783,6 +1783,9 @@ const Ver = () => {
                                 onChange={handleDateOfBirth}
                                 max="2222-01-01"
                                 value={dateOfBirth}
+                                style={{
+                                    width: '100%',
+                                }}
                             />
                         </div>
 

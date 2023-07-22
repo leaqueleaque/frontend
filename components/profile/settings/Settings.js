@@ -12,7 +12,7 @@ const Seting = () => {
     const [newPassword, setNewPassword] = useState('');
     const [fullname, setFullname] = useState('');
     const [email, setEmail] = useState('');
-    const [date_of_birth, setDateOfBirth] = useState('');
+    const [date_of_birth, setDateOfBirth] = useState('2000-01-01');
     const [present_address, setPresentAddress] = useState('');
     const [permanent_address, setPermanentAddress] = useState('');
     const [postalCode, setPostalCode] = useState('');
@@ -491,6 +491,18 @@ const Seting = () => {
                                                                         .value
                                                                 )
                                                             }
+                                                            style={{
+                                                                paddingRight:
+                                                                    '15px',
+                                                                width: '100%',
+                                                                display: 'flex',
+                                                                alignItems:
+                                                                    'center',
+                                                                justifyContent:
+                                                                    'space-between',
+                                                                textAlign:
+                                                                    'center',
+                                                            }}
                                                         />
                                                     </div>
                                                     <div className="form-group col-xl-6 col-md-6">
@@ -588,6 +600,10 @@ const Seting = () => {
                                                                         .value
                                                                 )
                                                             }
+                                                            style={{
+                                                                marginRight:
+                                                                    '15px',
+                                                            }}
                                                         >
                                                             <option value="">
                                                                 Select

@@ -291,7 +291,10 @@ const Staking__global = () => {
                                                     <div className="stakingForm__currency-sub">
                                                         {coin.index}&nbsp;&nbsp;
                                                         <span className="stakingForm__currency-title">
-                                                            {coin.name}
+                                                            {coin.index ===
+                                                            'USDT'
+                                                                ? 'Tether USDT'
+                                                                : coin.name}
                                                         </span>
                                                     </div>
                                                 </div>

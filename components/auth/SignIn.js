@@ -35,12 +35,12 @@ const SignIn = () => {
                 email: email,
                 password: password,
             };
-            // Отправка POST-запроса на сервер для входа в аккаунт
+
             const data = await Login.login(userData);
 
             console.log(data);
-            const accessToken = data.access; // Замените на полученный access token
-            const refreshToken = data.refresh; // Замените на полученный refresh token
+            const accessToken = data.access;
+            const refreshToken = data.refresh;
 
             setCookie(null, 'accessToken', accessToken, {
                 maxAge: 60 * 60, // 1 час
