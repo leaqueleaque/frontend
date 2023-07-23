@@ -166,7 +166,11 @@ const MenuProfile = () => {
 
                             <button
                                 className="menuProfile__menu-item menuProfile__menu-more mdi mdi-more"
-                                style={{ background: 'none', border: 'none' }}
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    outline: 'none',
+                                }}
                                 onClick={menuToggle}
                             >
                                 Menu

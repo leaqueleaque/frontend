@@ -28,7 +28,7 @@ const Coins = () => {
 
         const swiper = new Swiper('.coins__slider', {
             slidesPerView: 'auto',
-            spaceBetween: 16,
+            spaceBetween: 11,
             loop: true,
         });
 

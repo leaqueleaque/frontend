@@ -600,12 +600,13 @@ const Seting = () => {
                                                                         .value
                                                                 )
                                                             }
-                                                            style={{
-                                                                marginRight:
-                                                                    '15px',
-                                                            }}
                                                         >
-                                                            <option value="">
+                                                            <option
+                                                                value=""
+                                                                className={
+                                                                    'selectOOO'
+                                                                }
+                                                            >
                                                                 Select
                                                             </option>
                                                             <option value="Afghanistan">

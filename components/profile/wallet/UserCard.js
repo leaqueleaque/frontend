@@ -228,6 +228,7 @@ const UserCard = () => {
                                         style={{
                                             background: 'none',
                                             border: 'none',
+                                            outline: 'none',
                                         }}
                                         onClick={menuToggle}
                                     >

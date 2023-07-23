@@ -427,6 +427,7 @@ const Dep = () => {
                                         className="deposit__crypto-timer"
                                     >
                                         <p>Time remaining: </p>
+                                        &nbsp; &nbsp;
                                         <span className="">{timerText}</span>
                                     </div>
                                 </div>

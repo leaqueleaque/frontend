@@ -14,7 +14,7 @@ const Ver = () => {
     const [country, setCountry] = useState('United Kingdom');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
-    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('2000-01-01');
     const [typeDocument, setTypeDocument] = useState('Passport');
     const [idNumber, setIdNumber] = useState('');
 

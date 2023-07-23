@@ -2223,7 +2223,8 @@ overflow-y:scroll; }
       transition: none; } }
   .form-control::-ms-expand {
     background-color: transparent;
-    border: 0; }
+    border: 0;
+      margin-right: 20px;}
   .form-control:focus {
     color: #495057;
     background-color: #fff;
@@ -2257,7 +2258,8 @@ overflow-y:scroll; }
       transition: none; } }
   .form-control::-ms-expand {
     background-color: transparent;
-    border: 0; }
+    border: 0;
+      margin-right: 20px;}
   .form-control:focus {
     color: #495057;
     background-color: #fff;
@@ -2270,6 +2272,7 @@ overflow-y:scroll; }
   .form-control:disabled, .form-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
+
 
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -2375,6 +2378,10 @@ select.form-control:focus::-ms-value {
   margin-top: 50px;
   border-top: 1px solid #363C4E;
   padding-top: 30px; }
+
+#user_country {
+    padding: 0 10px;
+}
 
 .phone_verified {
   display: flex;
@@ -3676,3 +3683,5 @@ padding-top: 30px;
         font-size: 20px;
     }
 }
+
+

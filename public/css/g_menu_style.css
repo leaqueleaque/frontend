@@ -229,6 +229,7 @@
 }
 
 .header__profile-box.header__profile-box-active {
+    z-index: 100;
     top: 62px;
     opacity: 1;
     visibility: visible;
@@ -348,7 +349,9 @@
     .header__links {
         display: none;
     }
-
+    .file-upload-wrapper {
+        z-index: 1;
+    }
     .header__profile-center {
         display: flex;
         flex-direction: column;
