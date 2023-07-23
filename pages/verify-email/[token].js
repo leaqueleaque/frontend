@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const VerifyEmail = () => {
     const router = useRouter();
@@ -10,20 +11,27 @@ const VerifyEmail = () => {
 
     useEffect(() => {
         if (token) {
-            fetch(
-                process.env.NEXT_PUBLIC_BASE_URL + `/user/verify-email/${token}`
-            )
-                .then((response) => response.json())
-                .then((data) => {
-                    setMessage(data.message);
+            const url = `${process.env.NEXT_PUBLIC_BASE_URL}/user/verify-email/${token}`;
+
+            axios
+                .post(url)
+                .then((response) => {
+                    setMessage(response.data.message);
+                })
+                .catch((error) => {
+                    setMessage('Error verifying email.');
+                    console.error(error);
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        router.push('/signin');
+                    }, 1500);
                 });
-            setTimeout(() => {
-                router.push('/signin');
-            }, 500);
         }
-    }, [token]);
+    }, [token, router]);
 
     const containerStyle = {
+        overflow: 'hidden',
         transform: 'scale(1.02)',
         display: 'flex',
         flexDirection: 'column',
