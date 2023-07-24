@@ -48,7 +48,7 @@
 
 .header__link.header__link-new:after,
 .header__profile-link.header__link-new:after {
-    content: "new";
+    content: "soon";
     position: absolute;
     display: flex;
     justify-content: center;

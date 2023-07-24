@@ -178,7 +178,11 @@
         padding: 0 10px;
     }
 }
-
+@media (max-width: 500px) {
+    .userNavigation__tabBtn_wc {
+        margin-left: 1px !important;
+    }
+}
 .hiddenDesktop {
     display: none !important;
 }

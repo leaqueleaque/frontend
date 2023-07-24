@@ -417,6 +417,8 @@ background: linear-gradient(110deg, rgba(19,23,34,1) 56%, rgba(36,37,82,1) 56%);
     margin-left: 47px;
 }
 
+
+
 .userNavigation__tabBtn:hover{
  background: rgb(58 151 57);
     background: linear-gradient(90deg, rgb(86 75 181) 0%, rgb(86 48 98) 100%);
