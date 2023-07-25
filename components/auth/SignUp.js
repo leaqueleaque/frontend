@@ -47,7 +47,7 @@ const SignUp = () => {
             setEmail('');
             setPassword('');
             setConfirmPassword('');
-            alert('Check your email to verify your account!');
+            // alert('Check your email to verify your account!');
             setTimeout(() => {
                 router.push('/signin');
             }, 2000);
