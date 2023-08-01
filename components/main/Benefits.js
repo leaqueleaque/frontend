@@ -14,8 +14,9 @@ const Benefits = () => {
                             <div className="benefits__des">
                                 Our safe, secure wallet infrastructure supports
                                 all our listed assets. Invest confidently,
-                                knowing that our wallets are protected by Leaque
-                                industry-leading security and protection.
+                                knowing that our wallets are protected by Coin
+                                Tranche industry-leading security and
+                                protection.
                             </div>
                             <a href="profile/wallet" className="benefits__link">
                                 Wallet

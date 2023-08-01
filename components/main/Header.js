@@ -14,7 +14,7 @@ const navigation = [
         id: 3,
         title: 'Exchange',
         path: '/profile/swap',
-        className: 'header__link hot',
+        className: 'header__link',
     },
     {
         id: 4,
@@ -91,13 +91,12 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header__container">
-                <a className="header__logo" href="#">
+                <a className="header__logo" href="/">
                     <img
-                        style={{ width: '50px' }}
-                        src="img/default.png"
+                        style={{ width: '270px' }}
+                        src="img/ctlogo.svg"
                         alt=""
                     />
-                    Leaque{' '}
                 </a>
                 <div
                     className={

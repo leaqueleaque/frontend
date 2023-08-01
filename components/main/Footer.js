@@ -1,116 +1,139 @@
-import { useEffect, useState, useCallback } from 'react'
-import { parseCookies } from 'nookies'
-import axios from 'axios'
+import { useEffect, useState, useCallback } from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
 
 const Footer = () => {
+    const [profile, setProfile] = useState(null);
 
-  const [profile, setProfile] = useState(null)
+    const fetchData = useCallback(async () => {
+        try {
+            const cookies = parseCookies();
+            const accessToken = cookies.accessToken;
 
-  const fetchData = useCallback(async () => {
-    try {
-      const cookies = parseCookies()
-      const accessToken = cookies.accessToken
+            if (accessToken) {
+                const responseUser = await axios.get(
+                    process.env.NEXT_PUBLIC_BASE_URL + '/user/profile/',
+                    {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    }
+                );
+                const { user } = responseUser.data;
+                setProfile(user);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
 
-      if (accessToken) {
-        const responseUser = await axios.get(
-          process.env.NEXT_PUBLIC_BASE_URL + '/user/profile/',
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        )
-        const { user } = responseUser.data
-        setProfile(user)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }, [])
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-  useEffect(() => {
-    fetchData()
-  }, [])
+    return (
+        <footer className="footer">
+            <div className="footer__container">
+                <div className="footer__colums">
+                    <div className="footer__info">
+                        <div className="footer__info-logo">
+                            <img
+                                style={{ width: '210px' }}
+                                src="/img/ctlogo.svg"
+                                alt=""
+                            />
+                        </div>
+                        <div className="footer__info-description">
+                            Our exchange makes it simple to research the crypto
+                            market, buy bitcoin and other cryptos, and build a
+                            portfolio for the future of money.
+                        </div>
+                        <a className="footer__info-link" href="signup">
+                            {' '}
+                            Sign up{' '}
+                        </a>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
 
+                    <div className="footer__links">
+                        <div className="footer__link-box">
+                            <div className="footer__link-title">Features</div>
+                            <a
+                                className="footer__link-ref"
+                                href={`${
+                                    profile ? 'profile/wallet' : 'signup'
+                                }`}
+                            >
+                                Wallet
+                            </a>
+                            <a
+                                className="footer__link-ref"
+                                href={`${profile ? 'profile/swap' : 'signup'}`}
+                            >
+                                Exchange
+                            </a>
+                            <a
+                                className="footer__link-ref"
+                                href={`${
+                                    profile ? 'profile/invest' : 'signup'
+                                }`}
+                            >
+                                Staking
+                            </a>
+                            <a
+                                className="footer__link-ref"
+                                href={`${profile ? 'profile/p2p' : 'signup'}`}
+                            >
+                                P2P
+                            </a>
+                        </div>
 
-  return (
-    <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__colums">
-          <div className="footer__info">
-            <div className="footer__info-logo">
-              <img
-                style={{ width: '33px', height: 'auto', important: true }}
-                src="/img/default.png"
-                alt=""
-              />
-              Leaque
+                        <div className="footer__link-box">
+                            <div className="footer__link-title">Legal</div>
+                            <a
+                                className="footer__link-ref"
+                                href="../profile/support"
+                            >
+                                Support
+                            </a>
+                            <a
+                                className="footer__link-ref"
+                                href="../cookies-policy"
+                            >
+                                Cookies policy
+                            </a>
+                            <a className="footer__link-ref" href="../terms">
+                                Terms of service
+                            </a>
+                            <a
+                                className="footer__link-ref"
+                                href="../aml-kyc-policy"
+                            >
+                                AML & KYC policy
+                            </a>
+                        </div>
+
+                        <div className="footer__link-box">
+                            <div className="footer__link-title">Exchange</div>
+                            <a className="footer__link-ref" href="../signin">
+                                BTC to USDT
+                            </a>
+                            <a className="footer__link-ref" href="../signin">
+                                ETH to USDT
+                            </a>
+                            <a className="footer__link-ref" href="../signin">
+                                LTC to USDT
+                            </a>
+                            <a className="footer__link-ref" href="../signin">
+                                BNB to USDT
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="footer__info-description">
-              Our exchange makes it simple to research the crypto market, buy bitcoin and other
-              cryptos, and build a portfolio for the future of money.
-            </div>
-            <a className="footer__info-link" href="signup">
-              {' '}
-              Sign up{' '}
-            </a>
-            <br />
-            <br />
-            <br />
-          </div>
-
-          <div className="footer__links">
-            <div className="footer__link-box">
-              <div className="footer__link-title">Features</div>
-              <a className="footer__link-ref" href={`${profile ? 'profile/wallet' : 'signup' }`}>
-                Wallet
-              </a>
-              <a className="footer__link-ref" href={`${profile ? 'profile/swap' : 'signup' }`}>
-                Exchange
-              </a>
-              <a className="footer__link-ref" href={`${profile ? 'profile/invest' : 'signup' }`}>
-                Staking
-              </a>
-              <a className="footer__link-ref" href={`${profile ? 'profile/p2p' : 'signup' }`}>
-                P2P
-              </a>
-            </div>
-
-            <div className="footer__link-box">
-              <div className="footer__link-title">Legal</div>
-              <a className="footer__link-ref" href="../profile/support">
-                Support
-              </a>
-              <a className="footer__link-ref" href="../cookies-policy">
-                Cookies policy
-              </a>
-              <a className="footer__link-ref" href="../terms">
-                Terms of service
-              </a>
-              <a className="footer__link-ref" href="../aml-kyc-policy">
-                AML & KYC policy
-              </a>
-            </div>
-
-            <div className="footer__link-box">
-              <div className="footer__link-title">Exchange</div>
-              <a className="footer__link-ref" href="../signin">
-                BTC to USDT
-              </a>
-              <a className="footer__link-ref" href="../signin">
-                ETH to USDT
-              </a>
-              <a className="footer__link-ref" href="../signin">
-                LTC to USDT
-              </a>
-              <a className="footer__link-ref" href="../signin">
-                BNB to USDT
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <div className="footer__sub">
+            {/* <div className="footer__sub">
         <div className="footer__sub-text">
           Cryptocurrencies and their derivatives are innovative financial products with great
           volatility and high investment risks. Although Leaque is committed to providing users with
@@ -125,8 +148,8 @@ const Footer = () => {
           the terms and conditions stipulated in Leaque Terms of Use as well as our Privacy Policy.
         </div>
       </div> */}
-    </footer>
-  );
+        </footer>
+    );
 };
 
 export default Footer;

@@ -59,9 +59,9 @@ const Header = () => {
             <div className="header__left">
                 <a className="header__logo" href="/">
                     <img
-                        src="/img/logo_leaque.png"
+                        style={{ width: '270px' }}
+                        src="/img/ctlogo.svg"
                         alt=""
-                        style={{ width: 'auto', important: true }}
                     />
                 </a>
                 <div className="header__links">
