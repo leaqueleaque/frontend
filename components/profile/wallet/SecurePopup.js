@@ -41,7 +41,7 @@ export function SecurePopup({ handleCloseClick, secureVisible, onBtn }) {
                         <br />
                         <p>
                             <span style={{ fontWeight: 400 }}>
-                                To confirm your withdrawal from the Leaque
+                                To confirm your withdrawal from the Coin Tranche
                                 platform, enable 2FA Google Authorization.{' '}
                             </span>
                         </p>

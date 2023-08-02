@@ -136,16 +136,16 @@ const Footer = () => {
             {/* <div className="footer__sub">
         <div className="footer__sub-text">
           Cryptocurrencies and their derivatives are innovative financial products with great
-          volatility and high investment risks. Although Leaque is committed to providing users with
+          volatility and high investment risks. Although Coin Tranche is committed to providing users with
           easy-to-use trading tools, trading itself is still a highly sophisticated field. Trading
           digital assets and their derivatives are subject to high market risk and price volatility
           and may result in partial or total loss of account funds. You must carefully consider and
           exercise clear judgment to evaluate your financial situation and the aforementioned risks
-          before using Leaque Services. You shall be responsible for all losses arising therefrom.
+          before using Coin Tranche Services. You shall be responsible for all losses arising therefrom.
           If necessary, please consult relevant professionals to make informed decisions before
           investing. By accessing, downloading, using or clicking on "I agree" to accept any Febdex
-          Services provided by Leaque, you agree that you have read, understood and accepted all of
-          the terms and conditions stipulated in Leaque Terms of Use as well as our Privacy Policy.
+          Services provided by Coin Tranche, you agree that you have read, understood and accepted all of
+          the terms and conditions stipulated in Coin Tranche Terms of Use as well as our Privacy Policy.
         </div>
       </div> */}
         </footer>

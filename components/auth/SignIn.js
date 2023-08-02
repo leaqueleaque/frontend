@@ -84,7 +84,7 @@ const SignIn = () => {
                             </svg>
                         </div>
                         <div className="form-text">
-                            <span>&nbsp;&nbsp;https://</span>leaque.com
+                            <span>&nbsp;&nbsp;https://</span>cointranche.com
                         </div>
                     </div>
 

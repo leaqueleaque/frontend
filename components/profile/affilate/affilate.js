@@ -48,7 +48,7 @@ const AFF = () => {
                                                     id="link_text"
                                                     type="text"
                                                     className="form-control"
-                                                    value="https://leaque.com/signup?ref=135214936"
+                                                    value="https://cointranche.com/signup?ref=135214936"
                                                 />
                                                 <div className="input-group-append">
                                                     <button

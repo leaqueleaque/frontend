@@ -190,7 +190,7 @@ const FormP2p = () => {
             setIsPositive(true);
         } else {
             setErrorMessage(
-                'This is necessary to guarantee safe trading for Leaque platform and other traders.'
+                'This is necessary to guarantee safe trading for Coin Tranche platform and other traders.'
             );
             setIsPositive(true);
         }

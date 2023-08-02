@@ -46,7 +46,7 @@ const Ter = () => {
                                                         >
                                                             This User Agreement
                                                             for the service
-                                                            "leaque.com"
+                                                            "cointranche.com"
                                                             (hereinafter the
                                                             "Agreement") is
                                                             concluded between
@@ -68,7 +68,7 @@ const Ter = () => {
                                                                             'medium',
                                                                     }}
                                                                 >
-                                                                    leaque.com
+                                                                    cointranche.com
                                                                 </span>
                                                             </span>
                                                             " (hereinafter
@@ -87,7 +87,7 @@ const Ter = () => {
                                                                     'medium',
                                                             }}
                                                         >
-                                                            leaque.com
+                                                            cointranche.com
                                                         </span>
                                                     </span>
                                                     <span>
@@ -300,11 +300,11 @@ const Ter = () => {
                                                                             'medium',
                                                                     }}
                                                                 >
-                                                                    leaque.com
+                                                                    cointranche.com
                                                                 </span>
                                                             </span>
                                                             », located at
-                                                            https://leaque.com
+                                                            https://cointranche.com
                                                             and owned by CRYPTO
                                                             ARBY TRADE LIMITED,
                                                             containing all
@@ -375,7 +375,7 @@ const Ter = () => {
                                                             subscriptions are
                                                             listed on the
                                                             Service page
-                                                            https://leaque.com
+                                                            https://cointranche.com
                                                         </span>
                                                     </span>
                                                 </p>
