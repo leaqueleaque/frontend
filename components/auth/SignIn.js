@@ -138,14 +138,14 @@ const SignIn = () => {
                                     <span className="form__features-checkmark"></span>
                                 </label>
                             </div>
-                            {/*TODO: вкл*/}
-                            {/*<a*/}
-                            {/*    className="form__features-forget"*/}
-                            {/*    href="/reset-password"*/}
-                            {/*    style={{ textDecoration: 'none' }}*/}
-                            {/*>*/}
-                            {/*    Forgot password?*/}
-                            {/*</a>*/}
+                            {/*TODO: sets*/}
+                            <a
+                                className="form__features-forget"
+                                href="/reset-password"
+                                style={{ textDecoration: 'none' }}
+                            >
+                                Forgot password?
+                            </a>
                         </div>
 
                         <button

@@ -159,6 +159,7 @@ const P2p_trade = () => {
                 )
             )}
             <ul className="pagination">
+                {/* TODO: 15th traders*/}
                 {/*<div*/}
                 {/*  onClick={openp2p}*/}
                 {/*  style={{*/}
