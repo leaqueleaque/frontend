@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { UserApi } from '@/services/api';
 import { setCookie } from 'nookies';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const SignUp = () => {
     const [username, setUsername] = useState('');
@@ -11,6 +12,9 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
 
     const router = useRouter();
+
+    const { query } = router;
+    const refCode = query.ref;
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -41,16 +45,29 @@ const SignUp = () => {
                 path: '/', // Установите путь куки (обычно корень сайта)
             });
 
+            if (refCode) {
+                try {
+                    const refUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/user/ref/${refCode}/`;
+
+                    const data = await axios.post(refUrl, {
+                        email: email,
+                    });
+                    console.log(data);
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+
             setUsername('');
             setEmail('');
             setPassword('');
             setConfirmPassword('');
-            // alert('Check your email to verify your account!');
+            alert('Check your email to verify your account!');
             setTimeout(() => {
                 router.push('/signin');
-            }, 2000);
+            }, 1000);
         } catch (error) {
-            alert('a user with this email address already exists');
+            alert('Oops.... Something went wrong!');
             console.warn(error);
         }
     };

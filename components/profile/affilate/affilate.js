@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+
 const AFF = () => {
     const handleCopyClick = (e) => {
         e.preventDefault();
@@ -5,6 +9,41 @@ const AFF = () => {
         input.select();
         document.execCommand('copy');
     };
+
+    const [profile, setProfile] = useState({});
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const cookies = parseCookies();
+                const accessToken = cookies.accessToken;
+
+                if (accessToken) {
+                    const response = await axios.get(
+                        'https://cointranche.com/api/user/profile/',
+                        {
+                            headers: {
+                                Authorization: `Bearer ${accessToken}`,
+                            },
+                        }
+                    );
+                    const { user } = response.data;
+                    setProfile(user);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
+
+        const intervalId = setInterval(() => {
+            fetchData();
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
     return (
         <div className="content-body">
             <div className="container">
@@ -48,7 +87,7 @@ const AFF = () => {
                                                     id="link_text"
                                                     type="text"
                                                     className="form-control"
-                                                    value="https://cointranche.com/signup?ref=135214936"
+                                                    value={`https://cointranche.com/signup?ref=${profile?.ref_code}`}
                                                 />
                                                 <div className="input-group-append">
                                                     <button
@@ -96,15 +135,19 @@ const AFF = () => {
                                         <tbody>
                                             <tr>
                                                 <td>Invites</td>
-                                                <td>0 User</td>
+                                                <td>
+                                                    {profile?.invites} Users
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Total invite bonus</td>
-                                                <td>0.00 USDT</td>
+                                                <td>
+                                                    {profile?.got_total} USDT
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Referral turnover bonus</td>
-                                                <td>0.00 USDT</td>
+                                                <td>{profile?.got_dep} USDT</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -124,7 +167,7 @@ const AFF = () => {
                                                 <th
                                                     style={{ color: '#ffffff' }}
                                                 >
-                                                    0.00 USDT
+                                                    {profile?.got_usdt} USDT
                                                 </th>
                                             </tr>
                                         </tfoot>
