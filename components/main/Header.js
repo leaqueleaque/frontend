@@ -123,7 +123,7 @@ const Header = () => {
                                         <img
                                             src={`${
                                                 profile?.avatar
-                                                    ? 'https://leaque.com' +
+                                                    ? 'https://cointranche.com' +
                                                       profile?.avatar
                                                     : '/img/avatar.svg'
                                             }`}

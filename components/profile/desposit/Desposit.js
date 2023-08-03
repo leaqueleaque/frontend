@@ -441,7 +441,7 @@ const Dep = () => {
                                                 : { display: 'none' }
                                         }
                                         id={`view_qr_code_${data.id}`}
-                                        src={'https://leaque.com' + qrCode}
+                                        src={'https://cointranche.com' + qrCode}
                                         alt=""
                                     />
                                     <div className="deposit__text-items">

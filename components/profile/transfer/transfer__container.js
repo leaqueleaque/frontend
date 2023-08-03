@@ -92,7 +92,7 @@ const Transfer__container = () => {
 
             if (accessToken) {
                 const response = await axios.post(
-                    'https://leaque.com/api/transactions/transfer/',
+                    'https://cointranche.com/api/transactions/transfer/',
                     {
                         currency: activeCoin ? activeCoin.index : '',
                         email: receiverEmail,

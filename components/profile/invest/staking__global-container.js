@@ -49,7 +49,7 @@ const Staking__global = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    'https://leaque.com/api/price-updater/crypto/'
+                    'https://cointranche.com/api/price-updater/crypto/'
                 );
                 setCoinsData(response.data);
 
@@ -158,7 +158,7 @@ const Staking__global = () => {
 
             const accessToken = cookies.accessToken;
             const response = await axios.post(
-                'https://leaque.com/api/transactions/staking/',
+                'https://cointranche.com/api/transactions/staking/',
                 {
                     days:
                         selectedPlan === 1

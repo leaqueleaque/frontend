@@ -80,7 +80,7 @@ const MenuProfile = () => {
 
                 if (accessToken) {
                     const response = await axios.get(
-                        'https://leaque.com/api/user/profile/',
+                        'https://cointranche.com/api/user/profile/',
                         {
                             headers: {
                                 Authorization: `Bearer ${accessToken}`,

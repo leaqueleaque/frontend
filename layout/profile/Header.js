@@ -145,7 +145,7 @@ const Header = () => {
                         <img
                             src={`${
                                 profile?.avatar
-                                    ? 'https://leaque.com' + profile?.avatar
+                                    ? 'https://cointranche.com' + profile?.avatar
                                     : '/img/avatar.svg'
                             }`}
                             alt=""
@@ -183,7 +183,7 @@ const Header = () => {
                                 <img
                                     src={`${
                                         profile?.avatar
-                                            ? 'https://leaque.com' +
+                                            ? 'https://cointranche.com' +
                                               profile?.avatar
                                             : '/img/avatar.svg'
                                     }`}

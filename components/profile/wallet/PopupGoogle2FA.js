@@ -154,7 +154,7 @@ export function PopupGoogle2FA({ onclick, onCompleted }) {
                                     marginTop: '7px',
                                     border: '6px solid white',
                                 }}
-                                src={`https://leaque.com/${qrcode}`}
+                                src={`https://cointranche.com/${qrcode}`}
                             />
                         </p>
                         <br />

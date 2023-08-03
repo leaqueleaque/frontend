@@ -267,7 +267,7 @@ const Seting = () => {
                                                                 className="mr-3 rounded-circle mr-0 mr-sm-3"
                                                                 src={`${
                                                                     profile?.avatar
-                                                                        ? 'https://leaque.com' +
+                                                                        ? 'https://cointranche.com' +
                                                                           profile?.avatar
                                                                         : '/img/avatar.svg'
                                                                 }`}

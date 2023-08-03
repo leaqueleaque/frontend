@@ -131,7 +131,7 @@ const UserCard = () => {
 
                 if (accessToken) {
                     const response = await axios.get(
-                        'https://leaque.com/api/user/profile/',
+                        'https://cointranche.com/api/user/profile/',
                         {
                             headers: {
                                 Authorization: `Bearer ${accessToken}`,
@@ -287,7 +287,7 @@ const UserCard = () => {
                                     <img
                                         src={`${
                                             profile?.avatar
-                                                ? 'https://leaque.com' +
+                                                ? 'https://cointranche.com' +
                                                   profile?.avatar
                                                 : '/img/avatar.svg'
                                         }`}
