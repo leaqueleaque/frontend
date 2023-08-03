@@ -38,8 +38,12 @@ const Footer = () => {
                     <div className="footer__info">
                         <div className="footer__info-logo">
                             <img
-                                style={{ width: '210px' }}
-                                src="/img/ctlogo.svg"
+                                style={{
+                                    width: 'auto',
+                                    height: '36px',
+                                    marginTop: '8px',
+                                }}
+                                src="/img/ctlogofooter.svg"
                                 alt=""
                             />
                         </div>

@@ -10,15 +10,15 @@ const Footer = () => {
                         <div className="bottom-logo">
                             <a className="navbar-logo-vn" href="/">
                                 <img
-                                    src="/img/ctlogo.svg"
+                                    src="/img/ctlogofooter.svg"
                                     style={{
                                         width: 'auto',
-                                        height: '40px',
-                                        marginTop: '-8px',
+                                        height: '36px',
+                                        marginTop: '8px',
                                     }}
                                 />
                                 <p>
-                                    Coin Tranche is the safest platform
+                                    cointranche is the safest platform
                                     <br />
                                     for building a crypto portfolio
                                 </p>

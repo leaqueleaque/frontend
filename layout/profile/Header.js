@@ -59,12 +59,16 @@ const Header = () => {
             <div className="header__left">
                 <a className="header__logo" href="/">
                     <img
-                        style={{ width: '270px' }}
+                        style={{
+                            width: 'auto',
+                            height: '30px',
+                            marginLeft: '30px',
+                        }}
                         src="/img/ctlogo.svg"
                         alt=""
                     />
                 </a>
-                <div className="header__links">
+                <div className="header__links" style={{ marginTop: '5px' }}>
                     <div className="header__link-tools header__tools">
                         <span className="header__link-tools-span">
                             Market tools
@@ -145,7 +149,8 @@ const Header = () => {
                         <img
                             src={`${
                                 profile?.avatar
-                                    ? 'https://cointranche.com' + profile?.avatar
+                                    ? 'https://cointranche.com' +
+                                      profile?.avatar
                                     : '/img/avatar.svg'
                             }`}
                             alt=""

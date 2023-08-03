@@ -24,7 +24,7 @@ const Freedom = () => {
                                     />
                                 </div>
                                 <div className="freedom__benefit-text">
-                                    Coin Tranche allows up to exchange crypto
+                                    Cointranche allows up to exchange crypto
                                     without commission, providing traders with
                                     the opportunity to eran high profits without
                                     lost

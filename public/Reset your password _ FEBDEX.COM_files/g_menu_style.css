@@ -92,7 +92,8 @@
 
 .header__link,
 .header__link-tools {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 5px;
+    margin-right: 5px;
     transition: color .3s ease-in-out;
     color: #FFFF;
 }

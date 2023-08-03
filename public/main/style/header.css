@@ -5,6 +5,7 @@
     right: 0;
     z-index: 15;
     padding-top: 33px;
+    min-height: 74px;
 }
 
 .header__container {

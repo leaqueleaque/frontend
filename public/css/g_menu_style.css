@@ -3,7 +3,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    min-height: 62px;
+    min-height: 74px;
     padding: 0.5rem 1rem;
     background: #1c2030 !important;
     font-family: 'Poppins', sans-serif;
@@ -24,6 +24,7 @@
 
 .header__right {
     display: flex;
+    margin-top: 3px;
     align-items: center;
 }
 
@@ -98,8 +99,16 @@
 .header__link-tools {
     font-family: "Poppins", sans-serif;
     padding: 0.5rem 1rem;
+    margin-right: 2px;
     transition: color .3s ease-in-out;
     color: #FFFF;
+}
+
+.header__link:last-child,
+.header__link-tools:last-child {
+
+    margin-left: 15px;
+
 }
 
 .header__link:hover,

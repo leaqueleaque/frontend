@@ -89,11 +89,15 @@ const Header = () => {
     }
 
     return (
-        <header className="header">
+        <header className="header" style={{ minHeight: '74px' }}>
             <div className="header__container">
-                <a className="header__logo" href="/">
+                <a
+                    className="header__logo"
+                    href="/"
+                    style={{ margitLeft: '25px' }}
+                >
                     <img
-                        style={{ width: '270px' }}
+                        style={{ width: 'auto', height: '30px' }}
                         src="img/ctlogo.svg"
                         alt=""
                     />
