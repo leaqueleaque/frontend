@@ -79,12 +79,10 @@ const SignIn = () => {
                                 viewBox="0 0 16 20"
                                 fill="none"
                                 xmlns="https://www.w3.org/2000/svg"
-                            >
-                                {/* ...Остальной код SVG... */}
-                            </svg>
+                            ></svg>
                         </div>
                         <div className="form-text">
-                            <span>&nbsp;&nbsp;https://</span>cointranche.com
+                            <span>https://</span>cointranche.com
                         </div>
                     </div>
 

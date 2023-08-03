@@ -16,7 +16,6 @@ const SignUp = () => {
         e.preventDefault();
 
         try {
-            // Проверка валидности пароля
             if (password !== confirmPassword) {
                 alert('Passwords do not match');
                 return;
@@ -28,7 +27,6 @@ const SignUp = () => {
                 password: password,
             };
 
-            // Отправка POST-запроса на сервер для регистрации
             const data = await UserApi.register(userData);
 
             const accessToken = data.access;

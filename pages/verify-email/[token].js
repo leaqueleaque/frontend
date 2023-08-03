@@ -13,6 +13,7 @@ const VerifyEmail = () => {
         if (token) {
             const url = `${process.env.NEXT_PUBLIC_BASE_URL}/user/verify-email/${token}`;
 
+            console.log(url);
             axios
                 .post(url)
                 .then((response) => {
@@ -21,12 +22,12 @@ const VerifyEmail = () => {
                 .catch((error) => {
                     setMessage('Error verifying email.');
                     console.error(error);
-                })
-                .finally(() => {
-                    setTimeout(() => {
-                        router.push('/signin');
-                    }, 1500);
                 });
+            // .finally(() => {
+            //     setTimeout(() => {
+            //         router.push('/signin');
+            //     }, 1500);
+            // });
         }
     }, [token, router]);
 
