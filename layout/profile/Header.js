@@ -61,7 +61,7 @@ const Header = () => {
                     <img
                         style={{
                             width: 'auto',
-                            height: '30px',
+                            height: '33px',
                             marginLeft: '30px',
                         }}
                         src="/img/ctlogo.svg"
@@ -96,17 +96,14 @@ const Header = () => {
                     <a className="header__link" href="/profile/invest">
                         🔥 Staking
                     </a>
-                    <a
-                        className="header__link header__link-new"
-                        href="/profile/p2p"
-                    >
-                        P2P
+                    <a className="header__link" href="/profile/p2p">
+                        P2P Trading
                     </a>
                     <a
                         className="header__link header__link-hot"
                         href="/profile/swap"
                     >
-                        Exchange
+                        Swap
                     </a>
                     <a className="header__link" href="/profile/support">
                         Support
@@ -127,7 +124,7 @@ const Header = () => {
                                 fill="#fff"
                             ></path>
                         </svg>
-                        &nbsp;Wallet:{' '}
+                        &nbsp;Wallet&nbsp;:&nbsp;&nbsp;
                         {balance && balance.coins.usd !== '0.00'
                             ? `${new Intl.NumberFormat('en-US').format(
                                   balance.coins.usd
@@ -261,16 +258,16 @@ const Header = () => {
                                 Staking 🔥
                             </a>
                             <a
-                                className="header__profile-link header__link-new"
+                                className="header__profile-link "
                                 href="/profile/p2p"
                             >
-                                P2P
+                                P2P Trading
                             </a>
                             <a
                                 className="header__profile-link header__link-hot"
                                 href="/profile/swap"
                             >
-                                Exchange
+                                Swap
                             </a>
                             <a
                                 className="header__profile-link"

@@ -3,7 +3,12 @@ import { destroyCookie, parseCookies } from 'nookies';
 import axios from 'axios';
 
 const navigation = [
-    { id: 1, title: 'P2P', path: '/profile/p2p', className: 'header__link' },
+    {
+        id: 1,
+        title: 'P2P Trading',
+        path: '/profile/p2p',
+        className: 'header__link',
+    },
     {
         id: 2,
         title: 'Staking',
@@ -12,7 +17,7 @@ const navigation = [
     },
     {
         id: 3,
-        title: 'Exchange',
+        title: 'Swap',
         path: '/profile/swap',
         className: 'header__link',
     },
@@ -125,7 +130,19 @@ const Header = () => {
                                     className="header__profile-toggle"
                                     onClick={togglePopup}
                                 >
-                                    <a href="/profile/wallet">
+                                    <a
+                                        href="/profile/wallet"
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                        }}
+                                    >
+                                        <p
+                                            className="header__toggle-name"
+                                            style={{ marginRight: '15px' }}
+                                        >
+                                            {profile?.username}
+                                        </p>
                                         <img
                                             src={`${
                                                 profile?.avatar
