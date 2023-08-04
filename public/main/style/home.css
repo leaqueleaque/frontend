@@ -308,7 +308,7 @@
 @media (max-width: 768px) {
     .home__title {
         margin-top: 60px;
-        font-size: 55px;
+        font-size: 65px;
         line-height: 65px;
     }
 
@@ -326,7 +326,7 @@
 
 @media (max-width: 600px) {
     .home__title {
-        font-size: 45px;
+        font-size: 65px;
         line-height: 50px;
         margin-bottom: 20px;
     }
@@ -334,8 +334,12 @@
 
 @media (max-width: 500px) {
     .home__title {
-        font-size: 34px;
+        font-size: 45px;
         line-height: 50px;
+        margin-top: 35px;
+    }
+    .header__logo img {
+        height: 38px !important;
     }
 }
 

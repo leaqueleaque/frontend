@@ -6,7 +6,7 @@ const Home = () => {
                     <div className="home__box">
                         <div className="home__left">
                             <div className="home__title">
-                                Buy and Trade cryptos like <br /> never{' '}
+                                Buy and Trade <br /> cryptos like <br /> never{' '}
                                 <span>before</span>
                             </div>
                             <div className="home__description">

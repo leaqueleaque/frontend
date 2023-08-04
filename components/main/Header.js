@@ -94,10 +94,12 @@ const Header = () => {
                 <a
                     className="header__logo"
                     href="/"
-                    style={{ margitLeft: '25px' }}
+                    style={{
+                        marginLeft: '16px',
+                    }}
                 >
                     <img
-                        style={{ width: 'auto', height: '30px' }}
+                        style={{ width: 'auto', height: '43px' }}
                         src="img/ctlogo.svg"
                         alt=""
                     />
