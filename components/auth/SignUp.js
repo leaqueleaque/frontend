@@ -1,15 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { UserApi } from '@/services/api';
 import { setCookie } from 'nookies';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Toast from '@/components/auth/Toast';
 
 const SignUp = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [showToast, setShowToast] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [green, setGreen] = useState(false);
 
     const router = useRouter();
 
@@ -62,18 +66,28 @@ const SignUp = () => {
             setEmail('');
             setPassword('');
             setConfirmPassword('');
-            alert('Check your email to verify your account!');
+            setErrorMessage('Check your email to verify your account!');
+            setGreen(true);
+            setShowToast(true);
             setTimeout(() => {
                 router.push('/signin');
-            }, 1000);
+            }, 2500);
         } catch (error) {
-            alert('Oops.... Something went wrong!');
+            setErrorMessage('Oops.... Something went wrong!');
+            setGreen(false);
+            setShowToast(true);
             console.warn(error);
         }
     };
 
     return (
         <section className="signUp">
+            <Toast
+                show={showToast}
+                message={errorMessage}
+                setShowToast={setShowToast}
+                positive={green}
+            />
             <div className="form__container">
                 <div className="form__left">
                     <div className="form__title">Sign up</div>

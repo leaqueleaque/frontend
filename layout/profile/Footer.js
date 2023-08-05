@@ -39,13 +39,13 @@ const Footer = () => {
                                     <a href="/profile/wallet">Wallet</a>
                                 </li>
                                 <li>
-                                    <a href="/profile/swap">Exchange</a>
+                                    <a href="/profile/swap">Swap</a>
                                 </li>
                                 <li>
                                     <a href="/profile/invest">Staking</a>
                                 </li>
                                 <li>
-                                    <a href="/profile/p2p">P2P</a>
+                                    <a href="/profile/p2p">P2P Trading</a>
                                 </li>
                             </ul>
                         </div>

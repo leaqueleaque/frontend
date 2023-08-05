@@ -76,7 +76,7 @@ const Footer = () => {
                                 className="footer__link-ref"
                                 href={`${profile ? 'profile/swap' : 'signup'}`}
                             >
-                                Exchange
+                                Swap
                             </a>
                             <a
                                 className="footer__link-ref"
@@ -90,7 +90,7 @@ const Footer = () => {
                                 className="footer__link-ref"
                                 href={`${profile ? 'profile/p2p' : 'signup'}`}
                             >
-                                P2P
+                                P2P Trading
                             </a>
                         </div>
 
