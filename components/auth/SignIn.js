@@ -35,12 +35,12 @@ const SignIn = () => {
             const refreshToken = data.refresh;
 
             setCookie(null, 'accessToken', accessToken, {
-                maxAge: 60 * 60, // 1 час
+                maxAge: 60 * 60 * 24,
                 path: '/',
             });
 
             setCookie(null, 'refreshToken', refreshToken, {
-                maxAge: 30 * 24 * 60 * 60, // 30 дней
+                maxAge: 30 * 24 * 60 * 60,
                 path: '/',
             });
 
@@ -50,9 +50,8 @@ const SignIn = () => {
             router.push('/profile/wallet');
         } catch (error) {
             console.error(error);
-            setErrorMessage(
-                'Failed to sign in. Please check your credentials.'
-            );
+            setErrorMessage('Failed to sign. Check credentials.');
+
             setShowToast(true);
         }
     };

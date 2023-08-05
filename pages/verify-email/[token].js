@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const VerifyEmail = () => {
     const router = useRouter();
     const { token } = router.query;
-    const [message, setMessage] = useState(
-        'Your email succeseffully verified!'
-    );
 
     useEffect(() => {
         if (token) {
@@ -17,53 +16,31 @@ const VerifyEmail = () => {
             axios
                 .post(url)
                 .then((response) => {
-                    setMessage(response.data.message);
+                    console.log(response);
                 })
                 .catch((error) => {
-                    setMessage('Error verifying email.');
                     console.error(error);
-                })
-                .finally(() => {
-                    setTimeout(() => {
-                        router.push('/signin');
-                    }, 1500);
                 });
         }
     }, [token, router]);
 
-    const containerStyle = {
-        overflow: 'hidden',
-        transform: 'scale(1.02)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        padding: '20px',
-        background: '#141123',
-    };
-
-    const headingStyle = {
-        fontSize: '36px',
-        fontWeight: 'bold',
-        marginBottom: '20px',
-        textAlign: 'center',
-        fontStyle: 'Poppins, sans-serif',
-        color: '#fff',
-    };
-
-    const messageStyle = {
-        fontSize: '24px',
-        textAlign: 'center',
-        fontStyle: 'Poppins, sans-serif',
-        color: 'lightgreen',
-    };
-
     return (
-        <div style={containerStyle}>
-            <h1 style={headingStyle}>Verification Email:</h1>
-            <p style={messageStyle}>{message}</p>
-        </div>
+        <>
+            <Head>
+                <link rel="stylesheet" href="/css/verifyEmail.css" />
+            </Head>
+            <div>
+                <img src="/img/done.png" />
+                <h1>Thank you</h1>
+                <h2>
+                    You have successfully verified your email <br /> and can now
+                    use the crypto platform <a href="/">cointranche.com</a>
+                </h2>
+                <Link href={'/signin'} className={'coint'}>
+                    Sign in
+                </Link>
+            </div>
+        </>
     );
 };
 
