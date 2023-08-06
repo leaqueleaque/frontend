@@ -147,7 +147,7 @@ const AFF = () => {
                                             </tr>
                                             <tr>
                                                 <td>Referral turnover bonus</td>
-                                                <td>{profile?.got_dep} USDT</td>
+                                                <td>{profile?.got_dep} USD</td>
                                             </tr>
                                             <tr>
                                                 <td>
