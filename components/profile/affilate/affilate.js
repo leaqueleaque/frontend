@@ -142,7 +142,7 @@ const AFF = () => {
                                             <tr>
                                                 <td>Total invite bonus</td>
                                                 <td>
-                                                    {profile?.got_total} USDT
+                                                    {profile?.got_usdt} USDT
                                                 </td>
                                             </tr>
                                             <tr>
@@ -167,7 +167,7 @@ const AFF = () => {
                                                 <th
                                                     style={{ color: '#ffffff' }}
                                                 >
-                                                    {profile?.got_usdt} USDT
+                                                    {profile?.got_total} USDT
                                                 </th>
                                             </tr>
                                         </tfoot>

@@ -62,7 +62,8 @@ const Header = () => {
                         style={{
                             width: 'auto',
                             height: '33px',
-                            marginLeft: '30px',
+                            marginLeft: '50px',
+                            marginTop: '-6px',
                         }}
                         src="/img/ctlogo.svg"
                         alt=""

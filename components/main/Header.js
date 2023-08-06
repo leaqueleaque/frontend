@@ -139,7 +139,10 @@ const Header = () => {
                                     >
                                         <p
                                             className="header__toggle-name"
-                                            style={{ marginRight: '15px' }}
+                                            style={{
+                                                marginRight: '15px',
+                                                fontWeight: '600',
+                                            }}
                                         >
                                             {profile?.username}
                                         </p>
