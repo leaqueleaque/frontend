@@ -284,10 +284,12 @@ const Dep = () => {
     };
 
     useEffect(() => {
-        if (depActive) {
-            document.body.classList.add('deposit__coin-list-box-active');
-        } else {
-            document.body.classList.remove('deposit__coin-list-box-active');
+        if (window.innerWidth <= 800) {
+            if (depActive) {
+                document.body.classList.add('deposit__coin-list-box-active');
+            } else {
+                document.body.classList.remove('deposit__coin-list-box-active');
+            }
         }
     }, [depActive]);
 
