@@ -84,8 +84,15 @@ const Trans = () => {
                                                         {transaction.amount}
                                                     </td>
                                                     <td>
-                                                        {transaction.address}
+                                                        {transaction.address
+                                                            .length > 30
+                                                            ? `${transaction.address.substring(
+                                                                  0,
+                                                                  30
+                                                              )}...`
+                                                            : transaction.address}
                                                     </td>
+
                                                     <td>
                                                         {transaction.status}
                                                     </td>
